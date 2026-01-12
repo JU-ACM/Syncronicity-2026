@@ -60,7 +60,7 @@
   position: absolute;
   inset: 0;
 
-  background-image: url("../../../../assets/robot.png");
+  background-image: url("/src/assets/robot.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
