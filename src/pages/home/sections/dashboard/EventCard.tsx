@@ -37,9 +37,9 @@ const EventCard: React.FC<EventCardProps> = ({
     : { transform: 'perspective(1000px) rotateX(22.5deg) rotateY(-22.5deg) rotateZ(15deg) scale(0.6)' };
 
   return (
-    <div className={`relative w-64 h-96 ${className}`} style={rotationStyle}>
+    <div className={`relative w-64 h-96 ${className} min-w-[200px]`} style={rotationStyle}>
       {/* Card container with 3D tilt effect */}
-      <div className="relative w-full h-full transform transition-transform duration-300 hover:scale-105" 
+      <div className="relative w-full h-full transform transition-transform duration-300 hover:scale-105 lg:transform lg:translate-y-[-20vh]" 
            style={{ transformStyle: 'preserve-3d' }}>
         
         {/* Card background with gradient border */}

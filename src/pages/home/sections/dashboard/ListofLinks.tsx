@@ -2,7 +2,7 @@ import React from 'react'
 
 function ListofLinks():React.JSX.Element {
   return (
-    <div className='h-[90%] w-full flex flex-col justify-evenly items-center'>
+    <div className='h-[90%] w-full min-w-[200px]  flex-col justify-start gap-4 items-center hidden lg:flex '>
       <button className=' w-full h-auto bg-white rounded-full text-[#248a95] font-medium '>
             Home
       </button>

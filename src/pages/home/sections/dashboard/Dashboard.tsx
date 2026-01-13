@@ -9,11 +9,13 @@ import Clouds from './Clouds';
 import Robot from './Robot';
 
 
+
 export const Dashboard: React.FC = () => {
   return (
     <div
       className="
-        w-full
+        w-screen
+        md:w-full
         min-h-[150vh]
         flex
         flex-col
@@ -32,7 +34,7 @@ export const Dashboard: React.FC = () => {
       <section className="h-screen w-full flex justify-center items-center relative">
         {/* Left Event Card */}
         <EventCard 
-				className="absolute left-8 top-1/2 -translate-y-1/2"
+				className="relative scale-75 md:scale-100 left-40 md:left-8 top-1/2 -translate-y-1/2 mt-[75%] md:mt-0"
 				title="Synchronicity S2"
 				duration="10-hour · on-site"
 				eventType="hackathon"
@@ -42,14 +44,14 @@ export const Dashboard: React.FC = () => {
 			  />
 
         {/* Container for title, robot, link, description, and join button */}
-        <div className="w-[55%] h-[80%] flex flex-col z-10">
-          <div className='h-[40%] w-full font-black font-Bounded text-xl'>
-            <h1 className='text-white text-center'>
+        <div className=" w-full lg:w-[55%] h-[80%] flex flex-col items-center z-10 ">
+          <div className='h-[40%] w-[100%] font-black font-Bounded text-sm md:text-xl flex items-center  '>
+            <h1 className='text-white text-center px-12 md:px-0 '>
               Your Gateway To The Global Computing Community
             </h1>
           </div>
           
-          <div className='h-[40%] w-full overflow-y-visible grid grid-cols-3'>
+          <div className='h-[40%] w-full overflow-y-visible grid grid-rows-2 md:grid-cols-3'>
             <ListofLinks/>
 	  		<Robot/>
 
@@ -60,7 +62,7 @@ export const Dashboard: React.FC = () => {
 
         {/* Right Event Card */}
         <EventCard 
-				className="absolute right-8 top-1/2 -translate-y-1/2"
+				className="relative scale-75 md:scale-100 right-40 md:right-8 top-1/2 -translate-y-1/2 mt-[75%] md:mt-0"
 				title="CodeFest 2025"
 				duration="24-hour · virtual"
 				eventType="coding competition"
@@ -70,6 +72,8 @@ export const Dashboard: React.FC = () => {
 			  />
       </section>
 	  <Clouds/>
+
+    
 	  
     </div>
   );
