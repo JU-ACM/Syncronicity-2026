@@ -5,8 +5,8 @@ const Card = ({ name, role, bio, github, linkedin }) => {
   return (
     <div
       className="
-        w-full flex flex-col items-center
-        p-6 sm:p-8 gap-4
+        w-full h-full flex flex-col items-center  {/* Added h-full */}
+        px-4 py-6 sm:px-5 sm:py-8 gap-4
         text-slate-800
         shadow-2xl transition-all hover:shadow-3xl
         bg-[linear-gradient(135deg,#FFFFFF_0%,#5CE1E6_100%)]
@@ -14,10 +14,12 @@ const Card = ({ name, role, bio, github, linkedin }) => {
       style={{
         WebkitMaskImage: "url('/card-svg.svg')",
         WebkitMaskRepeat: "no-repeat",
-        WebkitMaskSize: "100% 100%",
+        WebkitMaskSize: "100% 100%", 
+        WebkitMaskPosition: "center",
         maskImage: "url('/card-svg.svg')",
         maskRepeat: "no-repeat",
-        maskSize: "100% 100%",
+        maskSize: "100% 100%", 
+        maskPosition: "center",
       }}
     >
       {/* Avatar */}
