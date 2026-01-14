@@ -1,6 +1,8 @@
 
 
+
 @import "tailwindcss";
+@import "tailwindcss/utilities";
 
 
 /* Bounded font */
@@ -16,6 +18,15 @@
   src: url("./assets/fonts/Euclid-Circular-B-Medium.ttf") format("truetype");
 }
 
+*, *::before, *::after{
+	box-sizing: border-box;
+
+}
+
+.joinbtn{
+  padding: 0.5em 1.25em;
+  font-size: 1rem;
+}
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -83,9 +94,7 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+
 }
 
-.joinbtn{
-  padding: 0.5em 1.25em;
-  font-size: 1rem;
-}
+
