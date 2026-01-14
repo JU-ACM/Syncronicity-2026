@@ -1,63 +1,61 @@
 import React from "react";
 import { Github, Linkedin } from "lucide-react";
 
-const Card = ({ name, role, bio, github, linkedin }) => {
+const Card = ({ name, role, bio, github, linkedin, image }) => {
   return (
     <div
       className="
-        w-full h-full flex flex-col items-center  {/* Added h-full */}
-        px-4 py-6 sm:px-5 sm:py-8 gap-4
+        w-full h-[394px] flex flex-col items-center 
+        px-5 py-6 gap-3
         text-slate-800
-        shadow-2xl transition-all hover:shadow-3xl
+        transition-all hover:scale-[1.02]
         bg-[linear-gradient(135deg,#FFFFFF_0%,#5CE1E6_100%)]
       "
       style={{
-        WebkitMaskImage: "url('/card-svg.svg')",
-        WebkitMaskRepeat: "no-repeat",
-        WebkitMaskSize: "100% 100%", 
-        WebkitMaskPosition: "center",
         maskImage: "url('/card-svg.svg')",
         maskRepeat: "no-repeat",
-        maskSize: "100% 100%", 
-        maskPosition: "center",
+        maskSize: "100% 100%",
+        WebkitMaskImage: "url('/card-svg.svg')",
+        WebkitMaskRepeat: "no-repeat",
+        WebkitMaskSize: "100% 100%",
       }}
     >
       {/* Avatar */}
-      <div className="w-24 h-24 sm:w-28 sm:h-28 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full shadow-lg flex items-center justify-center text-3xl sm:text-4xl font-bold text-white">
-        {name.charAt(0)}
+      <div className="w-24 h-24 bg-white/30 rounded-full overflow-hidden flex items-center justify-center border border-white/50 shrink-0">
+        {image ? (
+          <img src={image} alt={name} className="w-full h-full object-cover" />
+        ) : (
+          <div className="text-3xl font-bold text-cyan-800 font-['Unbounded']">
+            {name.charAt(0)}
+          </div>
+        )}
       </div>
 
-      {/* Name */}
+      {/* Content */}
       <div className="text-center space-y-1">
-        <h1 className="text-xl sm:text-2xl font-bold tracking-tight">
-          {name}
-        </h1>
-        <h2 className="text-base sm:text-lg font-medium text-cyan-600">
-          {role}
-        </h2>
+        <h3 className="text-lg font-bold tracking-tight font-['Unbounded'] leading-tight">
+          {name || "Full Name"}
+        </h3>
+        <h4 className="text-xs font-semibold text-cyan-700 font-['Unbounded']">
+          {role || "Designation"}
+        </h4>
       </div>
 
-      {/* Bio */}
-      <p className="text-xs sm:text-sm text-center leading-relaxed text-slate-600">
-        {bio || "Passionate professional dedicated to excellence and innovation in their field."}
+      {/* Bio: matches the style in your Figma image */}
+      <p className="text-[10px] text-center leading-[1.4] text-slate-700 font-['Unbounded'] px-2 overflow-hidden">
+        {bio || "The team has passionate and diligent people who are eager to create opportunities for everyone."}
       </p>
 
-      {/* Icons */}
-      <div className="flex gap-4 mt-2">
+      {/* Socials */}
+      <div className="flex gap-4 mt-auto mb-2">
         {github && (
-          <a
-            href={github}
-            className="p-3 bg-slate-800 hover:bg-cyan-600 rounded-full transition-all shadow-md hover:scale-110"
-          >
-            <Github className="w-6 h-6 text-white" />
+          <a href={github} className="transition-transform hover:scale-110">
+            <Github className="w-5 h-5 text-slate-900" />
           </a>
         )}
         {linkedin && (
-          <a
-            href={linkedin}
-            className="p-3 bg-slate-800 hover:bg-cyan-600 rounded-full transition-all shadow-md hover:scale-110"
-          >
-            <Linkedin className="w-6 h-6 text-white" />
+          <a href={linkedin} className="transition-transform hover:scale-110">
+            <Linkedin className="w-5 h-5 text-slate-900" />
           </a>
         )}
       </div>
