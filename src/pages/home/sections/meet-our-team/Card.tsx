@@ -4,7 +4,7 @@ const Card = ({ name, role, bio, github, linkedin, image }) => {
   return (
     <div
       className="
-        w-full h-[394px] flex flex-col items-center 
+        w-[282.5px] h-[394px] flex flex-col items-center 
         px-5 py-6 gap-3
         text-slate-800
         transition-all hover:scale-[1.02]
@@ -20,7 +20,7 @@ const Card = ({ name, role, bio, github, linkedin, image }) => {
       }}
     >
       {/* Avatar */}
-      <div className="w-24 h-24 bg-white/30 rounded-full overflow-hidden flex items-center justify-center border border-white/50 shrink-0">
+      <div className="w-24 h-24 bg-white/30 rounded-full overflow-hidden flex items-center justify-center border border-white/50 shrink-0 mt-[20%]">
         {image ? (
           <img src={image} alt={name} className="w-full h-full object-cover" />
         ) : (
@@ -46,7 +46,7 @@ const Card = ({ name, role, bio, github, linkedin, image }) => {
       </p>
 
       {/* Socials */}
-      <div className="flex gap-4 mt-auto mb-2">
+      <div className="flex gap-4 mt-auto mb-[10%]">
         {github && (
           <a
             href={github}
