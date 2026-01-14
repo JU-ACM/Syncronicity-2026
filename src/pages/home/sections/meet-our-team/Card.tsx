@@ -1,5 +1,4 @@
 import React from "react";
-import { Github, Linkedin } from "lucide-react";
 
 const Card = ({ name, role, bio, github, linkedin, image }) => {
   return (
@@ -41,7 +40,7 @@ const Card = ({ name, role, bio, github, linkedin, image }) => {
         </h4>
       </div>
 
-      {/* Bio: matches the style in your Figma image */}
+      {/* Bio */}
       <p className="text-[10px] text-center leading-[1.4] text-slate-700 font-['Unbounded'] px-2 overflow-hidden">
         {bio || "The team has passionate and diligent people who are eager to create opportunities for everyone."}
       </p>
@@ -49,16 +48,36 @@ const Card = ({ name, role, bio, github, linkedin, image }) => {
       {/* Socials */}
       <div className="flex gap-4 mt-auto mb-2">
         {github && (
-          <a href={github} className="transition-transform hover:scale-110">
-            <Github className="w-5 h-5 text-slate-900" />
+          <a
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-transform hover:scale-110"
+          >
+            <img
+              src="/github.svg"
+              alt="GitHub"
+              className="w-5 h-5"
+            />
           </a>
         )}
+
         {linkedin && (
-          <a href={linkedin} className="transition-transform hover:scale-110">
-            <Linkedin className="w-5 h-5 text-slate-900" />
+          <a
+            href={linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-transform hover:scale-110"
+          >
+            <img
+              src="/linkedin.svg"
+              alt="LinkedIn"
+              className="w-5 h-5"
+            />
           </a>
         )}
       </div>
+
     </div>
   );
 };
