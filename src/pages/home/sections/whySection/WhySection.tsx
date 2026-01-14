@@ -26,6 +26,23 @@ const WhySection = () => {
       mb-[10vh]
       max-md:w-[220px] max-md:mb-[1vh]
       max-h-[700px]:mb-[2vh]">
+                    {/* <div
+            className="
+              absolute
+              bottom-[-18%]
+              left-1/2
+              -translate-x-1/2
+              w-[220%] h-[45%]
+              max-md:w-[140%] max-md:h-[15%]
+              rounded-full
+              bg-[radial-gradient(124.34%_64.56%_at_50%_17.66%,rgba(237,252,252,0)_0%,#C4FEFF_100%)]
+              blur-[24px] max-md:blur-[18px]
+              opacity-80
+              bg-yellow
+              pointer-events-none
+              mb-[1vh]
+            "
+          /> */}
                         <div className="absolute
         top-[calc(18%+0.5vw)] left-[calc(-50%-1vw)]
         bg-[rgba(16,160,204,1)] text-white font-euclid font-semibold
@@ -72,7 +89,7 @@ const WhySection = () => {
       flex items-center justify-center
       mt-[clamp(-110px,-12vh,-50px)]
       max-md:max-w-[80vw] max-md:text-[16px]
-      max-md:mt-0 max-md:text-center">
+      max-md:mt-2 max-md:text-center">
                 There are many reasons to join ACM. Enhance your professional career or academic life with ACM member benefits that include a free subscription to ACM’s flagship publication Communications of the ACM; online books, courses, videos, and webinars through the ACM Learning Center; opportunities to participate in Special Interest Groups, and conferences all over the world; optional discounted subscription to the ACM Digital Library; savings on peer-driven specialty magazines and research journals, plus other exclusive member discounts.
                 </p>
 
