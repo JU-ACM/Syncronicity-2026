@@ -17,12 +17,11 @@ const WhySection = () => {
        }}>
             <section className="w-full min-h-screen
   flex flex-col items-center justify-center
-  pt-[6vh]
-  max-h-[850px]:pt-[8vh]
+  pt-[12vh]
+  max-h-[850px]:pt-[6vh]
   max-md:min-h-fit max-md:justify-start">
-                <h1 className="max-w-[1100px]
+                <h1 className="whyTitle max-w-[1100px]
   font-montserrat font-black
-  text-[clamp(36px,6vw,78px)]
   leading-[1.2]
   text-center text-[rgba(16,160,204,1)]
   mt-[clamp(-120px,-12vh,-60px)]
@@ -96,7 +95,7 @@ const WhySection = () => {
                             Is this worth my time?
                         </div>
                 </div>
-                <p className="max-w-[800px]
+                <p className="whyText max-w-[800px]
       font-euclid text-black text-[20px] leading-[1.2]
       flex items-center justify-center
       mt-[clamp(-110px,-12vh,-50px)]
