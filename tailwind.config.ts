@@ -6,14 +6,13 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        acmBlue: 'rgba(16,160,204,1)',
-      },
       fontFamily: {
         montserrat: ['Montserrat', 'sans-serif'],
-        euclid: ['"Euclid Circular B"', 'sans-serif'],
+        bounded: ["Bounded", "sans-serif"],
+        euclid: ["Euclid Circular B", "sans-serif"],
       },
     },
   },
   plugins: [],
 };
+

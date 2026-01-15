@@ -1,8 +1,20 @@
 import "./WhySection.css";
+import heroBg from "../../../../assets/whySection/hero-bg.png"
 
 const WhySection = () => {
     return (
-        <div className="w-full flex items-center justify-center px-4 py-12">
+        <div className="
+        w-full
+     min-h-screen
+     bg-no-repeat
+     bg-center
+     bg-cover
+     overflow-x-hidden
+     flex
+       "
+       style={{
+         backgroundImage: `url(${heroBg})`,
+       }}>
             <section className="w-full min-h-screen
   flex flex-col items-center justify-center
   pt-[6vh]
