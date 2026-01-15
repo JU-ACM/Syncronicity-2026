@@ -3,19 +3,109 @@
 
 @import "tailwindcss";
 @import "tailwindcss/utilities";
+/* Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@200;300;400;500;600;700;800;900&display=swap");
 
 
-/* Bounded font */
+
+/* =========================
+   BOUNDED
+========================= */
 @font-face {
   font-family: "Bounded";
-  src: url("./assets/fonts/Bounded-Variable.ttf") format("truetype");
-  font-weight: 100 900;
+  src: url("/fonts/Bounded-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* =========================
+   EUCLID CIRCULAR B
+========================= */
+@font-face {
+  font-family: "Euclid Circular B";
+  src: url("/fonts/Euclid-Circular-B-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: "Euclid Circular B";
-  src: url("./assets/fonts/Euclid-Circular-B-Medium.ttf") format("truetype");
+  src: url("/fonts/Euclid-Circular-B-Light-Italic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Euclid Circular B";
+  src: url("/fonts/Euclid-Circular-B-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Euclid Circular B";
+  src: url("/fonts/Euclid-Circular-B-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Euclid Circular B";
+  src: url("/fonts/Euclid-Circular-B-Medium-Italic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Euclid Circular B";
+  src: url("/fonts/Euclid-Circular-B-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Euclid Circular B";
+  src: url("/fonts/Euclid-Circular-B-SemiBold-Italic.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Euclid Circular B";
+  src: url("/fonts/Euclid-Circular-B-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Euclid Circular B";
+  src: url("/fonts/Euclid-Circular-B-Bold-Italic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@layer utilities {
+  .font-bounded {
+    font-family: "Bounded", sans-serif;
+  }
+
+  .font-euclid {
+    font-family: "Euclid Circular B", sans-serif;
+  }
+
+  .font-unbounded {
+    font-family: "Unbounded", sans-serif;
+  }
 }
 
 *, *::before, *::after{

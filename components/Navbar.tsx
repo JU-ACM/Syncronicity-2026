@@ -46,10 +46,11 @@ const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
           </button>
 
           {/* Download Brochure Button */}
+          <a href='/brochure.pdf' target='_blank'>
           <button className="flex items-center gap-2 px-6 py-3 bg-white/90 hover:bg-white text-teal-600 rounded-full font-medium transition-all duration-300 shadow-md hover:shadow-lg">
             <span>Download Brochure</span>
             <Download className="w-4 h-4" />
-          </button>
+          </button></a>
         </div>
       </div>
       <div className='w-full h-16 absolute top-0 left-0 z-50 md:hidden'>
@@ -151,7 +152,7 @@ const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
                       <span>Contact Us</span>
                       <Phone className="w-4 h-4" />
                     </motion.button>
-                    
+                    <a href='/brochure.pdf' target='_blank'>
                     <motion.button
                       initial={{ y: 50, opacity: 0 }}
                       animate={{ y: 0, opacity: 1 }}
@@ -163,6 +164,7 @@ const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
                       <span>Download Brochure</span>
                       <Download className="w-4 h-4" />
                     </motion.button>
+                    </a>
                   </div>
                 </div>
               </motion.div>
