@@ -1,0 +1,187 @@
+/* Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@200;300;400;500;600;700;800;900&display=swap");
+@import "tailwindcss";
+@import "tailwindcss/utilities";
+
+
+
+/* =========================
+   BOUNDED
+========================= */
+@font-face {
+  font-family: "Bounded";
+  src: url("/fonts/Bounded-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* =========================
+   EUCLID CIRCULAR B
+========================= */
+@font-face {
+  font-family: "Euclid Circular B";
+  src: url("/fonts/Euclid-Circular-B-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Euclid Circular B";
+  src: url("/fonts/Euclid-Circular-B-Light-Italic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Euclid Circular B";
+  src: url("/fonts/Euclid-Circular-B-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Euclid Circular B";
+  src: url("/fonts/Euclid-Circular-B-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Euclid Circular B";
+  src: url("/fonts/Euclid-Circular-B-Medium-Italic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Euclid Circular B";
+  src: url("/fonts/Euclid-Circular-B-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Euclid Circular B";
+  src: url("/fonts/Euclid-Circular-B-SemiBold-Italic.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Euclid Circular B";
+  src: url("/fonts/Euclid-Circular-B-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Euclid Circular B";
+  src: url("/fonts/Euclid-Circular-B-Bold-Italic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@layer utilities {
+  .font-bounded {
+    font-family: "Bounded", sans-serif;
+  }
+
+  .font-euclid {
+    font-family: "Euclid Circular B", sans-serif;
+  }
+
+  .font-unbounded {
+    font-family: "Unbounded", sans-serif;
+  }
+}
+
+*, *::before, *::after{
+	box-sizing: border-box;
+
+}
+
+.joinbtn{
+  padding: 0.5em 1.25em;
+  font-size: 1rem;
+}
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  
+  
+  padding: 0.4em 1.2em;
+
+  
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+
+}
+
+
