@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import { HomeRoute } from "./pages/home/route";
@@ -12,6 +13,12 @@ import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
+=======
+import {  Route, Routes } from 'react-router-dom'
+// import './App.css'
+import { HomeRoute } from './pages/home/route'
+import './index.css'
+>>>>>>> 3e14db1db4ee8088000083ae8593ce5e0f825ca2
 
 function App() {
   useEffect(() => {
