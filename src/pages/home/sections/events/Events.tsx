@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import herobg from '../../../../assets/dashboard/hero-bg.png'
 import mascotImg from '../../../../assets/events/events_mascot.png'
 
@@ -93,11 +94,11 @@ function useReveal(ref: React.RefObject<HTMLElement | null>, delay = 0) {
     )
     observer.observe(el)
     return () => observer.disconnect()
-  }, [delay])
+  }, [delay, ref])
 }
 
 // ── Vertical Event Card ──────────────────────────────────────────────────────
-const EventCard: React.FC<{ event: (typeof EVENTS)[0]; index: number }> = ({ event, index }) => {
+const EventCard: React.FC<{ event: (typeof EVENTS)[0]; index: number; navigate: (path: string) => void }> = ({ event, index, navigate }) => {
   const cardRef = useRef<HTMLDivElement>(null)
   useReveal(cardRef, index * 60)
 
@@ -183,7 +184,7 @@ const EventCard: React.FC<{ event: (typeof EVENTS)[0]; index: number }> = ({ eve
           className="self-start flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest transition-opacity duration-200 hover:opacity-70"
           style={{ color: event.color }}
           onClick={() => {
-            // TODO: navigate(`/events/${event.id}`)
+            navigate(`/event/${event.id}`)
           }}
         >
           Learn More
@@ -208,7 +209,8 @@ const EventCard: React.FC<{ event: (typeof EVENTS)[0]; index: number }> = ({ eve
 
 // ── Main Events Page ─────────────────────────────────────────────────────────
 const Events: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState('All')
+  const navigate = useNavigate()
+  const [activeCategory] = useState('All')
   const headingRef = useRef<HTMLHeadingElement>(null)
   const galleryRef = useRef<HTMLDivElement>(null)
   useReveal(headingRef, 120)
@@ -321,7 +323,7 @@ const Events: React.FC = () => {
             }}
           >
             {filtered.map((event, i) => (
-              <EventCard key={event.id} event={event} index={i} />
+              <EventCard key={event.id} event={event} index={i} navigate={navigate} />
             ))}
           </div>
         </div>
