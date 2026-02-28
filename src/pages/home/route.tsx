@@ -1,6 +1,6 @@
 import About from "./sections/about/About"
 import { Dashboard } from "./sections/dashboard/Dashboard"
-import Events from "./sections/events/events"
+import Events from "./sections/events/Events"
 import Footer from "./sections/footer/Footer"
 import MeetOurTeam from "./sections/meet-our-team/MeetOurTeam"
 import WhySection from "./sections/whySection/WhySection"

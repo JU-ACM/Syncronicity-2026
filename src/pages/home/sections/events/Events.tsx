@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import herobg from '../../../../assets/dashboard/hero-bg.png'
 import mascotImg from '../../../../assets/events/events_mascot.png'
+
 // ── Placeholder event data – swap with your real data ──────────────────────
 const EVENTS = [
   {
@@ -33,7 +34,7 @@ const EVENTS = [
     date: 'APR 20, 2025',
     location: 'Open Amphitheatre',
     seats: 500,
-    image: 'https://images.unsplash.com/photo-1559060680-36abfac01944?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    image: 'https://images.unsplash.com/photo-1559060680-36abfac01944?q=80&w=1374&auto=format&fit=crop',
     color: '#a855f7',
   },
   {
@@ -47,31 +48,31 @@ const EVENTS = [
     image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80',
     color: '#10a0cc',
   },
-  {
-    id: 5,
-    category: 'Competition',
-    title: 'Robotics Challenge',
-    description: 'Engineer, program, and race your bot through dynamic obstacle courses in this flagship robotics showdown.',
-    date: 'MAY 18, 2025',
-    location: 'Engineering Block',
-    seats: 80,
-    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&q=80',
-    color: '#f97316',
-  },
-  {
-    id: 6,
-    category: 'Cultural',
-    title: 'Music & Arts Carnival',
-    description: 'Live bands, murals, installations, and street food collide in our biggest open-air cultural extravaganza.',
-    date: 'JUN 01, 2025',
-    location: 'Central Lawn',
-    seats: 350,
-    image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&q=80',
-    color: '#a855f7',
-  },
+  // {
+  //   id: 5,
+  //   category: 'Competition',
+  //   title: 'Robotics Challenge',
+  //   description: 'Engineer, program, and race your bot through dynamic obstacle courses in this flagship robotics showdown.',
+  //   date: 'MAY 18, 2025',
+  //   location: 'Engineering Block',
+  //   seats: 80,
+  //   image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&q=80',
+  //   color: '#f97316',
+  // },
+  // {
+  //   id: 6,
+  //   category: 'Cultural',
+  //   title: 'Music & Arts Carnival',
+  //   description: 'Live bands, murals, installations, and street food collide in our biggest open-air cultural extravaganza.',
+  //   date: 'JUN 01, 2025',
+  //   location: 'Central Lawn',
+  //   seats: 350,
+  //   image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&q=80',
+  //   color: '#a855f7',
+  // },
 ]
 
-const CATEGORIES = ['All', 'Workshop', 'Competition', 'Cultural']
+// const CATEGORIES = ['All', 'Workshop', 'Competition', 'Cultural']
 
 // ── Reveal on scroll ─────────────────────────────────────────────────────────
 function useReveal(ref: React.RefObject<HTMLElement | null>, delay = 0) {
@@ -88,108 +89,126 @@ function useReveal(ref: React.RefObject<HTMLElement | null>, delay = 0) {
           observer.disconnect()
         }
       },
-      { threshold: 0.12 }
+      { threshold: 0.1 }
     )
     observer.observe(el)
     return () => observer.disconnect()
   }, [delay])
 }
 
-// ── Event Card ───────────────────────────────────────────────────────────────
+// ── Vertical Event Card ──────────────────────────────────────────────────────
 const EventCard: React.FC<{ event: (typeof EVENTS)[0]; index: number }> = ({ event, index }) => {
   const cardRef = useRef<HTMLDivElement>(null)
-  useReveal(cardRef, index * 70)
+  useReveal(cardRef, index * 60)
 
   return (
     <div
       ref={cardRef}
-      className="group relative overflow-hidden rounded-xl cursor-pointer"
+      className="group relative overflow-hidden rounded-2xl cursor-pointer"
       style={{
         opacity: 0,
-        transform: 'translateY(36px)',
-        transition: 'opacity 0.55s cubic-bezier(0.16,1,0.3,1), transform 0.55s cubic-bezier(0.16,1,0.3,1)',
+        transform: 'translateY(40px)',
+        transition: 'opacity 0.6s cubic-bezier(0.16,1,0.3,1), transform 0.6s cubic-bezier(0.16,1,0.3,1)',
+        aspectRatio: '3 / 5',
       }}
     >
-      {/* Full-bleed image */}
-      <div className="relative w-full h-52 overflow-hidden rounded-xl">
-        <img
-          src={event.image}
-          alt={event.title}
-          className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-        />
+      {/* Full-bleed background image */}
+      <img
+        src={event.image}
+        alt={event.title}
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+      />
 
-        {/* ── Default: dark band at bottom with title ── */}
-        <div
-          className="absolute inset-x-0 bottom-0 px-4 pt-10 pb-4 transition-opacity duration-300 group-hover:opacity-0"
-          style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%)' }}
-        >
-          <span
-            className="block text-[9px] font-bold uppercase tracking-[0.2em] mb-1"
-            style={{ color: event.color }}
-          >
-            {event.category}
-          </span>
-          <h3 className="text-white font-bold text-sm leading-snug">
-            {event.title}
-          </h3>
-        </div>
+      {/* Permanent dark vignette — stronger at bottom */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: 'linear-gradient(to top, rgba(0,0,0,0.90) 0%, rgba(0,0,0,0.35) 45%, rgba(0,0,0,0.10) 100%)',
+        }}
+      />
 
-        {/* ── Hover: full overlay with description + learn more ── */}
-        <div
-          className="absolute inset-0 flex flex-col justify-end px-4 pb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      {/* Category pill — top left, always visible */}
+      <div className="absolute top-3 left-3 z-10">
+        <span
+          className="text-[9px] font-bold uppercase tracking-[0.22em] px-2.5 py-1 rounded-full"
           style={{
-            background: 'linear-gradient(to top, rgba(0,0,0,0.93) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.15) 100%)',
+            background: event.color + '22',
+            color: event.color,
+            border: `1px solid ${event.color}66`,
+            backdropFilter: 'blur(6px)',
           }}
         >
-          <span
-            className="text-[9px] font-bold uppercase tracking-[0.2em] mb-1"
-            style={{ color: event.color }}
-          >
-            {event.category}
-          </span>
-          <h3 className="text-white font-bold text-sm leading-snug mb-2">
-            {event.title}
-          </h3>
+          {event.category}
+        </span>
+      </div>
 
-          {/* Description slides up */}
-          <p
-            className="text-white/65 text-[11px] leading-relaxed mb-2.5"
-            style={{
-              transform: 'translateY(6px)',
-              transition: 'transform 0.35s ease',
-            }}
-          >
-            {event.description}
-          </p>
-
-          {/* Meta */}
-          <div className="flex items-center gap-2 text-white/40 text-[10px] mb-3">
-            <span>{event.date}</span>
-            <span className="w-px h-2.5 bg-white/20" />
-            <span>{event.location}</span>
-          </div>
-
-          {/* Learn More */}
-          <button
-            className="self-start flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest hover:opacity-75 transition-opacity duration-200"
-            style={{ color: event.color }}
-            onClick={() => {
-              // TODO: navigate(`/events/${event.id}`)
-            }}
-          >
-            Learn More
-            <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </button>
+      {/* ── Default bottom content: just title ── */}
+      <div
+        className="absolute inset-x-0 bottom-0 px-4 pb-5 transition-all duration-300 group-hover:opacity-0 group-hover:translate-y-2"
+        style={{ zIndex: 10 }}
+      >
+        <h3 className="text-white font-bold text-sm leading-snug">
+          {event.title}
+        </h3>
+        <div className="flex items-center gap-2 text-white/40 text-[10px] mt-1.5">
+          <span>{event.date}</span>
+          <span className="w-px h-2 bg-white/25" />
+          <span>{event.location}</span>
         </div>
       </div>
+
+      {/* ── Hover overlay: description + learn more slides up ── */}
+      <div
+        className="absolute inset-0 flex flex-col justify-end px-4 pb-5 opacity-0 translate-y-3 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-350 ease-out"
+        style={{
+          zIndex: 10,
+          background: 'linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.65) 55%, rgba(0,0,0,0.1) 100%)',
+        }}
+      >
+        <h3 className="text-white font-bold text-sm leading-snug mb-2">
+          {event.title}
+        </h3>
+
+        <p className="text-white/60 text-[11px] leading-relaxed mb-3">
+          {event.description}
+        </p>
+
+        <div className="flex items-center gap-2 text-white/35 text-[10px] mb-4">
+          <span>{event.date}</span>
+          <span className="w-px h-2 bg-white/20" />
+          <span>{event.location}</span>
+        </div>
+
+        <button
+          className="self-start flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest transition-opacity duration-200 hover:opacity-70"
+          style={{ color: event.color }}
+          onClick={() => {
+            // TODO: navigate(`/events/${event.id}`)
+          }}
+        >
+          Learn More
+          <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </button>
+      </div>
+
+      {/* Accent line at bottom on hover */}
+      <div
+        className="absolute bottom-0 left-0 h-[2px] w-0 group-hover:w-full rounded-full"
+        style={{
+          background: `linear-gradient(90deg, ${event.color}, transparent)`,
+          transition: 'width 0.5s cubic-bezier(0.16,1,0.3,1)',
+          zIndex: 20,
+        }}
+      />
     </div>
   )
 }
 
-const Events : React.FC = () => {
-    const [activeCategory, setActiveCategory] = useState('All')
+// ── Main Events Page ─────────────────────────────────────────────────────────
+const Events: React.FC = () => {
+  const [activeCategory, setActiveCategory] = useState('All')
   const headingRef = useRef<HTMLHeadingElement>(null)
   const galleryRef = useRef<HTMLDivElement>(null)
   useReveal(headingRef, 120)
@@ -197,123 +216,120 @@ const Events : React.FC = () => {
 
   const filtered =
     activeCategory === 'All' ? EVENTS : EVENTS.filter((e) => e.category === activeCategory)
+
   return (
-    <div className=' min-h-screen ' style={{
-        backgroundImage: `url(${herobg})`,
-      }}>
-        <div
-      className="
-        w-screen
-        md:w-full
-        h-[110vh]
-        flex
-        flex-col
-        items-center
-        justify-center
-		relative
-        bg-no-repeat
-        bg-center
-        bg-cover
-      "
-      
+    <div
+      className="min-h-screen"
+      style={{ backgroundImage: `url(${herobg})` }}
     >
-        <img src={mascotImg} alt="Mascot" className="h-[70%] w-auto absolute right-0 bottom-0" />
-        {/* Noise grain */}
       <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage:
-            "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E\")",
-          backgroundRepeat: 'repeat',
-          zIndex: 1,
-          opacity: 0.35,
-        }}
-      />
-           {/* Ambient glow */}
-      <div
-        className="absolute top-10 left-10 w-80 h-80 rounded-full pointer-events-none"
-        style={{
-          background: 'radial-gradient(circle, rgba(16,160,204,0.12) 0%, transparent 70%)',
-          filter: 'blur(50px)',
-          zIndex: 0,
-        }}
-      />
-       <div
-        className="relative flex flex-col gap-6 py-10 pl-8 pr-4 h-[90%] w-[75%] mr-[20%]"
-        style={{ zIndex: 10,}}
+        className="w-screen md:w-full h-[110vh] flex flex-col items-center justify-center relative bg-no-repeat bg-center bg-cover"
       >
-        {/* Header */}
-        <div>
-          <p className="text-[#10a0cc] text-[10px] font-bold uppercase tracking-[0.35em] mb-2">
-            What's Coming Up
-          </p>
-          <h1
-            ref={headingRef}
-            className="text-4xl sm:text-5xl font-extrabold leading-none tracking-tight"
-            style={{
-              opacity: 0,
-              transform: 'translateY(28px)',
-              transition: 'opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1)',
-              fontFamily: 'Unbounded, sans-serif',
-            }}
-          >
-            <span className="text-white">EXCITING </span>
-            <span style={{ WebkitTextStroke: '1.5px #10a0cc', color: 'transparent' }}>EVENTS</span>
-            <br />
-            <span className="text-[#10a0cc]">AWAIT !!</span>
-          </h1>
-        </div>
-
-        {/* Filter pills */}
-        <div className="flex flex-wrap gap-2">
-          {CATEGORIES.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
-              className="text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full transition-all duration-300"
-              style={
-                activeCategory === cat
-                  ? { background: '#10a0cc', color: '#fff', boxShadow: '0 0 14px #10a0cc55' }
-                  : {
-                      background: 'rgba(255,255,255,0.07)',
-                      color: 'rgba(255,255,255,0.45)',
-                      border: '1px solid rgba(255,255,255,0.1)',
-                    }
-              }
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-
-        {/* Divider */}
-        <div
-          className="h-px"
-          style={{ background: 'linear-gradient(90deg, #10a0cc55, transparent)' }}
+        {/* Mascot — bottom right, full opacity, above everything */}
+        <img
+          src={mascotImg}
+          alt="Mascot"
+          className="h-[75%] w-auto absolute right-0 bottom-0 select-none pointer-events-none"
+          style={{ zIndex: 50 }}
         />
 
-        {/* Gallery Grid */}
+        {/* Noise grain */}
         <div
-          ref={galleryRef}
-          className="grid grid-cols-2 sm:grid-cols-3 gap-4"
+          className="absolute inset-0 pointer-events-none"
           style={{
-            opacity: 0,
-            transform: 'translateY(18px)',
-            transition: 'opacity 0.5s ease, transform 0.5s ease',
+            backgroundImage:
+              "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E\")",
+            backgroundRepeat: 'repeat',
+            zIndex: 1,
+            opacity: 0.35,
           }}
-        >
-          {filtered.map((event, i) => (
-            <EventCard key={event.id} event={event} index={i} />
-          ))}
-        </div>
-        
-        
-      </div>
-    </div>
-    <div className='h-[20vh]'/>
-    </div>
+        />
 
+        {/* Ambient glow */}
+        <div
+          className="absolute top-10 left-10 w-80 h-80 rounded-full pointer-events-none"
+          style={{
+            background: 'radial-gradient(circle, rgba(16,160,204,0.12) 0%, transparent 70%)',
+            filter: 'blur(50px)',
+            zIndex: 0,
+          }}
+        />
+
+        {/* ── Content: left 75%, pushed right margin to leave mascot space ── */}
+        <div
+          className="relative flex flex-col gap-6 py-10 pl-8 pr-4 h-[90%] w-[75%] mr-[20%]"
+          style={{ zIndex: 10 }}
+        >
+          {/* Header */}
+          <div>
+            <p className="text-white text-shadow-2xl text-shadow-white text-[10px] font-bold uppercase tracking-[0.35em] mb-2">
+              What's Coming Up
+            </p>
+            <h1
+              ref={headingRef}
+              className="text-4xl sm:text-5xl font-extrabold leading-none tracking-tight"
+              style={{
+                opacity: 0,
+                transform: 'translateY(28px)',
+                transition: 'opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1)',
+                fontFamily: 'Unbounded, sans-serif',
+              }}
+            >
+              <span className="text-white">EXCITING </span>
+              <span style={{ WebkitTextStroke: '1.5px #fff', color: 'transparent' }}>EVENTS</span>
+              <br />
+              <span className="text-[#10a0cc] text-shadow-2xs text-shadow-white">AWAIT !!</span>
+            </h1>
+          </div>
+
+          {/* Filter pills */}
+          {/* <div className="flex flex-wrap gap-2">
+            {CATEGORIES.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className="text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full transition-all duration-300"
+                style={
+                  activeCategory === cat
+                    ? { background: '#10a0cc', color: '#fff', boxShadow: '0 0 14px #10a0cc55' }
+                    : {
+                        background: 'rgba(255,255,255,0.07)',
+                        color: 'rgba(255,255,255,0.45)',
+                        border: '1px solid rgba(255,255,255,0.1)',
+                      }
+                }
+              >
+                {cat}
+              </button>
+            ))}
+          </div> */}
+
+          {/* Divider */}
+          <div
+            className="h-px"
+            style={{ background: 'linear-gradient(90deg, #10a0cc55, transparent)' }}
+          />
+
+          {/* Gallery Grid — vertical portrait cards */}
+          <div
+            ref={galleryRef}
+            className="grid grid-cols-4 gap-3"
+            style={{
+              opacity: 0,
+              transform: 'translateY(18px)',
+              transition: 'opacity 0.5s ease, transform 0.5s ease',
+            }}
+          >
+            {filtered.map((event, i) => (
+              <EventCard key={event.id} event={event} index={i} />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="h-[20vh]" />
+    </div>
   )
 }
 
-export default  Events
+export default Events
