@@ -1,3 +1,4 @@
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -7,18 +8,14 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-<<<<<<< HEAD
-        euclid: ["Euclid Circular B", "sans-serif"],
+        // Custom fonts from your @font-face declarations
         bounded: ["Bounded", "sans-serif"],
+        euclid: ["Euclid Circular B", "sans-serif"],
         unbounded: ["Unbounded", "sans-serif"],
-=======
+        // Keep existing if needed
         montserrat: ['Montserrat', 'sans-serif'],
-        bounded: ["Bounded", "sans-serif"],
-        euclid: ["Euclid Circular B", "sans-serif"],
->>>>>>> 3e14db1db4ee8088000083ae8593ce5e0f825ca2
       },
     },
   },
   plugins: [],
 };
-
