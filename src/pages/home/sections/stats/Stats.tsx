@@ -1,7 +1,3 @@
-import CloudBL from "./components/clouds/CloudBL";
-import CloudBR from "./components/clouds/CloudBR";
-import CloudTL from "./components/clouds/CloudTL";
-import CloudTR from "./components/clouds/CloudTR";
 import CountUp100k from "./components/CountUp100k";
 import CountUp35 from "./components/CountUp35";
 import CountUp70 from "./components/CountUp70";
@@ -9,17 +5,9 @@ import { motion } from "motion/react";
 
 const Stats = () => {
   return (
-    <div className="relative bg-transparent h-screen w-full">
-      {/* CLOUD LAYER */}
-      <div
-        className="h-[135vh] bg-transparent
-       absolute -top-[18vh] z-200 inset-0 overflow-x-hidden"
-      >
-        <CloudTL />
-        <CloudTR />
-        <CloudBL />
-        <CloudBR />
-      </div>
+    <div className="relative h-screen w-full">
+      {/* clouds */}
+      <img className="absolute z-50 top-10 -left-50 -translate-y-1/2 w-200 h-auto" src="src/assets/clouds/cloud-1.png" alt="cloud-1" />
 
       {/* CONTENT LAYER */}
       <div className="relative z-0 flex flex-col gap-6 py-20 px-40 h-full">

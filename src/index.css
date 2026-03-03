@@ -1,19 +1,9 @@
 /* Google Font */
 @import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@200;300;400;500;600;700;800;900&display=swap");
-<<<<<<< HEAD
-
-
-@import "tailwindcss";
-
-
-@import 'lenis/dist/lenis.css';
-
-=======
 @import "tailwindcss";
 @import "tailwindcss/utilities";
 
 
->>>>>>> 3e14db1db4ee8088000083ae8593ce5e0f825ca2
 
 /* =========================
    BOUNDED
@@ -48,8 +38,6 @@
 @font-face {
   font-family: "Euclid Circular B";
   src: url("/fonts/Euclid-Circular-B-Regular.ttf") format("truetype");
-<<<<<<< HEAD
-=======
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -130,7 +118,6 @@
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
->>>>>>> 3e14db1db4ee8088000083ae8593ce5e0f825ca2
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -144,14 +131,6 @@
   font-display: swap;
 }
 
-<<<<<<< HEAD
-@font-face {
-  font-family: "Euclid Circular B";
-  src: url("/fonts/Euclid-Circular-B-Medium-Italic.ttf") format("truetype");
-  font-weight: 500;
-  font-style: italic;
-  font-display: swap;
-=======
 html,
 body,
 #root {
@@ -181,7 +160,6 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
->>>>>>> 3e14db1db4ee8088000083ae8593ce5e0f825ca2
 }
 
 @font-face {
@@ -231,118 +209,3 @@ button:focus-visible {
 
 }
 
-<<<<<<< HEAD
-.mask-big {
---tl-size: 8vw;
---tr-size: 0vw;
---br-size: 8vw;
---bl-size: 0vw;
---offset: 1px;
-
--webkit-mask-mode: alpha;
--webkit-mask:
-linear-gradient(#000 0 0),
-url("/src/assets/stats/svg/TL-CountUp100k.svg") no-repeat,
-url("/src/assets/stats/svg/TR-CountUp100k.svg") no-repeat,
-url("/src/assets/stats/svg/BR-CountUp100k.svg") no-repeat,
-url("/src/assets/stats/svg/BL-CountUp100k.svg") no-repeat;
-
--webkit-mask-size:
-100% 100%,
-var(--tl-size) var(--tl-size),
-var(--tr-size) var(--tr-size),
-var(--br-size) var(--br-size),
-var(--bl-size) var(--bl-size);
-
--webkit-mask-position:
-0 0,
-calc(0% - var(--offset)) calc(0% - var(--offset)),
-calc(100% + var(--offset)) calc(0% - var(--offset)),
-calc(100% + var(--offset)) calc(100% + var(--offset)),
-calc(0% - var(--offset)) calc(100% + var(--offset));
-
--webkit-mask-composite: destination-out;
-
-mask-mode: alpha;
-mask:
-linear-gradient(#000 0 0),
-url("/src/assets/stats/svg/TL-CountUp100k.svg") no-repeat,
-url("/src/assets/stats/svg/TR-CountUp100k.svg") no-repeat,
-url("/src/assets/stats/svg/BR-CountUp100k.svg") no-repeat,
-url("/src/assets/stats/svg/BL-CountUp100k.svg") no-repeat;
-
-mask-size:
-100% 100%,
-var(--tl-size) var(--tl-size),
-var(--tr-size) var(--tr-size),
-var(--br-size) var(--br-size),
-var(--bl-size) var(--bl-size);
-
-mask-position:
-0 0,
-calc(0% - var(--offset)) calc(0% - var(--offset)),
-calc(100% + var(--offset)) calc(0% - var(--offset)),
-calc(100% + var(--offset)) calc(100% + var(--offset)),
-calc(0% - var(--offset)) calc(100% + var(--offset));
-
-mask-composite: exclude;
-}
-
-.mask-mid {
---tl-size: 0vw;
---tr-size: 0vw;
---br-size: 4vw;
---bl-size: 0vw;
---offset: 1px;
-
--webkit-mask-mode: alpha;
--webkit-mask:
-linear-gradient(#000 0 0),
-url("/src/assets/stats/svg/TL-CountUp100k.svg") no-repeat,
-url("/src/assets/stats/svg/TR-CountUp100k.svg") no-repeat,
-url("/src/assets/stats/svg/BR-CountUp75.svg") no-repeat,
-url("/src/assets/stats/svg/BL-CountUp100k.svg") no-repeat;
-
--webkit-mask-size:
-100% 100%,
-var(--tl-size) var(--tl-size),
-var(--tr-size) var(--tr-size),
-var(--br-size) var(--br-size),
-var(--bl-size) var(--bl-size);
-
--webkit-mask-position:
-0 0,
-calc(0% - var(--offset)) calc(0% - var(--offset)),
-calc(100% + var(--offset)) calc(0% - var(--offset)),
-calc(100% + var(--offset)) calc(100% + var(--offset)),
-calc(0% - var(--offset)) calc(100% + var(--offset));
-
--webkit-mask-composite: destination-out;
-
-mask-mode: alpha;
-mask:
-linear-gradient(#000 0 0),
-url("/src/assets/stats/svg/TL-CountUp100k.svg") no-repeat,
-url("/src/assets/stats/svg/TR-CountUp100k.svg") no-repeat,
-url("/src/assets/stats/svg/BR-CountUp75.svg") no-repeat,
-url("/src/assets/stats/svg/BL-CountUp100k.svg") no-repeat;
-
-mask-size:
-100% 100%,
-var(--tl-size) var(--tl-size),
-var(--tr-size) var(--tr-size),
-var(--br-size) var(--br-size),
-var(--bl-size) var(--bl-size);
-
-mask-position:
-0 0,
-calc(0% - var(--offset)) calc(0% - var(--offset)),
-calc(100% + var(--offset)) calc(0% - var(--offset)),
-calc(100% + var(--offset)) calc(100% + var(--offset)),
-calc(0% - var(--offset)) calc(100% + var(--offset));
-
-mask-composite: exclude;
-}
-=======
-
->>>>>>> 3e14db1db4ee8088000083ae8593ce5e0f825ca2
