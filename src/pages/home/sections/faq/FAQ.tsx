@@ -88,7 +88,7 @@ const FAQ: React.FC = () => {
                             <span className="text-xs uppercase tracking-[0.3em] font-light">Support Center</span>
                         </div>
 
-                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-unbounded font-bold leading-tight mb-6">
+                        <h2 className="text-3xl text-white md:text-5xl lg:text-6xl font-unbounded font-bold leading-tight mb-6">
                             Frequently <br />
                             <span className="bg-gradient-to-r from-[#70D2FF] to-white bg-clip-text text-transparent">
                                 asked questions
