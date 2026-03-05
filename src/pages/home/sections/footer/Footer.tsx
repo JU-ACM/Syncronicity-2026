@@ -62,9 +62,11 @@ export default function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-3 items-center gap-12">
           {/* LEFT */}
           <div className="text-black max-w-sm text-center lg:text-left lg:justify-self-start">
-            <h3 className="text-2xl lg:text-3xl font-euclid font-bold mb-4">
-              acm
-            </h3>
+            <img
+              src="/logo.svg"
+              alt="ACM JU Logo"
+              className="h-10 lg:h-12 mb-4 mx-auto lg:mx-0"
+            />
 
             <p className="text-sm leading-relaxed font-unbounded opacity-90">
               The Jadavpur University ACM Student Chapter is an official student
@@ -117,13 +119,51 @@ export default function ContactSection() {
               Quick Links
             </h3>
 
-            <ul className="space-y-2 font-montserrat	text-sm">
-              <li className="hover:underline cursor-pointer">About</li>
-              <li className="hover:underline cursor-pointer">Events</li>
-              <li className="hover:underline cursor-pointer">Our Team</li>
-              <li className="hover:underline cursor-pointer">Subscriptions</li>
-              <li className="hover:underline cursor-pointer">Contact Us</li>
-              <li className="hover:underline cursor-pointer">FAQs</li>
+            <ul className="space-y-2 font-montserrat text-sm">
+              <li>
+                <a href="#home" className="hover:underline !text-black cursor-pointer">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="#why" className="hover:underline !text-black cursor-pointer">
+                  Why Us
+                </a>
+              </li>
+              <li>
+                <a href="#problem" className="hover:underline !text-black cursor-pointer">
+                  Problem Statement
+                </a>
+              </li>
+              <li>
+                <a href="#stats" className="hover:underline !text-black cursor-pointer">
+                 Statistics
+                </a>
+              </li>
+
+              <li>
+                <a href="#events" className="hover:underline !text-black cursor-pointer">
+                  Events
+                </a>
+              </li>
+              <li>
+                <a href="#about" className="hover:underline !text-black cursor-pointer">
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a href="#timeline" className="hover:underline !text-black cursor-pointer">
+                  Timeline
+                </a>
+              </li>
+
+              <li>
+                <a href="#faq" className="hover:underline !text-black cursor-pointer">
+                  FAQs
+                </a>
+              </li>
+
+              
             </ul>
           </div>
         </div>
