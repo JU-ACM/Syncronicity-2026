@@ -27,7 +27,7 @@ const handleSubmit = async (e: React.FormEvent) => {
 
   try {
     await fetch(
-      "https://script.google.com/macros/s/AKfycbz2O85XjJjFB5ydJziodF30z20dhMPSXgxwDaE1YbTAxyYgIqnDGRSFa39HZK0-J5hbiw/exec",
+      "https://script.google.com/macros/s/AKfycbyGw_emNEvEAcUD5y1Sh4TecYOpn8aV_9RyRVQss4AuuPHRV1KT4e71YxlKlCTFjyv60g/exec",
       {
         method: "POST",
         headers: {
