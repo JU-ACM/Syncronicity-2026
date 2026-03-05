@@ -1,7 +1,8 @@
 import React from "react";
 import herobg from "../../../../assets/dashboard/hero-bg.png";
 import heroimg from "../../../../assets/dashboard/hero-img.png";
-
+import icpcMockFest from '../../../../assets/dashboard/icpc-mockfest-card.jpeg';
+import syncS1 from '../../../../assets/dashboard/synchronicity-s1-card.jpeg'
 import ListofLinks from "./ListofLinks";
 import Description from "./Description";
 import { EventCard } from "./EventCard";
@@ -33,7 +34,7 @@ export const Dashboard: React.FC = () => {
         {/* Left Event Card - Changed from lg:block to xl:block */}
         <EventCard
           className="absolute hidden xl:block left-15 top-60 cursor-pointer"
-          imageUrl="src/assets/dashboard/synchronicity-s1-card.jpeg"
+          imageUrl={syncS1}
           title="Synchronicity S1"
           duration="10-hour · on-site"
           eventType="hackathon"
@@ -57,7 +58,7 @@ export const Dashboard: React.FC = () => {
         {/* Right Event Card - Changed from lg:block to xl:block */}
         <EventCard
           className="absolute hidden xl:block right-15 top-60 cursor-pointer"
-          imageUrl="src/assets/dashboard/icpc-mockfest-card.jpeg"
+          imageUrl={icpcMockFest}
           title="CodeFest 2025"
           duration="24-hour · virtual"
           eventType="coding competition"
