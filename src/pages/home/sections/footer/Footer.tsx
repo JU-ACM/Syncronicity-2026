@@ -23,7 +23,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="relative w-full bg-gradient-to-br from-[#eef7fb] to-[#b7dbe8]">
+    <section className="footer-class relative w-full bg-linear-to-br from-[#eef7fb] to-[#b7dbe8]">
       {/* ================= TOP SECTION ================= */}
 
       <div className="mx-auto max-w-6xl flex flex-col lg:flex-row justify-center items-center lg:items-start gap-12 lg:gap-16 py-16 lg:py-20 px-6 lg:px-10">
@@ -134,7 +134,7 @@ export default function ContactSection() {
             <ul className="space-y-2 font-montserrat text-sm flex flex-col items-center lg:items-start">
               <li>
                 <button 
-                  onClick={() => handleScroll('.home-class')} 
+                  onClick={() => handleScroll('.hero-class')} 
                   className="hover:underline !text-black cursor-pointer bg-transparent border-none p-0 text-left"
                 >
                   Home

@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { Menu, X } from "lucide-react";
 import FunkyButton from "./FunkyButton";
 import CallIcon from "./icons/CallIcon";
+import { useLenis } from "lenis/react";
 
 interface NavbarProps {
   className?: string;
@@ -90,6 +91,7 @@ const Logo = ({ size = 200, className = "", color = "currentColor" }) => {
 };
 
 const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
+  const lenis = useLenis(); 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
@@ -123,7 +125,7 @@ const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
           <FunkyButton
             variant="blue"
             icon={<CallIcon size={16} />}
-            onClick={() => console.log("contact!")}
+            onClick={() => lenis?.scrollTo('.footer-class')} 
           >
             Contact Us
           </FunkyButton>
