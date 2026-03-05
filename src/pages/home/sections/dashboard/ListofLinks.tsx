@@ -42,6 +42,20 @@ function ListofLinks({ className = "" }): React.JSX.Element {
         variant="blue"
         className="w-full h-full"
         onClick={() => {
+          console.log("Scrolling to Problem Statements...");
+          lenis?.scrollTo(".problem-statement-class", {
+            offset: 0, 
+            duration: 1.2, 
+          });
+        }}
+      >
+        Problems
+      </FunkyButton>
+
+      <FunkyButton
+        variant="blue"
+        className="w-full h-full"
+        onClick={() => {
           console.log("Scrolling to Events...");
           lenis?.scrollTo(".events-class", {
             offset: 0, 
