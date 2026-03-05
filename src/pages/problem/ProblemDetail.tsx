@@ -420,7 +420,7 @@ const ProblemDetail: React.FC = () => {
                     </motion.button>
 
                     <motion.button
-                        onClick={() => navigate("/home")}
+                        onClick={() => window.location.reload()}
                         className="flex flex-col items-center gap-1 text-[#10A0CC] cursor-pointer"
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
