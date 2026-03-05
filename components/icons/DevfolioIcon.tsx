@@ -1,4 +1,3 @@
-import React from "react";
 
 const DevfolioIcon = ({ size = 30, color = "currentColor", className = "" }) => {
   return (

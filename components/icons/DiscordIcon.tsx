@@ -1,4 +1,3 @@
-import React from "react";
 
 const DiscordIcon = ({ size = 30, color = "currentColor", className = "" }) => {
   return (
