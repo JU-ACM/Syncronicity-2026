@@ -40,7 +40,6 @@ export default function FunkyButton({
   return (
     <motion.button
       onClick={onClick}
-      // 1. USE NATIVE REACT MOUSE EVENTS INSTEAD OF FRAMER MOTION'S GESTURES
       onMouseEnter={() => setHovered(true)} 
       onMouseLeave={() => setHovered(false)}
       className={`relative font-medium overflow-hidden flex items-center justify-center gap-2 px-6 py-1.5 rounded-full cursor-pointer select-none ${colors.bg} ${hovered ? "flex-row-reverse" : "flex-row"} ${className}`}
