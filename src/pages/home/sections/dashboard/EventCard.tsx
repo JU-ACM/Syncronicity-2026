@@ -230,7 +230,7 @@ const EventCard: React.FC<EventCardProps> = ({
           <div
             ref={badgeRef}
             // translateX(-50%) handles the horizontal centering
-            className="whitespace-nowrap px-4 py-1.5 rounded-lg bg-[#155DFC] text-white font-euclid font-bold text-xs shadow-[0_0_15px_rgba(45,212,191,0.5)] backdrop-blur-md pointer-events-none"
+            className="whitespace-nowrap px-4 py-1.5 rounded-lg bg-[#155DFC] text-white font-euclid font-medium text-xs shadow-[0_0_15px_rgba(45,212,191,0.5)] backdrop-blur-md pointer-events-none"
             style={{ transform: "translateX(-50%)" }}
           >
             Check Exciting Events

@@ -345,7 +345,7 @@ const Events: React.FC = () => {
   }, [filtered.length])
 
   return (
-    <div className="min-h-screen" >
+    <div className="events-class min-h-screen" >
       {/* MOBILE LAYOUT */}
       <div className="md:hidden flex flex-col min-h-screen bg-no-repeat bg-center bg-cover relative overflow-hidden">
         <div

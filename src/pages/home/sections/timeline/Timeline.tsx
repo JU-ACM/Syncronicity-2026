@@ -218,7 +218,7 @@ export default function Timeline() {
   }, []);
 
   return (
-    <section className="relative w-full overflow-hidden m-0 p-0 text-white font-sans bg-[#131313]">
+    <section className="timeline-class relative w-full overflow-hidden m-0 p-0 text-white font-sans bg-[#131313]">
       <div
         ref={containerRef}
         className="relative w-full aspect-[1440/2913] h-auto"

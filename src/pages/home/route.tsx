@@ -2,6 +2,7 @@ import { ReactLenis, useLenis } from "lenis/react";
 
 import { Dashboard } from "./sections/dashboard/Dashboard";
 import Clouds from "../../../components/Clouds";
+import CityScape from "../../../components/CityScape";
 import Events from "./sections/events/Events";
 import FAQ from "./sections/faq/FAQ";
 import Footer from "./sections/footer/Footer";
@@ -88,13 +89,14 @@ export const HomeRoute = () => {
           <Stats />
 
           <Events />
-          <div className="h-[30vh]" />
+          <div className="h-[60vh]" />
         </div>
 
 
 
-        <div className="hidden md:block">
+        <div className="hidden md:block relative z-50">
           <Timeline />
+          <CityScape className="absolute z-10 top-0 w-full" />
         </div>
 
         <div className="block md:hidden lg:hidden">

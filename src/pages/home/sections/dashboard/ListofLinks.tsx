@@ -1,12 +1,15 @@
-import React from 'react';
-import FunkyButton from '../../../../../components/FunkyButton'; // Adjust this import path if needed
+import React from "react";
+import FunkyButton from "../../../../../components/FunkyButton";
+import { useLenis } from "lenis/react";
 // import { Home, Info, Calendar, Bell } from 'lucide-react'; // Optional icons
 
-function ListofLinks({className = ""}): React.JSX.Element {
+function ListofLinks({ className = "" }): React.JSX.Element {
+  const lenis = useLenis();
   return (
-    <div className={` ${className} absolute z-10 flex flex-col gap-4 lg:w-70 md:w-50`} >
+    <div
+      className={` ${className} absolute z-10 flex flex-col gap-4 lg:w-70 md:w-50`}
+    >
       <FunkyButton
-        
         variant="blue"
         className="w-full h-full"
         onClick={() => console.log("Navigating to Home...")}
@@ -16,7 +19,6 @@ function ListofLinks({className = ""}): React.JSX.Element {
       </FunkyButton>
 
       <FunkyButton
-        
         variant="blue"
         className="w-full h-full"
         onClick={() => console.log("Navigating to About ACM-JU...")}
@@ -25,7 +27,6 @@ function ListofLinks({className = ""}): React.JSX.Element {
       </FunkyButton>
 
       <FunkyButton
-        
         variant="blue"
         className="w-full h-full"
         onClick={() => console.log("Navigating to Events...")}
@@ -34,10 +35,15 @@ function ListofLinks({className = ""}): React.JSX.Element {
       </FunkyButton>
 
       <FunkyButton
-        
         variant="blue"
         className="w-full h-full"
-        onClick={() => console.log("Navigating to Subscription...")}
+        onClick={() => {
+          console.log("Scrolling to Timeline...");
+          lenis?.scrollTo(".timeline-class", {
+            offset: 0, 
+            duration: 1.2, 
+          });
+        }}
       >
         Timeline
       </FunkyButton>
