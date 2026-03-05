@@ -33,7 +33,8 @@ export const Dashboard: React.FC = () => {
         {/* Left Event Card - Changed from lg:block to xl:block */}
         <EventCard
           className="absolute hidden xl:block left-15 top-60 cursor-pointer"
-          title="Synchronicity S2"
+          imageUrl="src/assets/dashboard/synchronicity-s1-card.jpeg"
+          title="Synchronicity S1"
           duration="10-hour · on-site"
           eventType="hackathon"
           prizePool="₹23,000 prize pool"
@@ -56,6 +57,7 @@ export const Dashboard: React.FC = () => {
         {/* Right Event Card - Changed from lg:block to xl:block */}
         <EventCard
           className="absolute hidden xl:block right-15 top-60 cursor-pointer"
+          imageUrl="src/assets/dashboard/icpc-mockfest-card.jpeg"
           title="CodeFest 2025"
           duration="24-hour · virtual"
           eventType="coding competition"
