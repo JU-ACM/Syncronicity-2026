@@ -26,10 +26,17 @@ const SendMessageCard: React.FC = () => {
     setStatus("");
 
     try {
-      const res = await fetch("https://script.google.com/macros/s/AKfycbw8BbHV289Pv0aE-eeJDSohNmX9jZyQ9g9xv4_v9NpgfXv28qL_BXRV410VJU_pkMWQ/exec", {
-        method: "POST",
-        body: JSON.stringify(formData),
-      });
+      const res = await fetch(
+  "https://script.google.com/macros/s/AKfycbw8BbHV289Pv0aE-eeJDSohNmX9jZyQ9g9xv4_v9NpgfXv28qL_BXRV410VJU_pkMWQ/exec",
+  {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(formData),
+    mode: "cors",
+  }
+);
 
       if (res.ok) {
         setStatus("Message sent successfully!");
