@@ -15,7 +15,7 @@ const fadeUp: Variants = {
 
 const SponsorsComingSoon: React.FC = () => {
     return (
-        <div className="relative w-full min-h-[60vh] bg-[#131313] flex flex-col items-center justify-center overflow-hidden">
+        <div className="sponsors-coming-soon-class relative w-full min-h-[60vh] bg-[#131313] flex flex-col items-center justify-center overflow-hidden">
 
             {/* Ambient glow — breathes in/out */}
             <motion.div
