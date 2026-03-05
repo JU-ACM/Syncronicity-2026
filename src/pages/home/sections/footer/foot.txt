@@ -1,0 +1,48 @@
+<div className="mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-16 items-center py-20 px-10">
+
+  {/* Left: Form */}
+  <div className="flex justify-center lg:justify-center">
+    <SendMessageCard />
+  </div>
+
+  {/* Right: Get in touch */}
+  <div className="max-w-md ml-auto text-left">
+
+  <h2 className="text-4xl font-extrabold text-black mb-3">
+    Get in touch
+  </h2>
+
+  <p className="text-sm text-gray-700 font-bold leading-relaxed mb-6">
+    Have questions about membership,<br />
+    events, or collaborations? Reach out<br />
+    to the Jadavpur University ACM<br />
+    Student Chapter and we’ll get back<br />
+    to you.
+  </p>
+
+  <div className="space-y-4 text-sm text-black">
+
+    <div className="flex items-start gap-3">
+      <MapPin className="w-5 h-5 mt-1" />
+      <span>
+        Jadavpur University, Saltlake,<br />
+        Sector IV, Bidhannagar,<br />
+        WestBengal-700098
+      </span>
+    </div>
+
+    <div className="flex items-center gap-3">
+      <Phone className="w-5 h-5" />
+      +91 987 654 3210
+    </div>
+
+    <div className="flex items-center gap-3">
+      <Mail className="w-5 h-5" />
+      unofficial01acmju@gmail.com
+    </div>
+
+  </div>
+
+</div>
+
+</div>
