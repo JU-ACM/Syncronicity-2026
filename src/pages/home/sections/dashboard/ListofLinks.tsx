@@ -14,7 +14,7 @@ function ListofLinks({ className = "" }): React.JSX.Element {
         className="w-full h-full"
         onClick={() => {
           console.log("Scrolling to Home...");
-          lenis?.scrollTo(".home-class", {
+          lenis?.scrollTo(".hero-class", {
             offset: 0, 
             duration: 1.2, 
           });
