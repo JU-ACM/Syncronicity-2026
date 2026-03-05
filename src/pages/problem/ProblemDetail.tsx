@@ -168,7 +168,7 @@ const ProblemDetail: React.FC = () => {
                     initial="hidden"
                     animate="visible"
                 >
-                    {[event.event, problem.difficulty, ...problem.tags.slice(0, 2)].map(
+                    {[event, problem.difficulty, ...(problem.tags || []).slice(0, 2)].filter(Boolean).map(
                         (label, i) => (
                             <motion.span
                                 key={i}
@@ -234,7 +234,7 @@ const ProblemDetail: React.FC = () => {
                         </h3>
                     </div>
                     <ul className="space-y-2 mb-6 pl-1">
-                        {problem.objectives.map((obj, i) => (
+                        {(problem.objectives || []).map((obj, i) => (
                             <motion.li
                                 key={i}
                                 className="flex items-start gap-3"
@@ -277,7 +277,7 @@ const ProblemDetail: React.FC = () => {
                         initial="hidden"
                         animate="visible"
                     >
-                        {problem.expectedSolution}
+                        {problem.expectedSolution || "No expected solution specified."}
                     </motion.p>
                 </motion.div>
 
@@ -292,7 +292,7 @@ const ProblemDetail: React.FC = () => {
                     Evaluation Criteria
                 </motion.h2>
                 <div className="grid grid-cols-2 gap-3 mb-6">
-                    {problem.evaluationCriteria.map((c, i) => (
+                    {(problem.evaluationCriteria || []).map((c, i) => (
                         <motion.div
                             key={i}
                             className="bg-white rounded-xl border border-gray-100 shadow-sm p-4 flex flex-col items-center text-center gap-2"
@@ -333,7 +333,7 @@ const ProblemDetail: React.FC = () => {
                     Resources
                 </motion.h2>
                 <div className="space-y-3 mb-6">
-                    {problem.resources.map((r, i) => (
+                    {(problem.resources || []).map((r, i) => (
                         <motion.a
                             key={i}
                             href={r.url}
@@ -386,7 +386,7 @@ const ProblemDetail: React.FC = () => {
                     initial="hidden"
                     animate="visible"
                 >
-                    {problem.tags.map((tag, i) => (
+                    {(problem.tags || []).map((tag, i) => (
                         <motion.span
                             key={i}
                             className="text-xs px-3 py-1.5 bg-[#E6F6FA] text-[#10A0CC] rounded-full font-euclid font-medium"
@@ -430,7 +430,7 @@ const ProblemDetail: React.FC = () => {
                     </motion.button>
 
                     <motion.button
-                        onClick={() => window.open(problem.resources[0]?.url || "#", "_blank")}
+                        onClick={() => window.open(problem.resources?.[0]?.url || "#", "_blank")}
                         className="flex items-center gap-2 bg-[#10A0CC] text-white px-5 py-2.5 rounded-full font-euclid text-sm font-semibold shadow-lg shadow-[#10A0CC]/20"
                         whileHover={{
                             scale: 1.05,

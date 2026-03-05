@@ -39,7 +39,7 @@ const ProblemStatement: React.FC = () => {
                 id={problem.id}
                 title={problem.title}
                 description={problem.description}
-                tags={problem.tags}
+                tags={problem.tags ?? []}
                 categorySlug={eventSection.categorySlug}
               />
             ))}

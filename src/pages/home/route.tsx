@@ -29,7 +29,7 @@ export const HomeRoute = () => {
       </div>
 
       {/* <About /> */}
-      <SponsorsComingSoon />
+
       <div className="hidden md:block">
         <Timeline />
       </div>
@@ -37,6 +37,7 @@ export const HomeRoute = () => {
       <div className="block md:hidden lg:hidden">
         <TimelineMobile />
       </div>
+      <SponsorsComingSoon />
       <FAQ />
       <Footer />
     </div>
