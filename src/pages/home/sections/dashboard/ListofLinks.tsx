@@ -13,21 +13,6 @@ function ListofLinks({ className = "" }): React.JSX.Element {
         variant="blue"
         className="w-full h-full"
         onClick={() => {
-          console.log("Scrolling to Home...");
-          lenis?.scrollTo(".hero-class", {
-            offset: 0, 
-            duration: 1.2, 
-          });
-        }}
-        // icon={<Home size={19} strokeWidth={2.3} />} // Uncomment to add an icon
-      >
-        Home
-      </FunkyButton>
-
-      <FunkyButton
-        variant="blue"
-        className="w-full h-full"
-        onClick={() => {
           console.log("Scrolling to About...");
           lenis?.scrollTo(".why-section-class", {
             offset: 380, 
