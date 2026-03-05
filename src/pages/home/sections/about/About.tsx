@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useEffect, useRef } from 'react'
-import Cityscape from './Cityscape'
+import CityScape from '../../../../../components/CityScape'
 import '../../../../index.css'
 
 // import TapeTransition from '../../../../../components/TapeTransition'
@@ -112,7 +112,7 @@ const About: React.FC = () => {
   return (
     <>
       <div className="relative w-full min-h-[150vh] bg-[#131313]">
-        <Cityscape />
+        <CityScape />
 
         <div
           ref={containerRef}
