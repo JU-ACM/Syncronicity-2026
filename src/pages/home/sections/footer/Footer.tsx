@@ -174,14 +174,6 @@ export default function ContactSection() {
               </li>
               <li>
                 <button 
-                  onClick={() => handleScroll('.about-class')} 
-                  className="hover:underline !text-black cursor-pointer bg-transparent border-none p-0 text-left"
-                >
-                  About Us
-                </button>
-              </li>
-              <li>
-                <button 
                   onClick={() => handleScroll('.timeline-class')} 
                   className="hover:underline !text-black cursor-pointer bg-transparent border-none p-0 text-left"
                 >
