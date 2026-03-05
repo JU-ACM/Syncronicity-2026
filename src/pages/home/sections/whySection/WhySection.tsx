@@ -27,8 +27,10 @@ const WhySection = () => {
   mt-[clamp(-120px,-12vh,-60px)]
   max-h-[850px]:mt-[3vh]
   max-md:mt-0 max-md:px-4 max-md:leading-[1.1]">
-                Why you should <br/>
-                join ACM?
+                <span className="text-white">Why you can't miss </span>
+                <span className="text-[#10A0CC]">
+                  Synchronicity 2.O!
+                </span>
                 </h1>
                 <div className="relative aspect-[3/5]
       w-[min(320px,70vw)]
@@ -62,7 +64,7 @@ const WhySection = () => {
         rounded-tl-[100px] rounded-tr-[84px] rounded-bl-[100px]
         max-md:text-[11px] max-md:max-w-[110px]
         max-md:top-[15%] max-md:left-[-35%]">
-                            Is this just another student club?
+                            Is this just another hackathon?
                         </div>
                         <div className="absolute
         top-[calc(22%+0.5vw)] right-[calc(-58%-1vw)]
@@ -72,7 +74,7 @@ const WhySection = () => {
         rounded-tl-[84px] rounded-tr-[100px] rounded-br-[100px]
         max-md:text-[11px] max-md:max-w-[110px]
         max-md:top-[22%] max-md:right-[-38%]">
-                            What do I actually gain from joining?
+                            What do I actually gain from participating?
                         </div>
                         <div className="absolute
         top-[calc(55%+0.3vw)] left-[calc(-50%-0.8vw)]
@@ -92,7 +94,7 @@ const WhySection = () => {
         rounded-tr-[100px] rounded-bl-[84px] rounded-br-[100px]
         max-md:text-[11px] max-md:max-w-[110px]
         max-md:top-[62%] max-md:right-[-36%]">
-                            Is this worth my time?
+                            Is it worth my time?
                         </div>
                 </div>
                 <p className="whyText max-w-[800px]

@@ -19,7 +19,7 @@ const ProblemStatement: React.FC = () => {
           style={{ fontFamily: 'Unbounded, sans-serif' }}
         >
           <span className="text-white">SOLVE </span>
-          <span className="text-transparent [-webkit-text-stroke:2px_#10A0CC]">
+          <span className="text-[#10A0CC]">
             REAL-WORLD
           </span>
           <br />

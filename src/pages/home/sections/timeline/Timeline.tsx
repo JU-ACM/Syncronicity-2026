@@ -11,10 +11,10 @@ const timelineSteps = [
   {
     id: "step-1",
     number: "1",
-    title: "Registration",
-    duration: "5th Sept to 20th November",
+    title: "Registration Starts",
+    duration: "8th March onwards",
     description:
-      "All Aboard! Save your spot at India's largest student-run hackathon.",
+      "Sign up and Secure your spot",
     positionClasses: "top-[13%] left-[17%] lg:top-[14%] lg:left-[18%]",
     layout: "left",
     lineProgress: 0.162,
@@ -23,10 +23,10 @@ const timelineSteps = [
   {
     id: "step-2",
     number: "2",
-    title: "Registration",
-    duration: "5th Sept to 20th November",
+    title: "Registration closes",
+    duration: "26th April",
     description:
-      "All Aboard! Save your spot at India's largest student-run hackathon.",
+      "Last chance to register",
     positionClasses: "top-[26.5%] right-[20%]",
     layout: "right",
     lineProgress: 0.322,
@@ -35,10 +35,10 @@ const timelineSteps = [
   {
     id: "step-3",
     number: "3",
-    title: "Registration",
-    duration: "5th Sept to 20th November",
+    title: "Final Date for PPT Submission",
+    duration: "3rd May onwards",
     description:
-      "All Aboard! Save your spot at India's largest student-run hackathon.",
+      "Submit your presentation for prelims.",
     positionClasses: "top-[46%] right-[33%] lg:top-[49%] lg:right-[35%]",
     layout: "right",
     lineProgress: 0.608,
@@ -47,10 +47,10 @@ const timelineSteps = [
   {
     id: "step-4",
     number: "4",
-    title: "Registration",
-    duration: "5th Sept to 20th November",
+    title: "Preliminary Round Shortlist Announced",
+    duration: "16th May",
     description:
-      "All Aboard! Save your spot at India's largest student-run hackathon.",
+      "Selected teams advance to the prelims",
     positionClasses: "top-[58%] right-[22%] lg:top-[60%] lg:right-[24%]",
     layout: "right",
     lineProgress: 0.657,
@@ -59,10 +59,10 @@ const timelineSteps = [
   {
     id: "step-5",
     number: "5",
-    title: "Final 24 Hours Hackathon",
-    duration: "5th Sept to 20th November",
+    title: "Final Round",
+    duration: "23rd May-24th May",
     description:
-      "All Aboard! Save your spot at India's largest student-run hackathon.",
+      "Top teams will compete for the title",
     positionClasses: "top-[75.5%] left-[14%]",
     layout: "left",
     lineProgress: 0.812,

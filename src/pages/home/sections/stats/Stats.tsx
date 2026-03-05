@@ -6,23 +6,23 @@ import DecryptedText from "./components/DecryptedText";
 const statsData = [
   {
     id: 1,
-    value: 100,
-    suffix: "k+",
-    desc: "Students and professionals contributing to a worldwide computing ecosystem.",
+    value: 1660,
+    suffix: "+",
+    desc: "Impressions",
     accentColor: "text-[#5A70FF]",
   },
   {
     id: 2,
-    value: 70,
+    value:200,
     suffix: "+",
-    desc: "Years of advancing computing through community and innovation.",
+    desc: "Selected Candidates",
     accentColor: "text-[#83ACFF]",
   },
   {
     id: 3,
-    value: 35,
-    suffix: "k+",
-    desc: "Special Interest Groups across computing.",
+    value: 50,
+    suffix: "+",
+    desc: "Participants from over 50 colleges across India, including IITs, BITs, IIITs and NITs",
     accentColor: "text-[#00DB96]",
   },
 ];

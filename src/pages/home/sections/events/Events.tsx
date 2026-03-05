@@ -328,9 +328,9 @@ const Events: React.FC = () => {
             }}
           >
             <span className="text-white">EXCITING </span>
-            <span style={{ WebkitTextStroke: '1.5px #fff', color: 'transparent' }}>EVENTS</span>
+            <span style={{color: '#10a0cc'}}>EVENTS</span>
             <br />
-            <span style={{ color: '#10a0cc' }}>AWAIT !!</span>
+            <span className='text-white'>AWAIT !!</span>
           </h1>
           <div
             className="h-px mt-5"
@@ -422,9 +422,9 @@ const Events: React.FC = () => {
               }}
             >
               <span className="text-white">EXCITING </span>
-              <span style={{ WebkitTextStroke: '1.5px #fff', color: 'transparent' }}>EVENTS</span>
+              <span style={{color: '#10a0cc'}}>EVENTS</span>
               <br />
-              <span className="text-[#10a0cc]">AWAIT !!</span>
+              <span className="text-white">AWAIT !!</span>
             </h1>
           </div>
           <div className="h-px" style={{ background: 'linear-gradient(90deg, #10a0cc55, transparent)' }} />

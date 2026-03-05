@@ -35,7 +35,7 @@ export const Dashboard: React.FC = () => {
         {/* Left Event Card */}
         <EventCard 
 				className="relative scale-75 md:scale-100 left-40 md:left-8 top-1/2 -translate-y-1/2 mt-[75%] md:mt-0"
-				title="Synchronicity S2"
+				title="Synchronicity 1.O"
 				duration="10-hour · on-site"
 				eventType="hackathon"
 				prizePool="₹23,000 prize pool"
@@ -47,7 +47,7 @@ export const Dashboard: React.FC = () => {
         <div className=" w-full lg:w-[55%] h-[80%] flex flex-col items-center z-10 ">
           <div className='h-[40%] w-[100%] font-black font-Bounded text-sm md:text-xl flex items-center  '>
             <h1 className='text-white text-center px-12 md:px-0 '>
-              Your Gateway To The Global Computing Community
+              Synchronicity 2.0: Hack, Create, Innovate
             </h1>
           </div>
           
@@ -63,7 +63,7 @@ export const Dashboard: React.FC = () => {
         {/* Right Event Card */}
         <EventCard 
 				className="relative scale-75 md:scale-100 right-40 md:right-8 top-1/2 -translate-y-1/2 mt-[75%] md:mt-0"
-				title="CodeFest 2025"
+				title=" ICPC Mockfest"
 				duration="24-hour · virtual"
 				eventType="coding competition"
 				prizePool="₹50,000 prize pool"
