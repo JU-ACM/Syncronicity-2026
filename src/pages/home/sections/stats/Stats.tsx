@@ -50,7 +50,7 @@ const cardVariants: Variants = {
 export default function Stats() {
   return (
     // Reduced minimum height and padding on mobile for the ~60vh constraint
-    <section className="relative w-full min-h-[60vh] md:min-h-[70vh] flex flex-col justify-center items-center py-10 md:py-20 px-4 md:px-12 bg-transparent overflow-hidden">
+    <section className="stats-class relative w-full min-h-[60vh] md:min-h-[70vh] flex flex-col justify-center items-center py-10 md:py-20 px-4 md:px-12 bg-transparent overflow-hidden">
 
       <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col gap-8 md:gap-16">
 

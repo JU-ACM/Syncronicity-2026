@@ -6,10 +6,56 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const CityScape = ({ className = "" }) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const frontRef = useRef<SVGSVGElement>(null);
+  const midRef = useRef<SVGSVGElement>(null);
+  const backRef = useRef<SVGSVGElement>(null);
+
+  useGSAP(() => {
+    if (!frontRef.current || !midRef.current || !backRef.current) return;
+
+    // Front layer — moves up faster (negative = upward)
+    gsap.to(frontRef.current, {
+      yPercent: 0,
+      ease: "none",
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true,
+      },
+    });
+
+    // Mid layer — normal speed (subtle upward)
+    gsap.to(midRef.current, {
+      yPercent: 8,
+      ease: "none",
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true,
+      },
+    });
+
+    // Back layer — moves downward (positive = downward parallax)
+    gsap.to(backRef.current, {
+      yPercent: 18,
+      ease: "none",
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true,
+      },
+    });
+  }, { scope: containerRef });
+
   return (
-    <div className={`${className}`}>
+    <div ref={containerRef} className={`${className}`}>
       {/* front */}
       <svg
+        ref={frontRef}
         viewBox="0 0 1440 310"
         className="absolute top-0 -translate-y-[99%] w-full z-20"
       >
@@ -21,6 +67,7 @@ const CityScape = ({ className = "" }) => {
 
       {/* mid */}
       <svg
+        ref={midRef}
         viewBox="0 0 1440 289"
         className="absolute top-0 -translate-y-[130%] w-full z-10"
       >
@@ -32,6 +79,7 @@ const CityScape = ({ className = "" }) => {
 
       {/* back */}
       <svg
+        ref={backRef}
         viewBox="0 0 1440 240"
         className="absolute top-0 -translate-y-[160%] w-full z-0"
       >

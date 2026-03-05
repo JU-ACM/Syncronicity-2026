@@ -58,7 +58,7 @@ const bubbles = [
 
 const WhySection = () => {
   return (
-    <div className="w-full min-h-screen bg-no-repeat bg-center bg-cover overflow-x-hidden flex pb-20 md:pt-100 pt-70">
+    <div className="why-section-class w-full min-h-screen bg-no-repeat bg-center bg-cover overflow-x-hidden flex pb-20 md:pt-100 pt-70">
       <section className="w-full min-h-screen flex flex-col items-center justify-center pt-[0vh] md:pt-[16vh] max-md:min-h-fit max-md:justify-start">
 
         {/* Title */}

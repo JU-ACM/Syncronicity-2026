@@ -9,8 +9,19 @@ import mail from "../../../../assets/footer/mail-icon.svg";
 import SendMessageCard from "../../../../../components/Form";
 
 import { MapPin, Phone, Mail } from "lucide-react";
+import { useLenis } from "lenis/react"; // 1. Import useLenis
 
 export default function ContactSection() {
+  const lenis = useLenis(); // 2. Initialize Lenis
+
+  // Helper function to handle scrolling cleanly
+  const handleScroll = (targetClass: string) => {
+    lenis?.scrollTo(targetClass, {
+      offset: 0,
+      duration: 1.2,
+    });
+  };
+
   return (
     <section className="relative w-full bg-gradient-to-br from-[#eef7fb] to-[#b7dbe8]">
       {/* ================= TOP SECTION ================= */}
@@ -115,55 +126,76 @@ export default function ContactSection() {
 
           {/* RIGHT QUICK LINKS */}
           <div className="text-black max-w-sm text-center lg:text-left lg:ml-auto lg:justify-self-end">
-            <h3 className="text-2xl lg:text-3xl font-euclid	font-bold mb-4">
+            <h3 className="text-2xl lg:text-3xl font-euclid font-bold mb-4">
               Quick Links
             </h3>
 
-            <ul className="space-y-2 font-montserrat text-sm">
+            {/* Replaced <a> tags with <button> tags to utilize onClick natively without # page jumps */}
+            <ul className="space-y-2 font-montserrat text-sm flex flex-col items-center lg:items-start">
               <li>
-                <a href="#home" className="hover:underline !text-black cursor-pointer">
+                <button 
+                  onClick={() => handleScroll('.home-class')} 
+                  className="hover:underline !text-black cursor-pointer bg-transparent border-none p-0 text-left"
+                >
                   Home
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#why" className="hover:underline !text-black cursor-pointer">
+                <button 
+                  onClick={() => handleScroll('.why-section-class')} 
+                  className="hover:underline !text-black cursor-pointer bg-transparent border-none p-0 text-left"
+                >
                   Why Us
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#problem" className="hover:underline !text-black cursor-pointer">
+                <button 
+                  onClick={() => handleScroll('.problem-statement-class')} 
+                  className="hover:underline !text-black cursor-pointer bg-transparent border-none p-0 text-left"
+                >
                   Problem Statement
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#stats" className="hover:underline !text-black cursor-pointer">
+                <button 
+                  onClick={() => handleScroll('.stats-class')} 
+                  className="hover:underline !text-black cursor-pointer bg-transparent border-none p-0 text-left"
+                >
                  Statistics
-                </a>
+                </button>
               </li>
-
               <li>
-                <a href="#events" className="hover:underline !text-black cursor-pointer">
+                <button 
+                  onClick={() => handleScroll('.events-class')} 
+                  className="hover:underline !text-black cursor-pointer bg-transparent border-none p-0 text-left"
+                >
                   Events
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#about" className="hover:underline !text-black cursor-pointer">
+                <button 
+                  onClick={() => handleScroll('.about-class')} 
+                  className="hover:underline !text-black cursor-pointer bg-transparent border-none p-0 text-left"
+                >
                   About Us
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#timeline" className="hover:underline !text-black cursor-pointer">
+                <button 
+                  onClick={() => handleScroll('.timeline-class')} 
+                  className="hover:underline !text-black cursor-pointer bg-transparent border-none p-0 text-left"
+                >
                   Timeline
-                </a>
+                </button>
               </li>
-
               <li>
-                <a href="#faq" className="hover:underline !text-black cursor-pointer">
+                <button 
+                  onClick={() => handleScroll('.faq-class')} 
+                  className="hover:underline !text-black cursor-pointer bg-transparent border-none p-0 text-left"
+                >
                   FAQs
-                </a>
+                </button>
               </li>
-
-              
             </ul>
           </div>
         </div>

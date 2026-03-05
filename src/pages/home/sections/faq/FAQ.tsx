@@ -130,7 +130,7 @@ const FAQ: React.FC = () => {
 
     return (
         <motion.section
-            className="relative w-full bg-[#131313] py-24 px-6 md:px-12 lg:px-24"
+            className="faq-class relative w-full bg-[#131313] py-24 px-6 md:px-12 lg:px-24"
             variants={sectionFade}
             initial="hidden"
             whileInView="visible"

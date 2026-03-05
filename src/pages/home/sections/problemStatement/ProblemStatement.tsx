@@ -5,7 +5,7 @@ import Card from "./Card";
 
 const ProblemStatement: React.FC = () => {
   return (
-    <div className="min-h-screen w-full bg-cover bg-center bg-no-repeat px-4 sm:px-6 lg:px-8 py-16 md:py-24 " >
+    <div className="problem-statement-class min-h-screen w-full bg-cover bg-center bg-no-repeat px-4 sm:px-6 lg:px-8 py-16 md:py-24 " >
       <div className="text-center max-w-7xl mx-auto">
         <h1
           className="

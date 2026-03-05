@@ -12,7 +12,13 @@ function ListofLinks({ className = "" }): React.JSX.Element {
       <FunkyButton
         variant="blue"
         className="w-full h-full"
-        onClick={() => console.log("Navigating to Home...")}
+        onClick={() => {
+          console.log("Scrolling to Home...");
+          lenis?.scrollTo(".home-class", {
+            offset: 0, 
+            duration: 1.2, 
+          });
+        }}
         // icon={<Home size={19} strokeWidth={2.3} />} // Uncomment to add an icon
       >
         Home
@@ -21,7 +27,13 @@ function ListofLinks({ className = "" }): React.JSX.Element {
       <FunkyButton
         variant="blue"
         className="w-full h-full"
-        onClick={() => console.log("Navigating to About ACM-JU...")}
+        onClick={() => {
+          console.log("Scrolling to About...");
+          lenis?.scrollTo(".why-section-class", {
+            offset: 380, 
+            duration: 1.2, 
+          });
+        }}
       >
         About
       </FunkyButton>
@@ -29,7 +41,13 @@ function ListofLinks({ className = "" }): React.JSX.Element {
       <FunkyButton
         variant="blue"
         className="w-full h-full"
-        onClick={() => console.log("Navigating to Events...")}
+        onClick={() => {
+          console.log("Scrolling to Events...");
+          lenis?.scrollTo(".events-class", {
+            offset: 0, 
+            duration: 1.2, 
+          });
+        }}
       >
         Events
       </FunkyButton>
