@@ -12,14 +12,15 @@ const WhySection = () => {
      overflow-x-hidden
      flex
      pb-20
-     pt-100
+     md:pt-100
+     pt-70
        "
     >
 
       <section className="w-full min-h-screen
   flex flex-col items-center justify-center
-  pt-[12vh]
-  max-h-[850px]:pt-[6vh]
+  pt-[0vh]
+  md:pt-[16vh]
   max-md:min-h-fit max-md:justify-start">
         <h1 className="whyTitle max-w-[1100px]
   font-montserrat font-black

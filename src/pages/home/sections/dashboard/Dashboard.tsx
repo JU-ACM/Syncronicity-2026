@@ -11,14 +11,15 @@ export const Dashboard: React.FC = () => {
   return (
     <div
       className="
+        hero-class
         w-screen
         md:w-full
-        min-h-[150vh]
+        h-220
         flex
         flex-col
         items-center
         justify-start
-		
+    
         bg-no-repeat
         bg-center
         bg-cover
@@ -28,10 +29,10 @@ export const Dashboard: React.FC = () => {
       }}
     >
       <Navbar />
-      <section className="h-screen w-full relative">
-        {/* Left Event Card */}
+      <section className="h-full w-full relative">
+        {/* Left Event Card - Changed from lg:block to xl:block */}
         <EventCard
-          className="absolute hidden lg:block left-15 top-60 cursor-pointer"
+          className="absolute hidden xl:block left-15 top-60 cursor-pointer"
           title="Synchronicity S2"
           duration="10-hour · on-site"
           eventType="hackathon"
@@ -40,21 +41,21 @@ export const Dashboard: React.FC = () => {
           tiltDirection="left"
         />
 
-        <p className="absolute md:top-15 top-30 inset-x-0 font-bounded lg:text-8xl md:text-6xl text-4xl text-white text-center px-12 md:px-0 ">
+        <p className="absolute left-1/2 -translate-x-1/2 md:top-15 top-30 font-bounded lg:text-8xl md:text-6xl text-4xl text-white text-center">
           Synchronicity
           <br />
           <span className="text-blue-600">Season 2</span>
         </p>
 
-        <ListofLinks className="hidden md:flex lg:left-80 lg:top-80 md:left-40 top-60" />
+        <ListofLinks className="hidden md:flex xl:left-80 xl:top-79 lg:left-30 lg:top-79 md:left-[10vw] top-60" />
 
         <img className="absolute left-1/2 -translate-x-1/2 lg:top-45 md:top-35 top-50 lg:w-120 md:w-100 w-70 object-contain" src={heroimg} alt="robot image" />
 
-        <Description className="lg:right-80 lg:top-79 md:right-40 top-59" />
+        <Description className="xl:right-80 xl:top-79 lg:right-30 lg:top-79 md:right-[10vw] md:translate-x-0 md:left-auto md:top-59 left-1/2 -translate-x-1/2 top-120" />
 
-        {/* Right Event Card */}
+        {/* Right Event Card - Changed from lg:block to xl:block */}
         <EventCard
-          className="absolute hidden lg:block right-15 top-60 cursor-pointer"
+          className="absolute hidden xl:block right-15 top-60 cursor-pointer"
           title="CodeFest 2025"
           duration="24-hour · virtual"
           eventType="coding competition"

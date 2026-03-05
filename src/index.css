@@ -179,3 +179,54 @@ button:hover {
   }
 
 }
+
+/* Apply to all elements */
+::selection {
+  background-color: #155DFC; 
+  color: #ffffff;
+}
+
+/* For older versions of Firefox */
+::-moz-selection {
+  background-color: #155DFC;
+  color: #ffffff;
+}
+
+/* --- Firefox Support --- */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #155DFC transparent;
+}
+
+/* --- WebKit (Chrome, Edge, Safari) --- */
+
+/* 1. Width of the scrollbar */
+::-webkit-scrollbar {
+  width: 10px;  /* For vertical scrollbar */
+  height: 10px; /* For horizontal scrollbar (if needed) */
+}
+
+/* 2. The track (background of the scrollbar) */
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05); /* Very faint white/transparent background */
+  border-radius: 10px;
+}
+
+/* 3. The thumb (the part you actually drag) */
+::-webkit-scrollbar-thumb {
+  /* Matching your blue-to-purple Tailwind gradient (#3b82f6 to #a855f7) */
+  background: linear-gradient(to bottom, #155DFC, #75a1ff); 
+  border-radius: 10px;
+  
+  /* This creates a nice little transparent padding around the thumb */
+  border: 2px solid rgba(0, 0, 0, 0); 
+  background-clip: padding-box;
+}
+
+/* 4. Hover effect for the thumb */
+::-webkit-scrollbar-thumb:hover {
+  /* Slightly lighter colors when the user hovers over it */
+  background: linear-gradient(to bottom, #155DFC, #75a1ff); 
+  border: 2px solid rgba(0, 0, 0, 0); 
+  background-clip: padding-box;
+}

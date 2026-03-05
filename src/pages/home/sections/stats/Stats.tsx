@@ -83,9 +83,9 @@ export default function Stats() {
                 className={`relative flex flex-col justify-center items-center w-full bg-[#F2F7FA] h-full
                   ${isMainCard
                     // Main card: spans 2 columns on mobile, 2 rows/cols on desktop
-                    ? "col-span-2 lg:col-span-2 lg:row-span-2 min-h-[160px] md:min-h-[300px] lg:min-h-[450px] p-6 md:p-12 rounded-[1.5rem] md:rounded-[2rem]"
+                    ? "col-span-2 lg:col-span-2 lg:row-span-2 h-[160px] md:h-[300px] lg:h-[480px] p-6 md:p-12 rounded-[1.5rem] md:rounded-[2rem]"
                     // Small cards: 1 column each on mobile, side-by-side
-                    : "col-span-1 lg:col-span-1 lg:row-span-1 min-h-[140px] md:min-h-[200px] p-4 md:p-8 rounded-2xl md:rounded-[2rem]"
+                    : "col-span-1 lg:col-span-1 lg:row-span-1 h-[140px] md:h-[224px] p-4 md:p-8 rounded-2xl md:rounded-[2rem]"
                   }
                 `}
               >

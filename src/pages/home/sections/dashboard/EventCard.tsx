@@ -182,7 +182,7 @@ const EventCard: React.FC<EventCardProps> = ({
         <div className="absolute inset-0 p-[3px]">
           <div
             ref={borderRef}
-            className={`absolute inset-0 rounded-xl to-gray-500 via-gray-300/30 from-white/0 ${
+            className={`absolute inset-0 rounded-2xl to-gray-500 via-gray-100/30 from-white/0 ${
               tiltDirection === 'left' ? 'bg-linear-to-bl' : 'bg-linear-to-br'
             }`}
           />
