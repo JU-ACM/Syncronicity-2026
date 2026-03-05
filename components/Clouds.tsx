@@ -2,6 +2,9 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import cloud1 from "../src/assets/clouds/cloud-1.png"
+import cloud2 from "../src/assets/clouds/cloud-2.png"
+import cloud3 from "../src/assets/clouds/cloud-3.png"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -108,7 +111,7 @@ const Clouds = () => {
       {/* --- LAYER 0: Extreme Background (-z-10 | w-50 to w-60) --- */}
       <div ref={layer0Ref}>
         <img
-          src="src/assets/clouds/cloud-3.png"
+          src={cloud3}
           className="absolute z-0 md:w-70 w-30 left-1/2 -translate-x-1/2 bottom-0 -translate-y-2"
           alt="cloud-3"
         />
@@ -117,22 +120,22 @@ const Clouds = () => {
       {/* --- LAYER 1: Base / Background (z-auto & z-0 | w-100) --- */}
       <div ref={layer1Ref}>
         <img
-          src="src/assets/clouds/cloud-1.png"
+          src={cloud1}
           className="absolute z-10 md:w-100 w-40 right-0 bottom-0 md:translate-y-10 translate-y-5 md:translate-x-40"
           alt="cloud-1"
         />
         <img
-          src="src/assets/clouds/cloud-2.png"
+          src={cloud2}
           className="absolute z-10 md:w-100 w-40 md:right-70 right-25 bottom-0 md:translate-y-10 translate-y-5"
           alt="cloud-2"
         />
         <img
-          src="src/assets/clouds/cloud-3.png"
+          src={cloud3}
           className="absolute z-10 md:w-100 w-40 left-0 bottom-0 md:-translate-x-40 md:translate-y-10 translate-y-5"
           alt="cloud-3"
         />
         <img
-          src="src/assets/clouds/cloud-1.png"
+          src={cloud1}
           className="absolute z-10 md:w-100 w-40 md:left-80 left-20 bottom-0 md:translate-y-10 translate-y-7"
           alt="cloud-1"
         />
@@ -141,12 +144,12 @@ const Clouds = () => {
       {/* --- LAYER 2: Mid-Background (z-50 | w-150) --- */}
       <div ref={layer2Ref}>
         <img
-          src="src/assets/clouds/cloud-2.png"
+          src={cloud2}
           className="absolute z-50 md:w-150 w-60 left-0 bottom-0 md:translate-y-30 translate-y-20 -translate-x-10"
           alt="cloud-2"
         />
         <img
-          src="src/assets/clouds/cloud-3.png"
+          src={cloud3}
           className="absolute z-50 md:w-150 w-60 right-0 bottom-0 md:translate-y-30 translate-y-20 translate-x-10"
           alt="cloud-3"
         />
@@ -155,7 +158,7 @@ const Clouds = () => {
       {/* --- LAYER 3: Mid-Foreground (z-60 | w-160) --- */}
       <div ref={layer3Ref}>
         <img
-          src="src/assets/clouds/cloud-1.png"
+          src={cloud1}
           className="absolute z-60 md:w-160 w-70 left-1/2 -translate-x-1/2 bottom-0 md:translate-y-50 translate-y-25"
           alt="cloud-3"
         />
@@ -164,12 +167,12 @@ const Clouds = () => {
       {/* --- LAYER 4: Foreground (z-70 | w-200) --- */}
       <div ref={layer4Ref}>
         <img
-          src="src/assets/clouds/cloud-1.png"
+          src={cloud1}
           className="absolute z-70 md:w-200 w-90 left-0 bottom-0 md:translate-y-90 translate-y-40 -translate-x-20"
           alt="cloud-1"
         />
         <img
-          src="src/assets/clouds/cloud-2.png"
+          src={cloud2}
           className="absolute z-70 md:w-200 w-90 right-0 bottom-0 md:translate-y-90 translate-y-40 translate-x-40"
           alt="cloud-2"
         />
@@ -178,7 +181,7 @@ const Clouds = () => {
       {/* --- LAYER 5: Extreme Foreground (z-80 | w-200) --- */}
       <div ref={layer5Ref}>
         <img
-          src="src/assets/clouds/cloud-1.png"
+          src={cloud1}
           className="absolute z-80 md:w-250 w-120 md:left-100 left-20 bottom-0 md:translate-y-150 translate-y-60"
           alt="cloud-1"
         />
