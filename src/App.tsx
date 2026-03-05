@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 // import './App.css'
 import { HomeRoute } from './pages/home/route'
 import { EventRoute } from './pages/event/route'
@@ -13,6 +13,7 @@ function App() {
 				<Route path='/home' element={<HomeRoute />} />
 				<Route path='/event/*' element={<EventRoute />} />
 				<Route path='/problem/*' element={<ProblemRoute />} />
+				<Route path='*' element={<Navigate to='/home' replace />} />
 			</Routes>
 		</>
 	)
