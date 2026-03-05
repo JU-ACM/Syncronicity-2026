@@ -1,9 +1,9 @@
 import "./WhySection.css";
-import heroBg from "../../../../assets/whySection/hero-bg.png"
+// import heroBg from "../../../../assets/whySection/hero-bg.png"
 
 const WhySection = () => {
-    return (
-        <div className="
+  return (
+    <div className="
         w-full
      min-h-screen
      bg-no-repeat
@@ -11,35 +11,37 @@ const WhySection = () => {
      bg-cover
      overflow-x-hidden
      flex
+     pb-20
+     md:pt-100
+     pt-70
        "
-       style={{
-         backgroundImage: `url(${heroBg})`,
-       }}>
-            <section className="w-full min-h-screen
+    >
+
+      <section className="w-full min-h-screen
   flex flex-col items-center justify-center
-  pt-[12vh]
-  max-h-[850px]:pt-[6vh]
+  pt-[0vh]
+  md:pt-[16vh]
   max-md:min-h-fit max-md:justify-start">
-                <h1 className="whyTitle max-w-[1100px]
+        <h1 className="whyTitle max-w-[1100px]
   font-montserrat font-black
   leading-[1.2]
   text-center text-[rgba(16,160,204,1)]
   mt-[clamp(-120px,-12vh,-60px)]
   max-h-[850px]:mt-[3vh]
   max-md:mt-0 max-md:px-4 max-md:leading-[1.1]">
-                <span className="text-white">Why you can't miss </span>
-                <span className="text-[#10A0CC]">
-                  Synchronicity 2.O!
-                </span>
-                </h1>
-                <div className="relative aspect-[3/5]
+          <span className="text-white">Why you can't miss </span>
+          <span className="text-[#10A0CC]">
+            Synchronicity 2.O!
+          </span>
+        </h1>
+        <div className="relative aspect-3/5
       w-[min(320px,70vw)]
       bg-[url('/src/assets/robot.png')]
       bg-cover bg-center bg-no-repeat
       mb-[10vh]
       max-md:w-[220px] max-md:mb-[1vh]
       max-h-[700px]:mb-[2vh]">
-                    {/* <div
+          {/* <div
             className="
               absolute
               bottom-[-18%]
@@ -56,7 +58,7 @@ const WhySection = () => {
               mb-[1vh]
             "
           /> */}
-                        <div className="absolute
+          <div className="absolute
         top-[calc(18%+0.5vw)] left-[calc(-50%-1vw)]
         bg-[rgba(16,160,204,1)] text-white font-euclid font-semibold
         text-[clamp(12px,1.2vw,16px)]
@@ -64,9 +66,9 @@ const WhySection = () => {
         rounded-tl-[100px] rounded-tr-[84px] rounded-bl-[100px]
         max-md:text-[11px] max-md:max-w-[110px]
         max-md:top-[15%] max-md:left-[-35%]">
-                            Is this just another hackathon?
-                        </div>
-                        <div className="absolute
+            Is this just another hackathon?
+          </div>
+          <div className="absolute
         top-[calc(22%+0.5vw)] right-[calc(-58%-1vw)]
         bg-[rgba(16,160,204,1)] text-white font-euclid font-semibold
         text-[clamp(12px,1.2vw,16px)]
@@ -74,9 +76,9 @@ const WhySection = () => {
         rounded-tl-[84px] rounded-tr-[100px] rounded-br-[100px]
         max-md:text-[11px] max-md:max-w-[110px]
         max-md:top-[22%] max-md:right-[-38%]">
-                            What do I actually gain from participating?
-                        </div>
-                        <div className="absolute
+            What do I actually gain from participating?
+          </div>
+          <div className="absolute
         top-[calc(55%+0.3vw)] left-[calc(-50%-0.8vw)]
         bg-[rgba(16,160,204,1)] text-white font-euclid font-semibold
         text-[clamp(12px,1.2vw,16px)]
@@ -84,9 +86,9 @@ const WhySection = () => {
         rounded-tl-[100px] rounded-bl-[100px] rounded-br-[84px]
         max-md:text-[11px] max-md:max-w-[110px]
         max-md:top-[55%] max-md:left-[-35%]">
-                            Will this help me beyond exams?
-                        </div>
-                        <div className="absolute
+            Will this help me beyond exams?
+          </div>
+          <div className="absolute
         top-[calc(60%+0.3vw)] right-[calc(-45%-0.8vw)]
         bg-[rgba(16,160,204,1)] text-white font-euclid font-semibold
         text-[clamp(12px,1.2vw,16px)]
@@ -94,23 +96,22 @@ const WhySection = () => {
         rounded-tr-[100px] rounded-bl-[84px] rounded-br-[100px]
         max-md:text-[11px] max-md:max-w-[110px]
         max-md:top-[62%] max-md:right-[-36%]">
-                            Is it worth my time?
-                        </div>
-                </div>
-                <p className="whyText max-w-[800px]
+            Is it worth my time?
+          </div>
+        </div>
+        <p className="whyText max-w-[800px]
       font-euclid text-black text-[20px] leading-[1.2]
       flex items-center justify-center
       mt-[clamp(-110px,-12vh,-50px)]
       max-md:max-w-[80vw] max-md:text-[16px]
       max-md:mt-2 max-md:text-center">
-                There are many reasons to join ACM. Enhance your professional career or academic life with ACM member benefits that include a free subscription to ACM’s flagship publication Communications of the ACM; online books, courses, videos, and webinars through the ACM Learning Center; opportunities to participate in Special Interest Groups, and conferences all over the world; optional discounted subscription to the ACM Digital Library; savings on peer-driven specialty magazines and research journals, plus other exclusive member discounts.
-                </p>
+          There are many reasons to join ACM. Enhance your professional career or academic life with ACM member benefits that include a free subscription to ACM’s flagship publication Communications of the ACM; online books, courses, videos, and webinars through the ACM Learning Center; opportunities to participate in Special Interest Groups, and conferences all over the world; optional discounted subscription to the ACM Digital Library; savings on peer-driven specialty magazines and research journals, plus other exclusive member discounts.
+        </p>
 
-            </section>
-        </div>
-        
-    );
-  };
-  
-  export default WhySection;
-  
+      </section>
+    </div>
+
+  );
+};
+
+export default WhySection;

@@ -1,27 +1,25 @@
-import React from 'react';
-import herobg from '../../../../assets/dashboard/hero-bg.png';
+import React from "react";
+import herobg from "../../../../assets/dashboard/hero-bg.png";
+import heroimg from "../../../../assets/dashboard/hero-img.png";
 
-import ListofLinks from './ListofLinks';
-import Description from './Description';
-import { EventCard } from './EventCard';
-import Navbar from '../../../../../components/Navbar'
-import Clouds from './Clouds';
-import Robot from './Robot';
-
-
+import ListofLinks from "./ListofLinks";
+import Description from "./Description";
+import { EventCard } from "./EventCard";
+import Navbar from "../../../../../components/Navbar";
 
 export const Dashboard: React.FC = () => {
   return (
     <div
       className="
+        hero-class
         w-screen
         md:w-full
-        min-h-[150vh]
+        h-220
         flex
         flex-col
         items-center
         justify-start
-		
+    
         bg-no-repeat
         bg-center
         bg-cover
@@ -30,51 +28,44 @@ export const Dashboard: React.FC = () => {
         backgroundImage: `url(${herobg})`,
       }}
     >
-		<Navbar />
-      <section className="h-screen w-full flex justify-center items-center relative">
-        {/* Left Event Card */}
-        <EventCard 
-				className="relative scale-75 md:scale-100 left-40 md:left-8 top-1/2 -translate-y-1/2 mt-[75%] md:mt-0"
-				title="Synchronicity 1.O"
-				duration="10-hour · on-site"
-				eventType="hackathon"
-				prizePool="₹23,000 prize pool"
-				date="11 April 2025"
-				tiltDirection="left"
-			  />
+      <Navbar />
+      <section className="h-full w-full relative">
+        {/* Left Event Card - Changed from lg:block to xl:block */}
+        <EventCard
+          className="absolute hidden xl:block left-15 top-60 cursor-pointer"
+          imageUrl="src/assets/dashboard/synchronicity-s1-card.jpeg"
+          title="Synchronicity S1"
+          duration="10-hour · on-site"
+          eventType="hackathon"
+          prizePool="₹23,000 prize pool"
+          date="11 April 2025"
+          tiltDirection="left"
+        />
 
-        {/* Container for title, robot, link, description, and join button */}
-        <div className=" w-full lg:w-[55%] h-[80%] flex flex-col items-center z-10 ">
-          <div className='h-[40%] w-[100%] font-black font-Bounded text-sm md:text-xl flex items-center  '>
-            <h1 className='text-white text-center px-12 md:px-0 '>
-              Synchronicity 2.0: Hack, Create, Innovate
-            </h1>
-          </div>
-          
-          <div className='h-[40%] w-full overflow-y-visible grid grid-rows-2 md:grid-cols-3'>
-            <ListofLinks/>
-	  		<Robot/>
+        <p className="absolute left-1/2 -translate-x-1/2 md:top-15 top-30 font-bounded lg:text-8xl md:text-6xl text-4xl text-white text-center">
+          Synchronicity
+          <br />
+          <span className="text-blue-600">Season 2</span>
+        </p>
 
+        <ListofLinks className="hidden md:flex xl:left-80 xl:top-79 lg:left-30 lg:top-79 md:left-[10vw] top-60" />
 
-            <Description/>
-          </div>
-        </div>
+        <img className="absolute left-1/2 -translate-x-1/2 lg:top-45 md:top-35 top-50 lg:w-120 md:w-100 w-70 object-contain" src={heroimg} alt="robot image" />
 
-        {/* Right Event Card */}
-        <EventCard 
-				className="relative scale-75 md:scale-100 right-40 md:right-8 top-1/2 -translate-y-1/2 mt-[75%] md:mt-0"
-				title=" ICPC Mockfest"
-				duration="24-hour · virtual"
-				eventType="coding competition"
-				prizePool="₹50,000 prize pool"
-				date="25 May 2025"
-				tiltDirection="right"
-			  />
+        <Description className="xl:right-80 xl:top-79 lg:right-30 lg:top-79 md:right-[10vw] md:translate-x-0 md:left-auto md:top-59 left-1/2 -translate-x-1/2 top-120" />
+
+        {/* Right Event Card - Changed from lg:block to xl:block */}
+        <EventCard
+          className="absolute hidden xl:block right-15 top-60 cursor-pointer"
+          imageUrl="src/assets/dashboard/icpc-mockfest-card.jpeg"
+          title="CodeFest 2025"
+          duration="24-hour · virtual"
+          eventType="coding competition"
+          prizePool="₹50,000 prize pool"
+          date="25 May 2025"
+          tiltDirection="right"
+        />
       </section>
-	  <Clouds/>
-
-    
-	  
     </div>
   );
 };

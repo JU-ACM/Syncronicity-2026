@@ -13,7 +13,7 @@ const statsData = [
   },
   {
     id: 2,
-    value:200,
+    value: 200,
     suffix: "+",
     desc: "Selected Candidates",
     accentColor: "text-[#83ACFF]",
@@ -39,21 +39,21 @@ const containerVariants = {
 
 const cardVariants: Variants = {
   hidden: { opacity: 0, y: 0, scale: 0.95 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    scale: 1, 
-    transition: { type: "spring", bounce: 0.4, duration: 0.8 } 
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { type: "spring", bounce: 0.4, duration: 0.8 }
   },
 };
 
 export default function Stats() {
   return (
     // Reduced minimum height and padding on mobile for the ~60vh constraint
-    <section className="relative w-full min-h-[60vh] md:min-h-[70vh] flex flex-col justify-center items-center py-10 md:py-20 px-4 md:px-12 bg-[#BFDAE4] overflow-hidden">
+    <section className="relative w-full min-h-[60vh] md:min-h-[70vh] flex flex-col justify-center items-center py-10 md:py-20 px-4 md:px-12 bg-transparent overflow-hidden">
 
       <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col gap-8 md:gap-16">
-        
+
         {/* Section Header */}
         <motion.h2
           className="font-bounded text-3xl md:text-5xl lg:text-6xl text-center font-bold text-white tracking-tight"
@@ -81,11 +81,11 @@ export default function Stats() {
                 key={stat.id}
                 variants={cardVariants}
                 className={`relative flex flex-col justify-center items-center w-full bg-[#F2F7FA] h-full
-                  ${isMainCard 
-                      // Main card: spans 2 columns on mobile, 2 rows/cols on desktop
-                      ? "col-span-2 lg:col-span-2 lg:row-span-2 min-h-[160px] md:min-h-[300px] lg:min-h-[450px] p-6 md:p-12 rounded-[1.5rem] md:rounded-[2rem]" 
-                      // Small cards: 1 column each on mobile, side-by-side
-                      : "col-span-1 lg:col-span-1 lg:row-span-1 min-h-[140px] md:min-h-[200px] p-4 md:p-8 rounded-2xl md:rounded-[2rem]"
+                  ${isMainCard
+                    // Main card: spans 2 columns on mobile, 2 rows/cols on desktop
+                    ? "col-span-2 lg:col-span-2 lg:row-span-2 h-[160px] md:h-[300px] lg:h-[480px] p-6 md:p-12 rounded-[1.5rem] md:rounded-[2rem]"
+                    // Small cards: 1 column each on mobile, side-by-side
+                    : "col-span-1 lg:col-span-1 lg:row-span-1 h-[140px] md:h-[224px] p-4 md:p-8 rounded-2xl md:rounded-[2rem]"
                   }
                 `}
               >
@@ -103,7 +103,7 @@ export default function Stats() {
                     />
                     {stat.suffix}
                   </h3>
-                  
+
                   {/* Scaled down descriptions with tighter line height for mobile */}
                   <DecryptedText
                     parentClassName={`text-slate-600 font-euclid font-medium leading-tight md:leading-relaxed text-center mx-auto

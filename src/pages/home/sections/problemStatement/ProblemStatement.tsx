@@ -1,11 +1,11 @@
 import { Data } from "./problemData";
 import React from "react";
 import Card from "./Card";
-import herobg from "../../../../assets/dashboard/hero-bg.png";
+// import herobg from "../../../../assets/dashboard/hero-bg.png";
 
 const ProblemStatement: React.FC = () => {
   return (
-    <div className="min-h-screen w-full bg-cover bg-center bg-no-repeat px-4 sm:px-6 lg:px-8 py-16 md:py-24 " style={{ backgroundImage: `url(${herobg})` }}>
+    <div className="min-h-screen w-full bg-cover bg-center bg-no-repeat px-4 sm:px-6 lg:px-8 py-16 md:py-24 " >
       <div className="text-center max-w-7xl mx-auto">
         <h1
           className="
@@ -14,7 +14,7 @@ const ProblemStatement: React.FC = () => {
                 leading-[1.05]
                 tracking-[-0.01em]
                 uppercase
-                break-words
+                wrap-break-word
                 "
           style={{ fontFamily: 'Unbounded, sans-serif' }}
         >
@@ -39,7 +39,8 @@ const ProblemStatement: React.FC = () => {
                 id={problem.id}
                 title={problem.title}
                 description={problem.description}
-                tags={problem.tags}
+                tags={problem.tags ?? []}
+                categorySlug={eventSection.categorySlug}
               />
             ))}
           </div>

@@ -1,52 +1,99 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import herobg from '../../../../assets/dashboard/hero-bg.png'
+// import herobg from '../../../../assets/dashboard/hero-bg.png'
 import mascotImg from '../../../../assets/events/events_mascot.png'
+
+// const EVENTS = [
+//   {
+//     id: 1,
+//     category: 'Workshop',
+//     title: 'AI & Future Tech Summit',
+//     description: 'Explore the cutting edge of artificial intelligence with industry leaders and researchers shaping tomorrow.',
+//     date: 'MAR 15, 2025',
+//     location: 'Main Hall · Block A',
+//     seats: 120,
+//     image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80',
+//     color: '#10a0cc',
+//   },
+//   {
+//     id: 2,
+//     category: 'Competition',
+//     title: 'Hackathon 2025',
+//     description: '48 hours. One problem. Unlimited creativity. Build, break, and ship something extraordinary.',
+//     date: 'APR 02, 2025',
+//     location: 'Innovation Hub',
+//     seats: 200,
+//     image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&q=80',
+//     color: '#f97316',
+//   },
+//   {
+//     id: 3,
+//     category: 'Cultural',
+//     title: 'Annual Fest Night',
+//     description: 'A night of performances, art, and celebration bringing the campus community together under the stars.',
+//     date: 'APR 20, 2025',
+//     location: 'Open Amphitheatre',
+//     seats: 500,
+//     image: 'https://images.unsplash.com/photo-1559060680-36abfac01944?q=80&w=1374&auto=format&fit=crop',
+//     color: '#a855f7',
+//   },
+//   {
+//     id: 4,
+//     category: 'Workshop',
+//     title: 'Design Thinking Lab',
+//     description: 'Hands-on sessions to master human-centered design principles with real product challenges.',
+//     date: 'MAY 05, 2025',
+//     location: 'Studio B',
+//     seats: 60,
+//     image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80',
+//     color: '#10a0cc',
+//   },
+// ]
 
 const EVENTS = [
   {
     id: 1,
-    category: 'Workshop',
-    title: 'AI & Future Tech Summit',
-    description: 'Explore the cutting edge of artificial intelligence with industry leaders and researchers shaping tomorrow.',
-    date: 'MAR 15, 2025',
-    location: 'Main Hall · Block A',
-    seats: 120,
-    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80',
-    color: '#10a0cc',
+    category: '???',
+    title: 'Coming Soon',
+    description: 'Exciting event details will be revealed soon. Stay tuned for updates and announcements.',
+    date: 'TBA',
+    location: 'TBA',
+    seats: 0,
+    image: 'https://images.unsplash.com/photo-1614332287897-cdc485fa562d?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    color: '#9ca3af',
   },
   {
     id: 2,
-    category: 'Competition',
-    title: 'Hackathon 2025',
-    description: '48 hours. One problem. Unlimited creativity. Build, break, and ship something extraordinary.',
-    date: 'APR 02, 2025',
-    location: 'Innovation Hub',
-    seats: 200,
-    image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&q=80',
-    color: '#f97316',
+    category: '???',
+    title: 'Coming Soon',
+    description: 'Exciting event details will be revealed soon. Stay tuned for updates and announcements.',
+    date: 'TBA',
+    location: 'TBA',
+    seats: 0,
+    image: 'https://images.unsplash.com/photo-1614332287897-cdc485fa562d?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    color: '#9ca3af',
   },
   {
     id: 3,
-    category: 'Cultural',
-    title: 'Annual Fest Night',
-    description: 'A night of performances, art, and celebration bringing the campus community together under the stars.',
-    date: 'APR 20, 2025',
-    location: 'Open Amphitheatre',
-    seats: 500,
-    image: 'https://images.unsplash.com/photo-1559060680-36abfac01944?q=80&w=1374&auto=format&fit=crop',
-    color: '#a855f7',
+    category: '???',
+    title: 'Coming Soon',
+    description: 'Exciting event details will be revealed soon. Stay tuned for updates and announcements.',
+    date: 'TBA',
+    location: 'TBA',
+    seats: 0,
+    image: 'https://images.unsplash.com/photo-1614332287897-cdc485fa562d?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    color: '#9ca3af',
   },
   {
     id: 4,
-    category: 'Workshop',
-    title: 'Design Thinking Lab',
-    description: 'Hands-on sessions to master human-centered design principles with real product challenges.',
-    date: 'MAY 05, 2025',
-    location: 'Studio B',
-    seats: 60,
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80',
-    color: '#10a0cc',
+    category: '???',
+    title: 'Coming Soon',
+    description: 'Exciting event details will be revealed soon. Stay tuned for updates and announcements.',
+    date: 'TBA',
+    location: 'TBA',
+    seats: 0,
+    image: 'https://images.unsplash.com/photo-1614332287897-cdc485fa562d?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    color: '#9ca3af',
   },
 ]
 
@@ -298,18 +345,18 @@ const Events: React.FC = () => {
   }, [filtered.length])
 
   return (
-    <div className="min-h-screen" style={{ backgroundImage: `url(${herobg})` }}>
+    <div className="min-h-screen" >
       {/* MOBILE LAYOUT */}
       <div className="md:hidden flex flex-col min-h-screen bg-no-repeat bg-center bg-cover relative overflow-hidden">
         <div
-          className="absolute inset-0 pointer-events-none z-0"
+          className="absolute inset-0 pointer-events-none z-0 "
           style={{
             backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E\")",
             opacity: 0.35,
           }}
         />
         <div
-          className="absolute top-0 left-0 w-64 h-64 rounded-full pointer-events-none z-0"
+          className="absolute top-0 left-0 w-64 h-64 rounded-full pointer-events-none z-0 "
           style={{ background: 'radial-gradient(circle, rgba(16,160,204,0.15) 0%, transparent 70%)', filter: 'blur(40px)' }}
         />
 
@@ -328,7 +375,7 @@ const Events: React.FC = () => {
             }}
           >
             <span className="text-white">EXCITING </span>
-            <span style={{color: '#10a0cc'}}>EVENTS</span>
+            <span style={{ color: '#10a0cc' }}>EVENTS</span>
             <br />
             <span className='text-white'>AWAIT !!</span>
           </h1>
@@ -340,7 +387,7 @@ const Events: React.FC = () => {
 
         <div className="relative z-10 px-6 mb-2 flex items-center justify-between">
           <p className="text-white/30 text-[10px] uppercase tracking-widest">Swipe to explore</p>
-          <div className="flex gap-1.5">
+          <div className="flex gap-1.5 ">
             {filtered.map((_, i) => (
               <div
                 key={i}
@@ -357,7 +404,7 @@ const Events: React.FC = () => {
 
         <div
           ref={carouselRef}
-          className="relative z-10 flex gap-4 overflow-x-auto pb-8 px-6"
+          className="relative z-10 flex gap-4 overflow-x-auto pb-8 px-6 items-center overflow-y-hidden"
           style={{
             scrollSnapType: 'x mandatory',
             WebkitOverflowScrolling: 'touch',
@@ -422,7 +469,7 @@ const Events: React.FC = () => {
               }}
             >
               <span className="text-white">EXCITING </span>
-              <span style={{color: '#10a0cc'}}>EVENTS</span>
+              <span style={{ color: '#10a0cc' }}>EVENTS</span>
               <br />
               <span className="text-white">AWAIT !!</span>
             </h1>
