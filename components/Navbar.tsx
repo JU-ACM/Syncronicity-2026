@@ -115,7 +115,7 @@ const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
           <BrochureDropdown variant="desktop">
             <FunkyButton
               variant="blue"
-              icon={<ChevronDown size={22} strokeWidth={2.3} />}
+              icon={<ChevronDown size={19} strokeWidth={2.3} />}
             >
               {isLgScreen && <p>Event Brochure</p>}
             </FunkyButton>
