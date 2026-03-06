@@ -3,6 +3,7 @@ import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { HomeRoute } from "./pages/home/route";
 import { EventRoute } from "./pages/event/route";
 import { ProblemRoute } from "./pages/problem/route";
+import NotFound from "./pages/notFound/NotFound";
 import CustomCursor from "../components/customCursor/CustomCursor";
 
 import "./index.css";
@@ -72,12 +73,13 @@ function App() {
         }}
       >
         <CustomCursor />
-        
+
         <Routes>
+          <Route path="/" element={<Navigate to="/home" replace />} />
           <Route path="/home" element={<HomeRoute />} />
           <Route path="/event/*" element={<EventRoute />} />
           <Route path="/problem/*" element={<ProblemRoute />} />
-          <Route path="*" element={<Navigate to="/home" replace />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </ReactLenis>
     </>
