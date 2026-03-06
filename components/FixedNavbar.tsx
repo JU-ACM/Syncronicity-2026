@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import FunkyButton from "./FunkyButton";
 import CallIcon from "./icons/CallIcon";
 import { useLenis } from "lenis/react";
-import { Download, Menu, X, Phone, ChevronDown } from "lucide-react";
+import { Download, Menu, X, ChevronDown } from "lucide-react";
 import FunkyColorButton from "./FunkyColorButton";
 import { motion, AnimatePresence } from "motion/react";
 import BrochureDropdown from "./BrochureDropdown";
