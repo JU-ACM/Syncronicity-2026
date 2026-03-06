@@ -105,7 +105,7 @@ const WhySection = () => {
 
         {/* Body text */}
         <motion.p
-          className="whyText max-w-[800px] font-euclid text-black text-[20px] leading-[1.2] flex items-center justify-center mt-[clamp(-110px,-12vh,-50px)] max-md:max-w-[80vw] max-md:text-[16px] max-md:mt-2 max-md:text-center"
+          className="whyText max-w-[800px] font-euclid text-black text-[20px] leading-[1.2] flex items-center justify-center mt-[clamp(-110px,-12vh,-50px)] max-md:max-w-[80vw] max-md:text-[16px] max-md:mt-2 max-md:text-center text-center"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

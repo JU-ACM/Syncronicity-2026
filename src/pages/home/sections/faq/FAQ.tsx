@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import type { Variants } from 'framer-motion'
 import { ChevronDown, HelpCircle } from 'lucide-react'
+import { useLenis } from 'lenis/react'
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1]
 
@@ -127,6 +128,7 @@ const FAQItem = ({ question, answer, isOpen, onClick }: {
 
 const FAQ: React.FC = () => {
     const [openIndex, setOpenIndex] = useState<number | null>(0)
+    const lenis = useLenis();
 
     return (
         <motion.section
@@ -188,11 +190,14 @@ const FAQ: React.FC = () => {
                             and how we support our community of innovators.
                         </motion.p>
 
-                        <motion.div
+                        <motion.button
                             className="mt-12 hidden lg:flex items-center gap-4 py-4 px-6 rounded-2xl border border-white/10 bg-white/5 w-fit"
                             variants={fadeUp}
                             whileHover={{ borderColor: 'rgba(112,210,255,0.25)', backgroundColor: 'rgba(255,255,255,0.08)' }}
                             transition={{ duration: 0.2 }}
+                            onClick={() => {
+                                lenis?.scrollTo(".footer-class");
+                            }}
                         >
                             <motion.div
                                 className="w-2 h-2 rounded-full bg-[#70D2FF]"
@@ -200,7 +205,7 @@ const FAQ: React.FC = () => {
                                 transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
                             />
                             <p className="text-xs text-white/40 font-medium">Need more help? Contact our support team</p>
-                        </motion.div>
+                        </motion.button>
                     </motion.div>
 
                     {/* ── Right Side Accordion ── */}
@@ -221,7 +226,7 @@ const FAQ: React.FC = () => {
 
                 </div>
             </div>
-        </motion.section>
+        </motion.section >
     )
 }
 

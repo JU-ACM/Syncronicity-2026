@@ -41,8 +41,8 @@ export const Dashboard: React.FC = () => {
           title="Synchronicity S1"
           duration="10-hour · on-site"
           eventType="hackathon"
-          prizePool="₹23,000 prize pool"
-          date="11 April 2025"
+          prizePool="₹17,000 prize pool"
+          date="20 January 2024"
           tiltDirection="left"
         />
 
@@ -94,11 +94,11 @@ export const Dashboard: React.FC = () => {
         <EventCard
           className="absolute hidden xl:block right-15 top-60 cursor-pointer"
           imageUrl={icpcMockFest}
-          title="CodeFest 2025"
-          duration="24-hour · virtual"
+          title="ICPC Mock Fest"
+          duration="3-hour · virtual"
           eventType="coding competition"
-          prizePool="₹50,000 prize pool"
-          date="25 May 2025"
+          prizePool="200+ participants"
+          date="7 October 2025"
           tiltDirection="right"
         />
       </section>
