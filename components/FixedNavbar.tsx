@@ -2,10 +2,11 @@ import React, { useState, useEffect, useRef } from "react";
 import FunkyButton from "./FunkyButton";
 import CallIcon from "./icons/CallIcon";
 import { useLenis } from "lenis/react";
-import { Download, Menu, X, Phone } from "lucide-react";
+import { Download, Menu, X, Phone, ChevronDown } from "lucide-react";
 import FunkyColorButton from "./FunkyColorButton";
 import { motion, AnimatePresence } from "motion/react";
 import BrochureDropdown from "./BrochureDropdown";
+import PrimaryColoredLogo from "./icons/PrimaryColoredLogo";
 
 // Navigation links derived from the list on the left side of the original screen
 const navLinks = [
@@ -14,7 +15,6 @@ const navLinks = [
   { label: "Events", sectionClass: ".events-class" },
   { label: "Timeline", sectionClass: ".timeline-class" },
   { label: "Sponsors", sectionClass: ".sponsors-coming-soon-class" },
-  { label: "FAQ", sectionClass: ".faq-class" },
 ];
 
 const FixedNavbar: React.FC = () => {
@@ -56,11 +56,11 @@ const FixedNavbar: React.FC = () => {
     <>
       {/* Desktop navbar: scroll-triggered show/hide (md and up) */}
       <nav
-        className={`hidden md:block fixed top-0 left-0 w-full z-[5000] bg-white transition-transform duration-300 ease-in-out ${isVisible ? "translate-y-0" : "-translate-y-full"
+        className={`hidden lg:block fixed top-0 left-0 w-full z-[5000] bg-white transition-transform duration-300 ease-in-out ${isVisible ? "translate-y-0" : "-translate-y-full"
           }`}
       >
         <div className="flex mx-auto max-w-[95rem] px-6 py-4 items-center justify-between">
-          <img src="/logo.svg" alt="Synchronicity" className="h-7" />
+          <PrimaryColoredLogo size={200} />
 
           <div className="flex w-[70vw] justify-between">
             {navLinks.map((link) => (
@@ -87,10 +87,10 @@ const FixedNavbar: React.FC = () => {
               <FunkyColorButton
                 color1="black"
                 color2="#155DFC"
-                icon={<Download size={19} strokeWidth={2.3} />}
+                icon={<ChevronDown size={19} strokeWidth={2.3} />}
                 className="font-euclid px-6 py-2"
               >
-                Event Brochure
+                Download Brochure
               </FunkyColorButton>
             </BrochureDropdown>
           </div>
@@ -107,7 +107,7 @@ const FixedNavbar: React.FC = () => {
               setIsMobileMenuOpen(false);
             }}
           >
-            <img src="/logo.svg" alt="Synchronicity" className="h-5" />
+            <PrimaryColoredLogo size={150} />
           </div>
 
           <motion.button
@@ -188,7 +188,7 @@ const FixedNavbar: React.FC = () => {
                       }}
                       whileTap={{ scale: 0.95 }}
                       onClick={() => handleNavClick(link.sectionClass)}
-                      className="text-left px-6 py-4 rounded-xl text-[#155DFC] uppercase text-sm font-medium tracking-wide transition-colors"
+                      className="text-left px-6 py-4 rounded-xl text-[#155DFC] uppercase text-sm font-medium font-euclid tracking-wide transition-colors"
                     >
                       <motion.span
                         initial={{ x: 0 }}
@@ -213,10 +213,10 @@ const FixedNavbar: React.FC = () => {
                       lenis?.scrollTo(".footer-class");
                       setIsMobileMenuOpen(false);
                     }}
-                    className="flex items-center justify-center gap-2 px-6 py-3 bg-[#155DFC] hover:bg-[#1048cc] text-white rounded-full font-medium transition-all duration-300 shadow-md hover:shadow-lg"
+                    className="font-euclid flex items-center justify-center gap-2 px-6 py-3 bg-[#155DFC] hover:bg-[#1048cc] text-white rounded-full font-medium transition-all duration-300 shadow-md hover:shadow-lg"
                   >
                     <span>Contact Us</span>
-                    <Phone className="w-4 h-4" />
+                    <CallIcon size={15} />
                   </motion.button>
                   <BrochureDropdown variant="mobile">
                     <motion.div
@@ -225,10 +225,10 @@ const FixedNavbar: React.FC = () => {
                       transition={{ delay: 0.45, duration: 0.3 }}
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-[#155DFC] hover:bg-[#1048cc] text-white rounded-full font-medium transition-all duration-300 shadow-md hover:shadow-lg"
+                      className="font-euclid w-full flex items-center justify-center gap-2 px-6 py-3 bg-[#155DFC] hover:bg-[#1048cc] text-white rounded-full font-medium transition-all duration-300 shadow-md hover:shadow-lg"
                     >
                       <span>Download Brochure</span>
-                      <Download className="w-4 h-4" />
+                      <Download size={20} strokeWidth={2} />
                     </motion.div>
                   </BrochureDropdown>
                 </div>

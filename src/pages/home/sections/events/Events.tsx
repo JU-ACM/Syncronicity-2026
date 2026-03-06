@@ -59,7 +59,7 @@ const EVENTS = [
     date: 'TBA',
     location: 'TBA',
     seats: 0,
-    image: 'https://images.unsplash.com/photo-1614332287897-cdc485fa562d?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    image: 'public/event-card-placeholder-img.png',
     color: '#9ca3af',
   },
   {
@@ -70,7 +70,7 @@ const EVENTS = [
     date: 'TBA',
     location: 'TBA',
     seats: 0,
-    image: 'https://images.unsplash.com/photo-1614332287897-cdc485fa562d?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    image: 'public/event-card-placeholder-img.png',
     color: '#9ca3af',
   },
   {
@@ -81,7 +81,7 @@ const EVENTS = [
     date: 'TBA',
     location: 'TBA',
     seats: 0,
-    image: 'https://images.unsplash.com/photo-1614332287897-cdc485fa562d?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    image: 'public/event-card-placeholder-img.png',
     color: '#9ca3af',
   },
   {
@@ -92,7 +92,7 @@ const EVENTS = [
     date: 'TBA',
     location: 'TBA',
     seats: 0,
-    image: 'https://images.unsplash.com/photo-1614332287897-cdc485fa562d?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    image: 'public/event-card-placeholder-img.png',
     color: '#9ca3af',
   },
 ]
@@ -159,7 +159,7 @@ const MobileEventCard: React.FC<{
       />
       <div className="absolute top-3 left-3 z-10">
         <span
-          className="text-[9px] font-bold uppercase tracking-[0.22em] px-2.5 py-1 rounded-full"
+          className="font-euclid text-[9px] font-semibold uppercase tracking-[0.22em] px-2.5 py-1 rounded-full"
           style={{
             background: event.color + '22',
             color: event.color,
@@ -178,14 +178,14 @@ const MobileEventCard: React.FC<{
           <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
           <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
         </svg>
-        <span className="text-white text-[9px] font-medium">tap</span>
+        <span className="font-euclid text-white text-[9px] font-medium">tap</span>
       </div>
       <div
         className="absolute inset-x-0 bottom-0 px-4 pb-5 z-10 transition-all duration-300"
         style={{ opacity: tapped ? 0 : 1, transform: tapped ? 'translateY(8px)' : 'translateY(0)' }}
       >
-        <h3 className="text-white font-bold text-sm leading-snug">{event.title}</h3>
-        <div className="flex items-center gap-2 text-white/40 text-[10px] mt-1.5">
+        <h3 className="font-unbounded font-semibold text-white text-sm leading-snug">{event.title}</h3>
+        <div className="font-euclid flex items-center gap-2 text-white/40 text-[10px] mt-1.5">
           <span>{event.date}</span>
           <span className="w-px h-2 bg-white/25" />
           <span>{event.location}</span>
@@ -199,15 +199,15 @@ const MobileEventCard: React.FC<{
           background: 'linear-gradient(to top, rgba(0,0,0,0.97) 0%, rgba(0,0,0,0.65) 55%, rgba(0,0,0,0.08) 100%)',
         }}
       >
-        <h3 className="text-white font-bold text-sm leading-snug mb-2">{event.title}</h3>
-        <p className="text-white/60 text-[11px] leading-relaxed mb-3">{event.description}</p>
-        <div className="flex items-center gap-2 text-white/35 text-[10px] mb-4">
+        <h3 className="font-unbounded font-semibold text-white text-sm leading-snug mb-2">{event.title}</h3>
+        <p className="font-euclid text-white/60 text-[11px] leading-relaxed mb-3">{event.description}</p>
+        <div className="font-euclid flex items-center gap-2 text-white/35 text-[10px] mb-4">
           <span>{event.date}</span>
           <span className="w-px h-2 bg-white/20" />
           <span>{event.location}</span>
         </div>
         <button
-          className="self-start flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest"
+          className="font-euclid self-start flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-widest"
           style={{ color: event.color }}
           onClick={(e) => { e.stopPropagation(); navigate(`/event/${event.id}`) }}
         >
@@ -255,11 +255,10 @@ const DesktopEventCard: React.FC<{
       />
       <div
         className="absolute inset-0"
-        style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.90) 0%, rgba(0,0,0,0.35) 45%, rgba(0,0,0,0.10) 100%)' }}
       />
       <div className="absolute top-3 left-3 z-10">
         <span
-          className="text-[9px] font-bold uppercase tracking-[0.22em] px-2.5 py-1 rounded-full"
+          className="font-euclid text-[9px] font-semibold uppercase tracking-[0.22em] px-2.5 py-1 rounded-full"
           style={{
             background: event.color + '22',
             color: event.color,
@@ -274,8 +273,8 @@ const DesktopEventCard: React.FC<{
         className="absolute inset-x-0 bottom-0 px-4 pb-5 transition-all duration-300 group-hover:opacity-0 group-hover:translate-y-2"
         style={{ zIndex: 10 }}
       >
-        <h3 className="text-white font-bold text-sm leading-snug">{event.title}</h3>
-        <div className="flex items-center gap-2 text-white/40 text-[10px] mt-1.5">
+        <h3 className="font-unbounded font-semibold text-white text-sm leading-snug">{event.title}</h3>
+        <div className="font-euclid flex items-center gap-2 text-white/40 text-[10px] mt-1.5">
           <span>{event.date}</span>
           <span className="w-px h-2 bg-white/25" />
           <span>{event.location}</span>
@@ -288,15 +287,15 @@ const DesktopEventCard: React.FC<{
           background: 'linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.65) 55%, rgba(0,0,0,0.1) 100%)',
         }}
       >
-        <h3 className="text-white font-bold text-sm leading-snug mb-2">{event.title}</h3>
-        <p className="text-white/60 text-[11px] leading-relaxed mb-3">{event.description}</p>
-        <div className="flex items-center gap-2 text-white/35 text-[10px] mb-4">
+        <h3 className="font-unbounded font-semibold text-white text-sm leading-snug mb-2">{event.title}</h3>
+        <p className="font-euclid text-white/60 text-[11px] leading-relaxed mb-3">{event.description}</p>
+        <div className="font-euclid flex items-center gap-2 text-white/35 text-[10px] mb-4">
           <span>{event.date}</span>
           <span className="w-px h-2 bg-white/20" />
           <span>{event.location}</span>
         </div>
         <button
-          className="self-start flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest transition-opacity duration-200 hover:opacity-70"
+          className="font-euclid self-start flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-widest transition-opacity duration-200 hover:opacity-70"
           style={{ color: event.color }}
           onClick={() => navigate(`/event/${event.id}`)}
         >
@@ -361,17 +360,16 @@ const Events: React.FC = () => {
         />
 
         <div className="relative z-10 pt-14 pb-4 px-6">
-          <p className="text-white/50 text-[9px] font-bold uppercase tracking-[0.35em] mb-3">
+          <p className="font-euclid text-white/50 text-[9px] font-semibold uppercase tracking-[0.35em] mb-3">
             What's Coming Up
           </p>
           <h1
             ref={mobileHeadingRef}
-            className="text-4xl font-extrabold leading-none tracking-tight"
+            className="font-unbounded font-semibold text-4xl leading-none tracking-tight"
             style={{
               opacity: 0,
               transform: 'translateY(28px)',
               transition: 'opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1)',
-              fontFamily: 'Unbounded, sans-serif',
             }}
           >
             <span className="text-white">EXCITING </span>
@@ -386,7 +384,7 @@ const Events: React.FC = () => {
         </div>
 
         <div className="relative z-10 px-6 mb-2 flex items-center justify-between">
-          <p className="text-white/30 text-[10px] uppercase tracking-widest">Swipe to explore</p>
+          <p className="font-euclid text-white/30 text-[10px] uppercase tracking-widest">Swipe to explore</p>
           <div className="flex gap-1.5 ">
             {filtered.map((_, i) => (
               <div
@@ -455,21 +453,20 @@ const Events: React.FC = () => {
         />
         <div className="relative flex flex-col gap-6 py-10 pl-8 pr-4 h-[90%] w-[75%] mr-[20%]" style={{ zIndex: 10 }}>
           <div>
-            <p className="text-white text-[10px] font-bold uppercase tracking-[0.35em] mb-2">
+            <p className="font-euclid text-white text-[10px] font-semibold uppercase tracking-[0.35em] mb-2">
               What's Coming Up
             </p>
             <h1
               ref={desktopHeadingRef}
-              className="text-4xl sm:text-5xl font-extrabold leading-none tracking-tight"
+              className="font-bounded font-semibold text-4xl sm:text-5xl leading-none tracking-tight"
               style={{
                 opacity: 0,
                 transform: 'translateY(28px)',
                 transition: 'opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1)',
-                fontFamily: 'Unbounded, sans-serif',
               }}
             >
               <span className="text-white">EXCITING </span>
-              <span style={{ color: '#10a0cc' }}>EVENTS</span>
+              <span className='text-blue-600'>EVENTS</span>
               <br />
               <span className="text-white">AWAIT !!</span>
             </h1>

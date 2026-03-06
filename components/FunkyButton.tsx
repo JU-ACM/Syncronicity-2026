@@ -43,7 +43,7 @@ export default function FunkyButton({
   const isIconOnly = Boolean(!children && icon);
 
   // Dynamic Tailwind classes based on content
-  const paddingClass = isIconOnly ? "p-3" : "px-6 py-1.5";
+  const paddingClass = isIconOnly ? "p-3" : "px-6 py-2";
   const gapClass = hasBoth ? "gap-2" : "";
   const directionClass = hasBoth && hovered ? "flex-row-reverse" : "flex-row";
 

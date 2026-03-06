@@ -6,7 +6,7 @@ const bubbles = [
     text: "Is this just another hackathon?",
     className: `absolute
       top-[calc(18%+0.5vw)] left-[calc(-50%-1vw)]
-      bg-[rgba(16,160,204,1)] text-white font-euclid font-semibold
+      bg-white/60 text-black font-euclid
       text-[clamp(12px,1.2vw,16px)]
       max-w-[220px] px-6 py-4 leading-[1.4]
       rounded-tl-[100px] rounded-tr-[84px] rounded-bl-[100px]
@@ -19,7 +19,7 @@ const bubbles = [
     text: "What do I actually gain from participating?",
     className: `absolute
       top-[calc(22%+0.5vw)] right-[calc(-58%-1vw)]
-      bg-[rgba(16,160,204,1)] text-white font-euclid font-semibold
+      bg-white/60 text-black font-euclid
       text-[clamp(12px,1.2vw,16px)]
       max-w-[220px] px-6 py-4 leading-[1.4]
       rounded-tl-[84px] rounded-tr-[100px] rounded-br-[100px]
@@ -32,7 +32,7 @@ const bubbles = [
     text: "Will this help me beyond exams?",
     className: `absolute
       top-[calc(55%+0.3vw)] left-[calc(-50%-0.8vw)]
-      bg-[rgba(16,160,204,1)] text-white font-euclid font-semibold
+      bg-white/60 text-black font-euclid
       text-[clamp(12px,1.2vw,16px)]
       max-w-[220px] px-6 py-4 leading-[1.4]
       rounded-tl-[100px] rounded-bl-[100px] rounded-br-[84px]
@@ -45,7 +45,7 @@ const bubbles = [
     text: "Is it worth my time?",
     className: `absolute
       top-[calc(60%+0.3vw)] right-[calc(-45%-0.8vw)]
-      bg-[rgba(16,160,204,1)] text-white font-euclid font-semibold
+      bg-white/60 text-black font-euclid
       text-[clamp(12px,1.2vw,16px)]
       max-w-[220px] px-6 py-4 leading-[1.4]
       rounded-tr-[100px] rounded-bl-[84px] rounded-br-[100px]
@@ -62,16 +62,16 @@ const WhySection = () => {
       <section className="w-full min-h-screen flex flex-col items-center justify-center pt-[0vh] md:pt-[16vh] max-md:min-h-fit max-md:justify-start">
 
         {/* Title */}
-        <motion.h1
+        <motion.p
           className="whyTitle max-w-[1100px] font-montserrat font-black leading-[1.2] text-center text-[rgba(16,160,204,1)] mt-[clamp(-120px,-12vh,-60px)] max-h-[850px]:mt-[3vh] max-md:mt-0 max-md:px-4 max-md:leading-[1.1]"
-          initial={{ opacity: 0, y: -36 }}
+          initial={{ opacity: 0, y: 36 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.7, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
           <span className="text-white">Why you can't miss </span>
-          <span className="text-[#10A0CC]">Synchronicity 2.O!</span>
-        </motion.h1>
+          <span className="text-blue-600">Synchronicity 2.O!</span>
+        </motion.p>
 
         {/* Robot */}
         <motion.div

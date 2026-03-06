@@ -27,7 +27,7 @@ export default function FunkyColorButton({
   const isIconOnly = Boolean(!children && icon);
 
   // 3. Dynamic Tailwind classes based on content
-  const paddingClass = isIconOnly ? "p-3" : "px-6 py-2.5"; // Assuming standard padding for text
+  const paddingClass = isIconOnly ? "p-3" : "px-6 py-2"; // Assuming standard padding for text
   const gapClass = hasBoth ? "gap-4" : "";
   const directionClass = hasBoth && hovered ? "flex-row-reverse" : "flex-row";
 

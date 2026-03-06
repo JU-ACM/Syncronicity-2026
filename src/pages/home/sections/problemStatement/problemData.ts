@@ -31,7 +31,7 @@ export interface EventSection {
 
 export const Data: EventSection[] = [
   {
-    event: "WEB DEVELOPMENT",
+    event: "Web Development",
     categorySlug: "web-development",
     problems: [
       {

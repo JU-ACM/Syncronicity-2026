@@ -55,15 +55,15 @@ export default function Stats() {
       <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col gap-8 md:gap-16">
 
         {/* Section Header */}
-        <motion.h2
-          className="font-bounded text-3xl md:text-5xl lg:text-6xl text-center font-bold text-white tracking-tight"
+        <motion.p
+          className="font-bounded text-3xl md:text-5xl lg:text-7xl text-center font-bold text-white tracking-tight"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          Our <span className="text-[#10A0CC]">Stats</span>
-        </motion.h2>
+          Our <span className="text-blue-600">Stats</span>
+        </motion.p>
 
         {/* Stats Grid - 2 columns on mobile, 3 columns on desktop */}
         <motion.div
