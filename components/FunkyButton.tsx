@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import { useState, type ReactNode } from "react";
 
-type ButtonVariant = "teal" | "purple" | "coral" | "blue" | "custom";
+type ButtonVariant = "teal" | "purple" | "coral" | "blue" | "blackText" | "custom";
 
 interface FunkyButtonProps {
-  children: ReactNode;
+  children?: ReactNode;
   icon?: ReactNode;
   onClick?: () => void;
   variant?: ButtonVariant;
@@ -18,6 +18,7 @@ const VARIANTS: Record<string, { fill: string; text: string; bg: string }> = {
   purple: { fill: "#7c3aed", text: "#7c3aed", bg: "bg-white" },
   coral: { fill: "#f43f5e", text: "#f43f5e", bg: "bg-white" },
   blue: { fill: "#155DFC", text: "#155DFC", bg: "bg-white" },
+  blackText: { fill: "#155DFC", text: "#000000", bg: "bg-white" },
 };
 
 export default function FunkyButton({

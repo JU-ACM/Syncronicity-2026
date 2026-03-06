@@ -1,0 +1,28 @@
+/* 1. Disable ALL default browser cursors globally (including pointer and grab) */
+* {
+  cursor: none !important;
+}
+
+/* 2. Base Custom Cursor Wrapper */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none; /* Crucial: Allows your actual clicks to pass through the icon */
+  
+  /* Optional: Add a slight transition if you are using state to change the icon size/color */
+  transition: transform 0.1s ease-out; 
+}
+
+/* 3. Disable custom cursor on touch devices (mobile/tablets) */
+@media (hover: none) and (pointer: coarse) {
+  .custom-cursor {
+    display: none;
+  }
+  
+  /* Restore default touch behavior just in case */
+  * {
+    cursor: auto !important;
+  }
+}

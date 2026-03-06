@@ -62,7 +62,7 @@ export const Dashboard: React.FC = () => {
 
         <Description className="xl:right-80 xl:top-79 lg:right-30 lg:top-79 md:right-[10vw] md:translate-x-0 md:left-auto md:top-59 left-1/2 -translate-x-1/2 top-120" />
 
-        <div className="absolute w-full flex flex-col gap-2 md:top-125 top-160 items-center">
+        <div className="absolute w-full flex flex-col gap-3 lg:top-125 md:top-140 top-160 items-center">
           <FunkyColorButton
             icon={<DevfolioIcon size={28} color="white" />}
             color1="#3770ff"

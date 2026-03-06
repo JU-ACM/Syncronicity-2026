@@ -78,6 +78,19 @@ function ListofLinks({ className = "" }): React.JSX.Element {
       >
         Sponsors
       </FunkyButton>
+      <FunkyButton
+        variant="blue"
+        className="w-full h-full"
+        onClick={() => {
+          console.log("Scrolling to FAQ...");
+          lenis?.scrollTo(".faq-class", {
+            offset: 0, 
+            duration: 1.2, 
+          });
+        }}
+      >
+        FAQ
+      </FunkyButton>
     </div>
   );
 }
