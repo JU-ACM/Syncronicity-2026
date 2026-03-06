@@ -38,12 +38,21 @@ export default function FunkyButton({
     bg: "bg-white/90",
   };
 
+  // Optimization: Pre-calculate layout states based on children
+  const hasBoth = Boolean(children && icon);
+  const isIconOnly = Boolean(!children && icon);
+
+  // Dynamic Tailwind classes based on content
+  const paddingClass = isIconOnly ? "p-3" : "px-6 py-1.5";
+  const gapClass = hasBoth ? "gap-2" : "";
+  const directionClass = hasBoth && hovered ? "flex-row-reverse" : "flex-row";
+
   return (
     <motion.button
       onClick={onClick}
-      onMouseEnter={() => setHovered(true)} 
+      onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className={`relative font-medium overflow-hidden flex items-center justify-center gap-2 px-6 py-1.5 rounded-full cursor-pointer select-none ${colors.bg} ${hovered ? "flex-row-reverse" : "flex-row"} ${className}`}
+      className={`relative font-medium overflow-hidden flex items-center justify-center rounded-full cursor-pointer select-none ${colors.bg} ${paddingClass} ${gapClass} ${directionClass} ${className}`}
       animate={hovered ? "hover" : "rest"}
       initial="rest"
       whileTap="active"
@@ -56,7 +65,6 @@ export default function FunkyButton({
       {/* ── Sweep fill background ── */}
       <motion.span
         aria-hidden
-        // 2. ADD pointer-events-none HERE
         className="absolute inset-0 rounded-full origin-left pointer-events-none"
         style={{ backgroundColor: colors.fill }}
         variants={{
@@ -67,26 +75,28 @@ export default function FunkyButton({
         transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
       />
 
-      {/* ── Label ── */}
-      <motion.span
-        layout // Tells Framer Motion to animate changes to flex ordering
-        className="relative z-10 font-medium font-euclid"
-        style={{ color: colors.text }}
-        variants={{
-          rest: { color: colors.text },
-          hover: { color: "#ffffff" },
-          active: { color: "#ffffff" },
-        }}
-        transition={{ duration: 0.25 }}
-      >
-        {children}
-      </motion.span>
+      {/* ── Label (Children) ── */}
+      {children && (
+        <motion.span
+          layout={hasBoth} // Only animate flex ordering if both elements exist
+          className="relative z-10 font-medium font-euclid"
+          style={{ color: colors.text }}
+          variants={{
+            rest: { color: colors.text },
+            hover: { color: "#ffffff" },
+            active: { color: "#ffffff" },
+          }}
+          transition={{ duration: 0.25 }}
+        >
+          {children}
+        </motion.span>
+      )}
 
-      {/* ── Icon: spin + bounce ── */}
+      {/* ── Icon ── */}
       {icon && (
         <motion.span
-          layout // Tells Framer Motion to animate changes to flex ordering
-          className="relative z-10 flex items-center"
+          layout={hasBoth} // Only animate flex ordering if both elements exist
+          className="relative z-10 flex items-center justify-center"
           style={{ color: colors.text }}
           variants={{
             rest: { color: colors.text },

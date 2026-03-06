@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useState, type ReactNode } from "react";
 
 interface FunkyColorButtonProps {
-  children: ReactNode;
+  children?: ReactNode; // 1. Made optional so it can be null/undefined
   icon?: ReactNode;
   onClick?: () => void;
   color1?: string; // The resting base background color
@@ -20,16 +20,23 @@ export default function FunkyColorButton({
   textColor = "#ffffff",
   className = "",
 }: FunkyColorButtonProps) {
-  // 1. Bring back the state to track hovering for the flex-direction swap
   const [hovered, setHovered] = useState<boolean>(false);
+
+  // 2. Optimization: Pre-calculate layout states based on children
+  const hasBoth = Boolean(children && icon);
+  const isIconOnly = Boolean(!children && icon);
+
+  // 3. Dynamic Tailwind classes based on content
+  const paddingClass = isIconOnly ? "p-3" : "px-6 py-2.5"; // Assuming standard padding for text
+  const gapClass = hasBoth ? "gap-4" : "";
+  const directionClass = hasBoth && hovered ? "flex-row-reverse" : "flex-row";
 
   return (
     <motion.button
       onClick={onClick}
       onMouseEnter={() => setHovered(true)} 
       onMouseLeave={() => setHovered(false)}
-      // 2. Add the dynamic flex-row / flex-row-reverse class based on hover state
-      className={`relative flex items-center justify-center gap-4 rounded-full cursor-pointer select-none border-none overflow-hidden ${hovered ? "flex-row-reverse" : "flex-row"} ${className}`}
+      className={`relative flex items-center justify-center rounded-full cursor-pointer select-none border-none overflow-hidden ${paddingClass} ${gapClass} ${directionClass} ${className}`}
       style={{ backgroundColor: color1 }}
       initial="rest"
       whileHover="hover"
@@ -53,19 +60,21 @@ export default function FunkyColorButton({
       />
 
       {/* ── Label ── */}
-      <motion.span
-        layout // 3. Added layout prop back so Framer Motion animates the flex ordering
-        className="relative z-10"
-        style={{ color: textColor }}
-      >
-        {children}
-      </motion.span>
+      {children && (
+        <motion.span
+          layout={hasBoth} // Only animate flex ordering if both elements exist
+          className="relative z-10"
+          style={{ color: textColor }}
+        >
+          {children}
+        </motion.span>
+      )}
 
       {/* ── Icon ── */}
       {icon && (
         <motion.span
-          layout // 4. Added layout prop back so it smoothly glides to the other side
-          className="relative z-10 flex items-center"
+          layout={hasBoth} // Only animate flex ordering if both elements exist
+          className="relative z-10 flex items-center justify-center"
           style={{ color: textColor }}
           variants={{
             rest: { color: textColor },

@@ -4,7 +4,6 @@ import { HomeRoute } from "./pages/home/route";
 import { EventRoute } from "./pages/event/route";
 import { ProblemRoute } from "./pages/problem/route";
 import CustomCursor from "../components/customCursor/CustomCursor";
-import FixedNavbar from "../components/FixedNavbar";
 
 import "./index.css";
 import ReactLenis, { useLenis } from "lenis/react";
@@ -73,7 +72,7 @@ function App() {
         }}
       >
         <CustomCursor />
-        <FixedNavbar />
+        
         <Routes>
           <Route path="/home" element={<HomeRoute />} />
           <Route path="/event/*" element={<EventRoute />} />

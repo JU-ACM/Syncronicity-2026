@@ -128,7 +128,7 @@ const FixedNavbar: React.FC = () => {
 
   return (
     <nav
-      className={`hidden lg:block fixed top-0 left-0 w-full z-5000 bg-white transition-transform duration-300 ease-in-out ${
+      className={`hidden xl:block fixed top-0 left-0 w-full z-5000 bg-white transition-transform duration-300 ease-in-out ${
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >

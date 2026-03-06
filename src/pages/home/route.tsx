@@ -13,12 +13,14 @@ import WhySection from "./sections/whySection/WhySection";
 // import About from "./sections/about/About";
 import SponsorsComingSoon from "./sections/about/SponsorsComingSoon";
 import GoToTop from "../../../components/GoToTop";
+import FixedNavbar from "../../../components/FixedNavbar";
 
 export const HomeRoute = () => {
   const lenis = useLenis();
 
   return (
     <div className="w-full min-h-screen bg-[#B2D9E7] overflow-hidden">
+      <FixedNavbar />
       <GoToTop lenis={lenis} />
       <div className="relative min-h-screen w-full">
         <Dashboard />
