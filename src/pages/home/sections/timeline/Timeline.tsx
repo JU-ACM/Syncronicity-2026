@@ -72,7 +72,7 @@ export default function Timeline() {
   const circlesRef = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    let mm = gsap.matchMedia(containerRef);
+    const mm = gsap.matchMedia(containerRef);
 
     mm.add("(min-width: 768px)", () => {
       if (!pathRef.current || !planeRef.current) return;
@@ -166,7 +166,7 @@ export default function Timeline() {
       const animateEl = (
         el: HTMLElement | null,
         props: gsap.TweenVars,
-        isReversing: boolean
+
       ) => {
         if (!el) return;
         gsap.to(el, {
@@ -186,12 +186,12 @@ export default function Timeline() {
             {
               duration: 0.001,
               onStart: () => {
-                animateEl(checkpoint, { opacity: 1, color: "#00DB96", duration: 0.4, ease: "power2.out" }, false);
-                animateEl(circle, { scale: 1, opacity: 1, backgroundColor: "#00DB96", duration: 0.4, ease: "back.out(2)" }, false);
+                animateEl(checkpoint, { opacity: 1, color: "#00DB96", duration: 0.4, ease: "power2.out" });
+                animateEl(circle, { scale: 1, opacity: 1, backgroundColor: "#00DB96", duration: 0.4, ease: "back.out(2)" });
               },
               onReverseComplete: () => {
-                animateEl(checkpoint, { opacity: 0.2, color: "white", duration: 0.4, ease: "power2.out" }, true);
-                animateEl(circle, { scale: 0, opacity: 0, backgroundColor: "white", duration: 0.4, ease: "power2.in" }, true);
+                animateEl(checkpoint, { opacity: 0.2, color: "white", duration: 0.4, ease: "power2.out" });
+                animateEl(circle, { scale: 0, opacity: 0, backgroundColor: "white", duration: 0.4, ease: "power2.in" });
               },
             },
             progress
@@ -283,13 +283,11 @@ export default function Timeline() {
               ref={(el) => {
                 checkpointsRef.current[index] = el;
               }}
-              className={`absolute z-10 flex items-center w-[45vw] lg:w-max will-change-transform ${
-                step.positionClasses
-              } ${
-                step.layout === "left"
+              className={`absolute z-10 flex items-center w-[45vw] lg:w-max will-change-transform ${step.positionClasses
+                } ${step.layout === "left"
                   ? "flex-row"
                   : "flex-row-reverse text-right"
-              }`}
+                }`}
             >
               <div className={`text-7xl lg:text-9xl font-bounded font-black leading-none tracking-tighter mx-4 shrink-0 ${step.number === "5" ? "lg:text-[12rem]" : "lg:text-9xl"} `} >
                 {step.number}
@@ -303,7 +301,7 @@ export default function Timeline() {
                 <span className={` font-euclid font-medium tracking-wide ${step.number === "5" ? "text-2xl" : "text-lg"} `}>
                   {step.duration}
                 </span>
-                <span className={`text-sm font-euclid text-gray-400 leading-tight ${step.number === "5" ? "lg:text-xl" : "lg:text-base" } `}>
+                <span className={`text-sm font-euclid text-gray-400 leading-tight ${step.number === "5" ? "lg:text-xl" : "lg:text-base"} `}>
                   {step.description}
                 </span>
               </div>
