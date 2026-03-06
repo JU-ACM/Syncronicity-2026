@@ -1,4 +1,3 @@
-import React from "react";
 
 const PointerIcon = ({
   size = 30,

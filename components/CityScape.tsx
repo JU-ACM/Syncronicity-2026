@@ -25,7 +25,7 @@ const CityScape = ({ className = "" }) => {
         },
         (context) => {
           // Destructure conditions
-          const { isDesktop, isMobile, reduceMotion } = context.conditions as {
+          const { isMobile, reduceMotion } = context.conditions as {
             isDesktop: boolean;
             isMobile: boolean;
             reduceMotion: boolean;
