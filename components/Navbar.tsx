@@ -1,5 +1,5 @@
 import React from "react";
-import { Download } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import FunkyButton from "./FunkyButton";
 import CallIcon from "./icons/CallIcon";
 import { useLenis } from "lenis/react";
@@ -115,7 +115,7 @@ const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
           <BrochureDropdown variant="desktop">
             <FunkyButton
               variant="blue"
-              icon={<Download size={19} strokeWidth={2.3} />}
+              icon={<ChevronDown size={22} strokeWidth={2.3} />}
             >
               {isLgScreen && <p>Event Brochure</p>}
             </FunkyButton>
