@@ -15,11 +15,16 @@ export default function ContactSection() {
 
   // Helper function to handle scrolling cleanly
   const handleScroll = (targetClass: string) => {
-    lenis?.scrollTo(targetClass, {
-      offset: 0,
-      duration: 1.2,
-    });
-  };
+  const allMatches = document.querySelectorAll(targetClass);
+  const visibleTarget = Array.from(allMatches).find(
+    (el) => (el as HTMLElement).offsetParent !== null
+  ) as HTMLElement | undefined;
+
+  lenis?.scrollTo(visibleTarget ?? targetClass, {
+    offset: 0,
+    duration: 1.2,
+  });
+};
 
   return (
     <section className="footer-class relative pt-40 w-full bg-linear-to-br from-[#eef7fb] to-[#b7dbe8]">
