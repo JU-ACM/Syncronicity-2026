@@ -3,7 +3,6 @@
 const PrimaryMonoWhiteLogo = ({
   size = 30,
   className = "",
-  color = "#00DB96",
 }) => {
   return (
     <svg
