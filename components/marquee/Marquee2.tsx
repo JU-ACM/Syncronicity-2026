@@ -65,8 +65,8 @@ const Marquee2: React.FC<MarqueeProps> = ({
   const MarqueeItemSet = ({ isFirst }: { isFirst: boolean }) => (
     <div ref={isFirst ? singleSetRef : null} className='flex w-max items-center'>
       {texts.map((text, index) => (
-        <div key={index} className='flex items-center gap-8 py-2 shrink-0 mx-4'>
-          <p className={`${textColor} text-[1rem] md:text-[1.5rem] lg:text-[2rem] font-unbounded font-medium uppercase text-nowrap mt-0.5`}>
+        <div key={index} className='flex items-center gap-4 md:gap-8 py-2 shrink-0 mx-2 md:mx-4'>
+          <p className={`${textColor} text-[0.8rem] md:text-[1rem] lg:text-[1.5rem] font-unbounded font-medium uppercase text-nowrap mt-0.5`}>
             {text}
           </p>
           {Icon && (
