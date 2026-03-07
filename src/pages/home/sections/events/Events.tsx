@@ -364,20 +364,20 @@ const Events: React.FC = () => {
           <p className="font-euclid text-white/50 text-[9px] font-semibold uppercase tracking-[0.35em] mb-3">
             What's Coming Up
           </p>
-          <h1
+          <p
             ref={mobileHeadingRef}
-            className="font-unbounded font-semibold text-4xl leading-none tracking-tight"
+            className="font-bounded text-4xl leading-none tracking-tight"
             style={{
               opacity: 0,
               transform: 'translateY(28px)',
               transition: 'opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1)',
             }}
           >
-            <span className="text-white">EXCITING </span>
-            <span style={{ color: '#10a0cc' }}>EVENTS</span>
-            <br />
-            <span className='text-white'>AWAIT !!</span>
-          </h1>
+            <span className="text-white lg:text-7xl md:text-6xl text-4xl">Exciting </span>
+              <span className='text-blue-600 lg:text-7xl md:text-6xl text-4xl'>Events</span>
+              <br />
+              <span className="text-white lg:text-7xl md:text-6xl text-4xl">Await !!</span>
+          </p>
           <div
             className="h-px mt-5"
             style={{ background: 'linear-gradient(90deg, #10a0cc55, transparent)' }}

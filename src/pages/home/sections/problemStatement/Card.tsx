@@ -16,18 +16,16 @@ const Card = ({ id, title, description, tags, categorySlug }: Props) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Set up the intersection observer to detect when the card enters the viewport
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          // Stop observing once it's visible so the animation only plays once per page load
           if (cardRef.current) observer.unobserve(cardRef.current);
         }
       },
       {
-        threshold: 0.8, // Trigger when 10% of the card is visible
-        rootMargin: "0px 0px -50px 0px", // Triggers slightly before the very bottom of the screen
+        threshold: 0.15, // Changed from 0.8 to 0.15 for mobile safety
+        rootMargin: "0px 0px -50px 0px",
       }
     );
 
