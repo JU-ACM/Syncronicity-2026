@@ -47,7 +47,7 @@ export const HomeRoute = () => {
       setTimeout(() => {
         lenis.scrollTo(location.state.scrollTo, { offset: 0, immediate: true });
         window.history.replaceState({}, document.title);
-      }, 300);
+      }, 500);
     }
   }, [location, lenis]);
 
