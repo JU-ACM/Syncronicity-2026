@@ -1,14 +1,11 @@
 import Robot from "../../../../assets/footer/robot.webp";
 import insta from "../../../../assets/footer/insta-icon.svg";
-import face from "../../../../assets/footer/facebook-icon.svg";
-import github from "../../../../assets/footer/github-icon.svg";
 import linkedin from "../../../../assets/footer/linkedin-icon.svg";
-import call from "../../../../assets/footer/call-icon.svg";
 import mail from "../../../../assets/footer/mail-icon.svg";
 
 import SendMessageCard from "../../../../../components/Form";
 
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Mail } from "lucide-react";
 import { useLenis } from "lenis/react";
 import PrimaryColoredLogo from "../../../../../components/icons/PrimaryColoredLogo";
 import { motion } from "framer-motion";

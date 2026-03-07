@@ -224,7 +224,7 @@ export const Dashboard: React.FC = () => {
         </p>
 
         {/* ListOfLinks */}
-        <div ref={listLinksRef} style={{ position: "absolute", width: "100%", zIndex: 50 }}>
+        <div ref={listLinksRef} style={{ position: "absolute", width: "100%" }}>
           <ListofLinks className="hidden md:flex xl:left-80 xl:top-79 lg:left-30 lg:top-79 md:left-[10vw] top-60" />
         </div>
 
