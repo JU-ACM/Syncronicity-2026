@@ -14,7 +14,7 @@ const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
   const lenis = useLenis();
 
   return (
-    <nav className={`w-full bg-transparent pt-4 pb-0 px-8 ${className} `}>
+    <nav className={`w-full bg-transparent pt-4 pb-0 px-8 z-500 ${className} `}>
       <div className="max-w-screen-2xl mx-auto pt-3 items-center justify-between hidden md:flex ">
         {/* Logo */}
         <div className="cursor-pointer">

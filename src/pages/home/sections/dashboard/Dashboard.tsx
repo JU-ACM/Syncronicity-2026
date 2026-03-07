@@ -177,7 +177,7 @@ export const Dashboard: React.FC = () => {
       style={{ backgroundImage: `url(${herobg})` }}
     >
       {/* Wrap Navbar so we can ref it */}
-      <div ref={navRef} style={{ width: "100%" }}>
+      <div ref={navRef} className="relative z-500" style={{ width: "100%" }}>
         <Navbar />
       </div>
 
@@ -204,6 +204,7 @@ export const Dashboard: React.FC = () => {
             lg:text-8xl md:text-6xl text-4xl
             text-white text-center
             leading-tight
+            z-0
           "
         >
           {/* Note: We must use inline-block here so the clipPath and transforms 
@@ -242,7 +243,7 @@ export const Dashboard: React.FC = () => {
 
         {/* CTA Buttons */}
         <motion.div
-          className="absolute w-full flex flex-col gap-3 lg:top-125 md:top-140 top-160 items-center"
+          className="absolute w-full flex flex-col gap-3 lg:top-125 md:top-140 top-160 items-center lg:items-end"
           initial="hidden"
           animate="visible"
           variants={{
@@ -272,7 +273,7 @@ export const Dashboard: React.FC = () => {
               color1="#3770ff"
               color2="#00DB96"
               textColor="white"
-              className="font-unbounded font-bold w-78 px-8 py-3 lg:translate-x-76 md:translate-x-0"
+              className="font-unbounded font-bold w-78 px-8 py-3 lg:-translate-x-76 md:translate-x-0"
             >
               Apply with Devfolio
             </FunkyColorButton>
@@ -297,7 +298,7 @@ export const Dashboard: React.FC = () => {
               onClick={() =>
                 window.open("https://discord.gg/zAQB3aFw", "_blank", "noopener,noreferrer")
               }
-              className="font-unbounded font-bold w-78 px-8 py-3 lg:translate-x-76 md:translate-x-0"
+              className="font-unbounded font-bold w-78 px-8 py-3 lg:-translate-x-76 md:translate-x-0"
             >
               Join Discord
             </FunkyColorButton>
