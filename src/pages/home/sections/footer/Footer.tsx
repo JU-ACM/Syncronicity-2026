@@ -68,7 +68,7 @@ export default function ContactSection() {
 
             <div className="flex items-center gap-4 justify-center lg:justify-start">
               <Mail className="w-5 h-5 shrink-0" />
-              <span>unofficial01acmju@gmail.com</span>
+              <span>acmjustudentchapter@gmail.com</span>
             </div>
           </div>
         </div>
