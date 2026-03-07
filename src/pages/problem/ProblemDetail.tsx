@@ -125,7 +125,7 @@ const ProblemDetail: React.FC = () => {
         initial="hidden"
         animate="visible"
       >
-        <div className="w-full px-2 md:px-6 lg:px-12 py-3 flex items-center">
+        <div className="w-full px-4 md:px-6 lg:px-12 py-3 flex items-center">
           {/* <motion.button
             onClick={() =>
               navigate("/home", {
@@ -142,7 +142,7 @@ const ProblemDetail: React.FC = () => {
           <FunkyColorButton
             color1="#155DFC"
             color2="#00DB96"
-            className="font-euclid"
+            className="font-euclid text-sm md:text-base"
             onClick={() =>
               navigate("/home", {
                 state: { scrollTo: ".problem-statement-class" },
@@ -156,7 +156,7 @@ const ProblemDetail: React.FC = () => {
 
       <div className="max-w-2xl mx-auto px-4 pt-6 pb-8">
         {/* ── Title ── */}
-        <motion.h1
+        <motion.p
           className="font-bounded text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-4 break-words [overflow-wrap:break-word] [word-break:break-word]"
           variants={fadeUp}
           custom={0}
@@ -173,7 +173,7 @@ const ProblemDetail: React.FC = () => {
           ) : (
             problem.title
           )}
-        </motion.h1>
+        </motion.p>
 
         {/* ── Tags ── */}
         <motion.div
