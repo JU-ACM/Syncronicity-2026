@@ -448,10 +448,9 @@ const ProblemDetail: React.FC = () => {
             onClick={() =>
               window.open(problem.resources?.[0]?.url || "#", "_blank")
             }
-            className="flex items-center gap-2 bg-blue-600 text-white px-5 py-2.5 rounded-full font-euclid text-sm font-semibold shadow-lg shadow-blue-600/20"
+            className="flex items-center gap-2 bg-blue-600 hover:bg-blue-400 text-white px-5 py-2.5 rounded-full font-euclid text-sm font-semibold shadow-lg shadow-blue-600/20"
             whileHover={{
               scale: 1.05,
-              backgroundColor: "#0d8ab0",
               boxShadow: "0 8px 24px rgba(16,160,204,0.35)",
             }}
             whileTap={{ scale: 0.95 }}
