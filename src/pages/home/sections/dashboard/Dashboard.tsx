@@ -15,10 +15,13 @@ import FunkyColorButton from "../../../../../components/FunkyColorButton";
 import DiscordIcon from "../../../../../components/icons/DiscordIcon";
 import DevfolioIcon from "../../../../../components/icons/DevfolioIcon";
 
-// Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
 
-export const Dashboard: React.FC = () => {
+interface DashboardProps {
+  animateIn?: boolean; // ← NEW: fires GSAP only when Transition is done
+}
+
+export const Dashboard: React.FC<DashboardProps> = ({ animateIn = false }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const titleLine1Ref = useRef<HTMLSpanElement>(null);
   const titleLine2Ref = useRef<HTMLSpanElement>(null);
@@ -27,16 +30,34 @@ export const Dashboard: React.FC = () => {
   const rightCardRef = useRef<HTMLDivElement>(null);
   const listLinksRef = useRef<HTMLDivElement>(null);
   const descriptionRef = useRef<HTMLDivElement>(null);
-  const navRef = useRef<HTMLDivElement>(null); 
+  const navRef = useRef<HTMLDivElement>(null);
+
+  // ─── Hide all elements immediately on mount ─────────────────────────────
+  // Runs once so nothing flashes visible while the Transition is playing.
+  useEffect(() => {
+    const targets = [
+      navRef.current,
+      titleLine1Ref.current,
+      titleLine2Ref.current,
+      heroImgRef.current,
+      leftCardRef.current,
+      rightCardRef.current,
+      listLinksRef.current,
+      descriptionRef.current,
+    ].filter(Boolean);
+    gsap.set(targets, { opacity: 0 });
+  }, []);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      // ─── Master timeline ───────────────────────────────────────────
-      const tl = gsap.timeline({
-        defaults: { ease: "power3.inOut" },
-      });
+    // Do nothing until the parent signals the transition is complete
+    if (!animateIn) return;
 
-      // ─── 1. Navbar fades down from above ──────────────────────────
+    const ctx = gsap.context(() => {
+      // ─── Master timeline ─────────────────────────────────────────
+      // delay: 0 — the Transition's onComplete IS our timing signal now
+      const tl = gsap.timeline({ defaults: { ease: "power3.inOut" } });
+
+      // 1. Navbar fades down from above
       if (navRef.current) {
         tl.fromTo(
           navRef.current,
@@ -46,75 +67,55 @@ export const Dashboard: React.FC = () => {
         );
       }
 
-      // ─── 2. Title — ClipPath Wipe Animation ───────────────────────
+      // 2. Title — ClipPath Wipe Animation
       const titleLines = [titleLine1Ref.current, titleLine2Ref.current].filter(Boolean);
       if (titleLines.length) {
         tl.fromTo(
           titleLines,
+          { clipPath: "inset(0 100% 0 0)", xPercent: 50, opacity: 0 },
           {
-            clipPath: "inset(0 100% 0 0)", // Hidden at right
-            xPercent: 50, // Slight horizontal shift (using xPercent instead of translateX for GSAP)
-          },
-          {
-            clipPath: "inset(0 0% 0 0)", // Fully revealed
+            opacity: 1,
+            clipPath: "inset(0 0% 0 0)",
             xPercent: 0,
             duration: 1.2,
-            stagger: 0.5, // Delay the second line slightly
+            stagger: 0.5,
             ease: "power3.out",
           },
           0.2
         );
       }
 
-      // ─── 3. Hero robot image — rises from below with elastic ───────
+      // 3. Hero robot image — rises from below with elastic
       if (heroImgRef.current) {
         tl.fromTo(
           heroImgRef.current,
           { y: 120, opacity: 0, scale: 0.88 },
-          {
-            y: 0,
-            opacity: 1,
-            scale: 1,
-            duration: 1.5,
-            ease: "elastic.out(1, 0.6)",
-          },
+          { y: 0, opacity: 1, scale: 1, duration: 1.5, ease: "elastic.out(1, 0.6)" },
           1
         );
       }
 
-      // ─── 4. Left card — slides in from the left ───────────────────
+      // 4. Left card — slides in from the left
       if (leftCardRef.current) {
         tl.fromTo(
           leftCardRef.current,
           { x: -140, opacity: 0, rotate: -8 },
-          {
-            x: 0,
-            opacity: 1,
-            rotate: 0,
-            duration: 0.9,
-            ease: "power4.out",
-          },
+          { x: 0, opacity: 1, rotate: 0, duration: 0.9, ease: "power4.out" },
           0.75
         );
       }
 
-      // ─── 5. Right card — slides in from the right ─────────────────
+      // 5. Right card — slides in from the right
       if (rightCardRef.current) {
         tl.fromTo(
           rightCardRef.current,
           { x: 140, opacity: 0, rotate: 8 },
-          {
-            x: 0,
-            opacity: 1,
-            rotate: 0,
-            duration: 0.9,
-            ease: "power4.out",
-          },
-          0.75  // same time as left card → simultaneous
+          { x: 0, opacity: 1, rotate: 0, duration: 0.9, ease: "power4.out" },
+          0.75
         );
       }
 
-      // ─── 6. ListOfLinks — fades + slides up ───────────────────────
+      // 6. ListOfLinks — fades + slides up
       if (listLinksRef.current) {
         tl.fromTo(
           listLinksRef.current,
@@ -124,7 +125,7 @@ export const Dashboard: React.FC = () => {
         );
       }
 
-      // ─── 7. Description — fades + slides up (slight delay) ────────
+      // 7. Description — fades + slides up
       if (descriptionRef.current) {
         tl.fromTo(
           descriptionRef.current,
@@ -133,50 +134,23 @@ export const Dashboard: React.FC = () => {
           1.25
         );
       }
-
-      // ─── 8. CTA Buttons — stagger up from below ───────────────────
-      // if (buttonsRef.current) {
-      //   const buttons = buttonsRef.current.querySelectorAll("button, a, [role='button'], .funky-btn");
-      //   // Fallback: animate the wrapper children
-      //   const targets = buttons.length > 0 ? buttons : Array.from(buttonsRef.current.children);
-
-      //   tl.fromTo(
-      //     targets,
-      //     { opacity: 0, scale: 0.92 },
-      //     {
-      //       opacity: 1,
-      //       scale: 1,
-      //       duration: 0.3,
-      //       stagger: 0.1,
-      //       ease: "back.out(1.7)",
-      //     },
-      //     1.4
-      //   );
-      // }
     }, containerRef);
 
-    return () => ctx.revert(); // cleanup on unmount
-  }, []);
+    return () => ctx.revert();
+  }, [animateIn]); // ← Re-runs only when animateIn flips to true
 
+  // CTA buttons use Framer Motion — key prop forces re-mount when animateIn fires,
+  // so delayChildren is measured from transition completion, not page load.
   return (
     <div
       ref={containerRef}
       className="
-        hero-class
-        w-screen
-        md:w-full
-        h-220
-        flex
-        flex-col
-        items-center
-        justify-start
-        bg-no-repeat
-        bg-center
-        bg-cover
+        hero-class w-screen md:w-full h-220
+        flex flex-col items-center justify-start
+        bg-no-repeat bg-center bg-cover
       "
       style={{ backgroundImage: `url(${herobg})` }}
     >
-      {/* Wrap Navbar so we can ref it */}
       <div ref={navRef} className="relative z-500" style={{ width: "100%" }}>
         <Navbar />
       </div>
@@ -195,22 +169,15 @@ export const Dashboard: React.FC = () => {
           />
         </div>
 
-        {/* Title — ClipPath Reveal */}
+        {/* Title */}
         <p
           className="
             absolute left-1/2 -translate-x-1/2
             md:top-15 top-30
-            font-bounded
-            lg:text-8xl md:text-6xl text-4xl
-            text-white text-center
-            leading-tight
-            z-0
+            font-bounded lg:text-8xl md:text-6xl text-4xl
+            text-white text-center leading-tight z-0
           "
         >
-          {/* Note: We must use inline-block here so the clipPath and transforms 
-            calculate the exact width of the text properly, rather than 
-            taking up the full width of the parent flex container.
-          */}
           <span style={{ display: "block" }}>
             <span ref={titleLine1Ref} style={{ display: "inline-block" }}>
               Synchronicity
@@ -241,31 +208,30 @@ export const Dashboard: React.FC = () => {
           <Description className="xl:right-80 xl:top-79 lg:right-30 lg:top-79 md:right-[10vw] md:translate-x-0 md:left-auto md:top-59 left-1/2 -translate-x-1/2 top-120" />
         </div>
 
-        {/* CTA Buttons */}
+        {/*
+          CTA Buttons — key={String(animateIn)} re-mounts the motion.div
+          so the stagger always starts fresh from transition completion.
+        */}
         <motion.div
+          key={String(animateIn)}
           className="absolute w-full flex flex-col gap-3 lg:top-125 md:top-140 top-160 items-center lg:items-end"
           initial="hidden"
-          animate="visible"
+          animate={animateIn ? "visible" : "hidden"}
           variants={{
             hidden: { opacity: 0 },
             visible: {
               opacity: 1,
               transition: {
-                delayChildren: 2, // Matches your GSAP 1.4 timeline start
-                staggerChildren: 0.1, // Staggers the buttons
+                delayChildren: 0.6, // small breathing room after transition ends
+                staggerChildren: 0.1,
               },
             },
           }}
         >
-          {/* Button 1 */}
-          <motion.div 
+          <motion.div
             variants={{
               hidden: { opacity: 0, scale: 0.92 },
-              visible: { 
-                opacity: 1, 
-                scale: 1, 
-                transition: { duration: 0.3, ease: "backOut" } // Matches back.out(1.7)
-              }
+              visible: { opacity: 1, scale: 1, transition: { duration: 0.3, ease: "backOut" } },
             }}
           >
             <FunkyColorButton
@@ -273,21 +239,16 @@ export const Dashboard: React.FC = () => {
               color1="#3770ff"
               color2="#00DB96"
               textColor="white"
-              className="font-unbounded font-bold w-78 px-8 py-3 lg:-translate-x-76 md:translate-x-0"
+              className="font-unbounded font-bold w-78 px-8 py-3 xl:-translate-x-76 lg:-translate-x-28 translate-x-0"
             >
               Apply with Devfolio
             </FunkyColorButton>
           </motion.div>
 
-          {/* Button 2 */}
-          <motion.div 
+          <motion.div
             variants={{
               hidden: { opacity: 0, scale: 0.92 },
-              visible: { 
-                opacity: 1, 
-                scale: 1, 
-                transition: { duration: 0.3, ease: "backOut" } 
-              }
+              visible: { opacity: 1, scale: 1, transition: { duration: 0.3, ease: "backOut" } },
             }}
           >
             <FunkyColorButton
@@ -298,7 +259,7 @@ export const Dashboard: React.FC = () => {
               onClick={() =>
                 window.open("https://discord.gg/zAQB3aFw", "_blank", "noopener,noreferrer")
               }
-              className="font-unbounded font-bold w-78 px-8 py-3 lg:-translate-x-76 md:translate-x-0"
+              className="font-unbounded font-bold w-78 px-8 py-3 xl:-translate-x-76 lg:-translate-x-28 translate-x-0"
             >
               Join Discord
             </FunkyColorButton>
