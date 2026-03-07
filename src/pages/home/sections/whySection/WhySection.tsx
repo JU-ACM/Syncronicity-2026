@@ -75,7 +75,7 @@ const WhySection = () => {
 
         {/* Robot */}
         <motion.div
-          className="relative aspect-3/5 w-[min(320px,70vw)] bg-[url('/src/assets/robot.png')] bg-cover bg-center bg-no-repeat mb-[10vh] max-md:w-[220px] max-md:mb-[1vh] max-h-[700px]:mb-[2vh]"
+          className="relative aspect-3/5 w-[min(320px,70vw)] bg-[url('/src/assets/robot.webp')] bg-cover bg-center bg-no-repeat mb-[10vh] max-md:w-[220px] max-md:mb-[1vh] max-h-[700px]:mb-[2vh]"
           initial={{ opacity: 0, y: 40, scale: 0.92 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true, margin: "0px 0px -30% 0px" }}

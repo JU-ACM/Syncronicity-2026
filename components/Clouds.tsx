@@ -2,9 +2,9 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import cloud1 from "../src/assets/clouds/cloud-1.png"
-import cloud2 from "../src/assets/clouds/cloud-2.png"
-import cloud3 from "../src/assets/clouds/cloud-3.png"
+import cloud1 from "../src/assets/clouds/cloud-1.webp"
+import cloud2 from "../src/assets/clouds/cloud-2.webp"
+import cloud3 from "../src/assets/clouds/cloud-3.webp"
 
 gsap.registerPlugin(ScrollTrigger);
 

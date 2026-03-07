@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import herobg from '../../assets/dashboard/hero-bg.png';
+import herobg from '../../assets/dashboard/hero-bg.webp';
 
 const EventDetail: React.FC = () => {
     const { id } = useParams<{ id: string }>();

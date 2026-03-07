@@ -1,8 +1,8 @@
 import React from "react";
-import herobg from "../../../../assets/dashboard/hero-bg.png";
-import heroimg from "../../../../assets/dashboard/hero-img.png";
-import icpcMockFest from "../../../../assets/dashboard/icpc-mockfest-card.jpeg";
-import syncS1 from "../../../../assets/dashboard/synchronicity-s1-card.jpeg";
+import herobg from "../../../../assets/dashboard/hero-bg.webp";
+import heroimg from "../../../../assets/dashboard/hero-img.webp";
+import icpcMockFest from "../../../../assets/dashboard/icpc-mockfest-card.webp";
+import syncS1 from "../../../../assets/dashboard/synchronicity-s1-card.webp";
 import ListofLinks from "./ListofLinks";
 import Description from "./Description";
 import { EventCard } from "./EventCard";
