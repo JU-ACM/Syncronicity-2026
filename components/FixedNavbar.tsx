@@ -48,7 +48,11 @@ const FixedNavbar: React.FC = () => {
   }, []);
 
   const handleNavClick = (sectionClass: string) => {
-    lenis?.scrollTo(sectionClass, { offset: 0, duration: 1.2 });
+    const allMatches = document.querySelectorAll(sectionClass);
+  const visibleTarget = Array.from(allMatches).find(
+    (el) => (el as HTMLElement).offsetParent !== null
+  ) as HTMLElement | undefined;
+    lenis?.scrollTo(visibleTarget ?? sectionClass, { offset: 0, duration: 1.2 });
     setIsMobileMenuOpen(false);
   };
 
