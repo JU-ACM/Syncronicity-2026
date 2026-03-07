@@ -27,8 +27,7 @@ export const Dashboard: React.FC = () => {
   const rightCardRef = useRef<HTMLDivElement>(null);
   const listLinksRef = useRef<HTMLDivElement>(null);
   const descriptionRef = useRef<HTMLDivElement>(null);
-  const buttonsRef = useRef<HTMLDivElement>(null);
-  const navRef = useRef<HTMLDivElement>(null);
+  const navRef = useRef<HTMLDivElement>(null); 
 
   useEffect(() => {
     const ctx = gsap.context(() => {
