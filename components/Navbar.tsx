@@ -4,7 +4,7 @@ import FunkyButton from "./FunkyButton";
 import CallIcon from "./icons/CallIcon";
 import { useLenis } from "lenis/react";
 import BrochureDropdown from "./BrochureDropdown";
-import PrimaryColoredLogo from "../components/icons/PrimaryColoredLogo";
+import PrimaryMonoWhiteLogo from "../components/icons/PrimaryMonoWhiteLogo";
 
 interface NavbarProps {
   className?: string;
@@ -18,7 +18,7 @@ const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
       <div className="max-w-screen-2xl mx-auto pt-3 items-center justify-between hidden md:flex ">
         {/* Logo */}
         <div className="cursor-pointer">
-          <PrimaryColoredLogo color="white" size={200} />
+          <PrimaryMonoWhiteLogo size={200} />
         </div>
 
         {/* Action Buttons */}
