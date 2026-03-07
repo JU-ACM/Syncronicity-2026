@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 // import herobg from '../../../../assets/dashboard/hero-bg.png'
-import mascotImg from '../../../../assets/events/events_mascot.png'
-import comingsoonImg from '../../../../../public/event-card-placeholder-img.png'
+import mascotImg from '../../../../assets/events/events_mascot.webp'
+import comingsoonImg from '../../../../../public/event-card-placeholder-img.webp'
 
 // const EVENTS = [
 //   {

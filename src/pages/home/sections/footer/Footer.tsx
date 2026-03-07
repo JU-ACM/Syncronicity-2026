@@ -1,4 +1,4 @@
-import Robot from "../../../../assets/footer/robot.png";
+import Robot from "../../../../assets/footer/robot.webp";
 import insta from "../../../../assets/footer/insta-icon.svg";
 import face from "../../../../assets/footer/facebook-icon.svg";
 import github from "../../../../assets/footer/github-icon.svg";
