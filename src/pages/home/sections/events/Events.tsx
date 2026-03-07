@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 // import herobg from '../../../../assets/dashboard/hero-bg.png'
 import mascotImg from '../../../../assets/events/events_mascot.png'
+import comingsoonImg from '../../../../../public/event-card-placeholder-img.png'
 
 // const EVENTS = [
 //   {
@@ -59,7 +60,7 @@ const EVENTS = [
     date: 'TBA',
     location: 'TBA',
     seats: 0,
-    image: 'public/event-card-placeholder-img.png',
+    image: comingsoonImg,
     color: '#9ca3af',
   },
   {
@@ -70,7 +71,7 @@ const EVENTS = [
     date: 'TBA',
     location: 'TBA',
     seats: 0,
-    image: 'public/event-card-placeholder-img.png',
+    image: comingsoonImg,
     color: '#9ca3af',
   },
   {
@@ -81,7 +82,7 @@ const EVENTS = [
     date: 'TBA',
     location: 'TBA',
     seats: 0,
-    image: 'public/event-card-placeholder-img.png',
+    image: comingsoonImg,
     color: '#9ca3af',
   },
   {
@@ -92,7 +93,7 @@ const EVENTS = [
     date: 'TBA',
     location: 'TBA',
     seats: 0,
-    image: 'public/event-card-placeholder-img.png',
+    image: comingsoonImg,
     color: '#9ca3af',
   },
 ]
