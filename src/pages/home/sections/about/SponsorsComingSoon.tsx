@@ -15,7 +15,7 @@ const fadeUp: Variants = {
 
 const SponsorsComingSoon: React.FC = () => {
     return (
-        <div className="sponsors-coming-soon-class relative w-full min-h-[60vh] bg-[#131313] flex flex-col items-center justify-center overflow-hidden">
+        <div className="sponsors-coming-soon-class py-20 relative w-full min-h-[100vh] bg-[#131313] flex flex-col items-center justify-center overflow-hidden">
 
             {/* Ambient glow — breathes in/out */}
             <motion.div
@@ -52,8 +52,8 @@ const SponsorsComingSoon: React.FC = () => {
                 </motion.p>
 
                 {/* SPONSORS heading */}
-                <motion.h2
-                    className="text-4xl sm:text-5xl md:text-7xl font-unbounded font-bold text-center"
+                <motion.p
+                    className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-unbounded font-bold text-center"
                     style={{
                         background: 'linear-gradient(135deg, #70D2FF 0%, #10A0CC 40%, #0d8ab0 70%, #70D2FF 100%)',
                         backgroundSize: '200% 200%',
@@ -66,8 +66,8 @@ const SponsorsComingSoon: React.FC = () => {
                     initial="hidden"
                     animate="visible"
                 >
-                    SPONSORS
-                </motion.h2>
+                    Sponsors
+                </motion.p>
 
                 {/* Coming Soon row */}
                 <motion.div

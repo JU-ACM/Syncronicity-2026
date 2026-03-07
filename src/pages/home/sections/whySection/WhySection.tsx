@@ -66,8 +66,8 @@ const WhySection = () => {
           className="whyTitle max-w-[1100px] font-montserrat font-black leading-[1.2] text-center text-[rgba(16,160,204,1)] mt-[clamp(-120px,-12vh,-60px)] max-h-[850px]:mt-[3vh] max-md:mt-0 max-md:px-4 max-md:leading-[1.1]"
           initial={{ opacity: 0, y: 36 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          viewport={{ once: true, margin: "0px 0px -50% 0px" }}
+          transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
         >
           <span className="text-white">Why you can't miss </span>
           <span className="text-blue-600">Synchronicity 2.O!</span>
@@ -78,7 +78,7 @@ const WhySection = () => {
           className="relative aspect-3/5 w-[min(320px,70vw)] bg-[url('/src/assets/robot.png')] bg-cover bg-center bg-no-repeat mb-[10vh] max-md:w-[220px] max-md:mb-[1vh] max-h-[700px]:mb-[2vh]"
           initial={{ opacity: 0, y: 40, scale: 0.92 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px 0px -30% 0px" }}
           transition={{ duration: 0.75, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
         >
           {bubbles.map((bubble, i) => (

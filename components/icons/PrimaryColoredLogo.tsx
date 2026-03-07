@@ -1,7 +1,7 @@
 const PrimaryColoredLogo = ({
   size = 30,
   className = "",
-  color = "#25d8b5",
+  color = "#00DB96",
 }) => {
   return (
     <svg
@@ -15,7 +15,7 @@ const PrimaryColoredLogo = ({
         <style>
           {`
       .cls-1 {
-        fill: #2d2dd0;
+        fill: #155DFC;
       }
         `}
         </style>

@@ -59,7 +59,7 @@ export default function Stats() {
           className="font-bounded text-3xl md:text-5xl lg:text-7xl text-center font-bold text-white tracking-tight"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.5, margin: "0px 0px -20% 0px" }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           Our <span className="text-blue-600">Stats</span>

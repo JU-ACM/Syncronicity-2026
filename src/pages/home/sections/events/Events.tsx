@@ -465,10 +465,10 @@ const Events: React.FC = () => {
                 transition: 'opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1)',
               }}
             >
-              <span className="text-white">EXCITING </span>
-              <span className='text-blue-600'>EVENTS</span>
+              <span className="text-white lg:text-7xl md:text-6xl text-4xl">Exciting </span>
+              <span className='text-blue-600 lg:text-7xl md:text-6xl text-4xl'>Events</span>
               <br />
-              <span className="text-white">AWAIT !!</span>
+              <span className="text-white lg:text-7xl md:text-6xl text-4xl">Await !!</span>
             </h1>
           </div>
           <div className="h-px" style={{ background: 'linear-gradient(90deg, #10a0cc55, transparent)' }} />
