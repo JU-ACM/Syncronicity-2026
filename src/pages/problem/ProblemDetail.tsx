@@ -4,7 +4,6 @@ import { findProblem } from "../home/sections/problemStatement/problemData";
 import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
 import {
-  ArrowLeft,
   FileText,
   Target,
   Lightbulb,
@@ -16,7 +15,6 @@ import {
   LayoutGrid,
   Rocket,
 } from "lucide-react";
-import FunkyButton from "../../../components/FunkyButton";
 import FunkyColorButton from "../../../components/FunkyColorButton";
 
 // ─── Animation Variants ────────────────────────────────────────────────────────
