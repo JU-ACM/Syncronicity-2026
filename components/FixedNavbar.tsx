@@ -56,11 +56,22 @@ const FixedNavbar: React.FC = () => {
     <>
       {/* Desktop navbar: scroll-triggered show/hide (md and up) */}
       <nav
-        className={`hidden lg:block fixed top-0 left-0 w-full z-[5000] bg-white transition-transform duration-300 ease-in-out ${isVisible ? "translate-y-0" : "-translate-y-full"
-          }`}
+        className={`hidden lg:block fixed top-0 left-0 w-full z-[5000] bg-white transition-transform duration-300 ease-in-out ${
+          isVisible ? "translate-y-0" : "-translate-y-full"
+        }`}
       >
         <div className="flex mx-auto max-w-[95rem] px-6 py-4 items-center justify-between">
-          <PrimaryColoredLogo size={200} />
+          <div
+            className="cursor-pointer"
+            onClick={() =>
+              lenis?.scrollTo(0, {
+                duration: 1.2,
+                easing: (t) => 1 - Math.pow(1 - t, 4),
+              })
+            }
+          >
+            <PrimaryColoredLogo size={200} />
+          </div>
 
           <div className="flex w-[70vw] justify-between">
             {navLinks.map((link) => (

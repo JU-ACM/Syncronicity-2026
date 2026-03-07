@@ -18,9 +18,26 @@ import Marquee1 from "../../../components/marquee/Marquee1";
 import Marquee2 from "../../../components/marquee/Marquee2";
 import LogoIconMono from "../../../components/icons/LogoIconMono";
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 export const HomeRoute = () => {
   const lenis = useLenis();
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.scrollTo && lenis) {
+      setTimeout(() => {
+        lenis.scrollTo(location.state.scrollTo, {
+          offset: 0,
+          immediate: true,
+        });
+
+        // Optional: clear the state so it doesn't re-scroll if the user refreshes the page
+        window.history.replaceState({}, document.title);
+      }, 300);
+    }
+  }, [location, lenis]);
 
   // 1. Create a state to hold the dynamic size
   const [marqueeIconSize, setMarqueeIconSize] = useState(50);
@@ -29,7 +46,7 @@ export const HomeRoute = () => {
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
-      
+
       // Define your breakpoints
       if (width < 768) {
         setMarqueeIconSize(30); // Mobile

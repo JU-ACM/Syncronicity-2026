@@ -33,7 +33,7 @@ const ProblemStatement: React.FC = () => {
         {Data.map((eventSection) => (
           <div key={eventSection.event} className="mb-12 md:mb-20">
             <motion.p
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "0px 0px -20% 0px" }}
               transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
