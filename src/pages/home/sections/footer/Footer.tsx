@@ -11,6 +11,7 @@ import SendMessageCard from "../../../../../components/Form";
 import { MapPin, Phone, Mail } from "lucide-react";
 import { useLenis } from "lenis/react";
 import PrimaryColoredLogo from "../../../../../components/icons/PrimaryColoredLogo";
+import { motion } from "framer-motion";
 
 export default function ContactSection() {
   const lenis = useLenis();
@@ -58,10 +59,10 @@ export default function ContactSection() {
               </span>
             </div>
 
-            <div className="flex items-center gap-4 justify-center lg:justify-start">
+            {/* <div className="flex items-center gap-4 justify-center lg:justify-start">
               <Phone className="w-5 h-5 shrink-0" />
               <span>+91 987 654 3210</span>
-            </div>
+            </div> */}
 
             <div className="flex items-center gap-4 justify-center lg:justify-start">
               <Mail className="w-5 h-5 shrink-0" />
@@ -93,30 +94,39 @@ export default function ContactSection() {
               <a href="mailto:unofficial01acmju@gmail.com">
                 <img src={mail} alt="Email" className="w-5 hover:scale-110 transition-transform" />
               </a>
-              <a href="#">
+              <a href="https://www.linkedin.com/company/jadavpur-university-acm-student-chapter/posts/?feedView=all" target="_blank" rel="noopener noreferrer">
                 <img src={linkedin} alt="LinkedIn" className="w-5 hover:scale-110 transition-transform" />
               </a>
-              <a href="#">
+              {/* <a href="#">
                 <img src={face} alt="Facebook" className="w-5 hover:scale-110 transition-transform" />
-              </a>
-              <a href="#">
+              </a> */}
+              <a href="https://www.instagram.com/acm.ju?igsh=ZzVhMXpnbnlocno3" target="_blank" rel="noopener noreferrer">
                 <img src={insta} alt="Instagram" className="w-5 hover:scale-110 transition-transform" />
               </a>
-              <a href="#">
+              {/* <a href="#">
                 <img src={call} alt="Call" className="w-5 hover:scale-110 transition-transform" />
-              </a>
-              <a href="#">
+              </a> */}
+              {/* <a href="#">
                 <img src={github} alt="GitHub" className="w-5 hover:scale-110 transition-transform" />
-              </a>
+              </a> */}
             </div>
           </div>
 
           {/* Middle: Robot Graphic (Hidden on Mobile/Tablet) */}
           <div className="hidden lg:flex justify-center items-end h-full">
-            <img
+            <motion.img
               src={Robot}
               alt="Friendly Robot"
-              className="w-80 xl:w-96 drop-shadow-xl -mb-12"
+              className="absolute w-80 xl:w-120 -mb-12 origin-bottom"
+              initial={{ opacity: 0, scale: 0.85, y: 20 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true, margin: "0px 0px -100px 0px" }}
+              transition={{ 
+                duration: 0.7, 
+                type: "spring", 
+                stiffness: 200, 
+                damping: 15 
+              }}
             />
           </div>
 

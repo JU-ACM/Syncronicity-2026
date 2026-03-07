@@ -228,7 +228,7 @@ export default function TimelineMobile() {
   }, []);
 
   return (
-    <section className="relative w-full overflow-hidden m-0 p-0 text-white font-sans bg-[#131313] py-10">
+    <section className="timeline-class relative w-full overflow-hidden m-0 p-0 text-white font-sans bg-[#131313] py-10">
       {/* Container mapped to exact SVG aspect ratio and full width.
         Will natively scale down/up based on the device width.
       */}
