@@ -49,13 +49,13 @@ const TapeTransition: React.FC = () => {
     >
       <img
         ref={tape1Ref}
-        src="/tape2.png"
+        src="/tape2.webp"
         className="absolute inset-0 w-full pointer-events-none"
         alt=""
       />
       <img
         ref={tape2Ref}
-        src="/tape1.png"
+        src="/tape1.webp"
         className="absolute inset-0 w-full pointer-events-none"
         alt=""
       />

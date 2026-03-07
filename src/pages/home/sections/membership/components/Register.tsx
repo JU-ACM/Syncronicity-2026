@@ -3,7 +3,7 @@ const Register = () => {
     <div className="relative w-150">
       <img
         className="object-cover object-center"
-        src="/src/assets/membership/png/register-img.png"
+        src="/src/assets/membership/webp/register-img.webp"
         alt=""
       />
       <button

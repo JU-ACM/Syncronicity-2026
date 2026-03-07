@@ -54,7 +54,7 @@
   aspect-ratio: 3 / 5;
   width: min(320px, 70vw);
   height: auto;
-  background-image: url("../../../../assets/robot.png");
+  background-image: url("../../../../assets/robot.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -177,7 +177,7 @@
   width: fit-content;
   margin: 0 0 0 0;
   margin-bottom: 3vh;
-  background-image:url("../../../../assets/robot.png");
+  background-image:url("../../../../assets/robot.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -193,7 +193,7 @@
   position: absolute;
   inset: 0;
 
-  background-image: url("/src/assets/robot.png");
+  background-image: url("/src/assets/robot.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
