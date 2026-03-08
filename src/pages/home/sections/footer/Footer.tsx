@@ -15,23 +15,23 @@ export default function ContactSection() {
 
   // Helper function to handle scrolling cleanly
   const handleScroll = (targetClass: string) => {
-  const allMatches = document.querySelectorAll(targetClass);
-  const visibleTarget = Array.from(allMatches).find(
-    (el) => (el as HTMLElement).offsetParent !== null
-  ) as HTMLElement | undefined;
+    const allMatches = document.querySelectorAll(targetClass);
+    const visibleTarget = Array.from(allMatches).find(
+      (el) => (el as HTMLElement).offsetParent !== null
+    ) as HTMLElement | undefined;
 
-  lenis?.scrollTo(visibleTarget ?? targetClass, {
-    offset: 0,
-    duration: 1.2,
-  });
-};
+    lenis?.scrollTo(visibleTarget ?? targetClass, {
+      offset: 0,
+      duration: 1.2,
+    });
+  };
 
   return (
     <section className="footer-class relative pt-40 w-full bg-linear-to-br from-[#eef7fb] to-[#b7dbe8]">
-      
+
       {/* ================= TOP SECTION (Form & Contact Info) ================= */}
       <div className="mx-auto max-w-6xl flex flex-col-reverse lg:flex-row justify-center items-center lg:items-start gap-12 lg:gap-20 py-16 lg:py-20 px-6 lg:px-10">
-        
+
         {/* Left: Send Message Card */}
         <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
           <SendMessageCard />
@@ -45,9 +45,7 @@ export default function ContactSection() {
           </p>
 
           <p className="text-sm lg:text-base text-gray-700 font-euclid leading-relaxed mb-8 max-w-md mx-auto lg:mx-0">
-            Have questions about membership, events, or collaborations? Reach
-            out to the Jadavpur University ACM Student Chapter and we’ll get
-            back to you.
+            Have questions about the hackathon? We’re here to help! Whether it’s about registration, rules, schedules, or anything else, feel free to reach out to us.
           </p>
 
           {/* Contact Details */}
@@ -77,7 +75,7 @@ export default function ContactSection() {
       {/* ================= FOOTER SECTION (Logo, Links & Socials) ================= */}
       <div className="mx-auto max-w-7xl px-6 lg:px-10 pb-12 pt-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center gap-12">
-          
+
           {/* Left: Logo & Description */}
           <div className="text-black max-w-sm text-center lg:text-left mx-auto lg:mx-0">
             <div className="flex justify-center lg:justify-start mb-4">
@@ -85,10 +83,7 @@ export default function ContactSection() {
             </div>
 
             <p className="text-sm font-euclid leading-relaxed opacity-90 mb-6">
-              The Jadavpur University ACM Student Chapter is an official student
-              chapter affiliated with the Association for Computing Machinery,
-              dedicated to fostering learning, innovation, and professional
-              growth.
+              To stay updated with all hackathon announcements, resources, and important notices, make sure you are connected with us on the platforms listed below.
             </p>
 
             {/* Social Icons */}
@@ -123,11 +118,11 @@ export default function ContactSection() {
               initial={{ opacity: 0, scale: 0.85, y: 20 }}
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true, margin: "0px 0px -100px 0px" }}
-              transition={{ 
-                duration: 0.7, 
-                type: "spring", 
-                stiffness: 200, 
-                damping: 15 
+              transition={{
+                duration: 0.7,
+                type: "spring",
+                stiffness: 200,
+                damping: 15
               }}
             />
           </div>
@@ -142,14 +137,14 @@ export default function ContactSection() {
               {['Home', 'Why Us', 'Problem Statement', 'Statistics', 'Events', 'Timeline', 'FAQs'].map((item, index) => {
                 // Map the labels to their respective target classes
                 const targets = [
-                  '.hero-class', '.why-section-class', '.problem-statement-class', 
+                  '.hero-class', '.why-section-class', '.problem-statement-class',
                   '.stats-class', '.events-class', '.timeline-class', '.faq-class'
                 ];
-                
+
                 return (
                   <li key={item}>
-                    <button 
-                      onClick={() => handleScroll(targets[index])} 
+                    <button
+                      onClick={() => handleScroll(targets[index])}
                       className="hover:underline hover:text-blue-600 transition-colors cursor-pointer bg-transparent border-none p-0"
                     >
                       {item}
@@ -159,7 +154,7 @@ export default function ContactSection() {
               })}
             </ul>
           </div>
-          
+
         </div>
       </div>
 

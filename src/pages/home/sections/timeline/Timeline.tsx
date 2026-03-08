@@ -32,7 +32,7 @@ const timelineSteps = [
     id: "step-3",
     number: "3",
     title: "Final Date for PPT Submission",
-    duration: "3rd May onwards",
+    duration: "3rd May",
     description: "Submit your presentation for prelims.",
     positionClasses: "top-[46%] right-[33%] lg:top-[49%] lg:right-[35%]",
     layout: "right",

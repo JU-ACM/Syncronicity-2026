@@ -11,10 +11,10 @@ const timelineSteps = [
   {
     id: "step-1",
     number: "1",
-    title: "Registration",
-    duration: "5th Sept to 20th November",
+    title: "Registration Starts",
+    duration: "8th March onwards",
     description:
-      "All Aboard! Save your spot at India's largest student-run hackathon.",
+      "Sign up and Secure your spot",
     maxW: "",
     positionClasses: "top-[20.72%] left-[20%] -translate-y-1/2",
     layout: "left",
@@ -24,10 +24,10 @@ const timelineSteps = [
   {
     id: "step-2",
     number: "2",
-    title: "Registration",
-    duration: "5th Sept to 20th November",
+    title: "Registration closes",
+    duration: "26th April",
     description:
-      "All Aboard! Save your spot at India's largest student-run hackathon.",
+      "Last chance to register",
     maxW: "",
     positionClasses: "top-[32.40%] right-[14%] -translate-y-1/2",
     layout: "right",
@@ -37,10 +37,10 @@ const timelineSteps = [
   {
     id: "step-3",
     number: "3",
-    title: "Registration",
-    duration: "5th Sept to 20th November",
+    title: "Final Date for PPT Submission",
+    duration: "3rd May",
     description:
-      "All Aboard! Save your spot at India's largest student-run hackathon.",
+      "Submit your presentation for prelims.",
     maxW: "max-w-60", // Converted max-w-60 to arbitrary value for consistency
     positionClasses: "top-[53.41%] right-[32%] -translate-y-1/2",
     layout: "right",
@@ -50,10 +50,10 @@ const timelineSteps = [
   {
     id: "step-4",
     number: "4",
-    title: "Registration",
-    duration: "5th Sept to 20th November",
+    title: "Preliminary Round Shortlist Announced",
+    duration: "16th May",
     description:
-      "All Aboard! Save your spot at India's largest student-run hackathon.",
+      "Selected teams advance to the prelims",
     positionClasses: "top-[64.79%] right-[18%] -translate-y-1/2",
     layout: "right",
     lineProgress: 0.68,
@@ -62,10 +62,10 @@ const timelineSteps = [
   {
     id: "step-5",
     number: "5",
-    title: "Registration",
-    duration: "5th Sept to 20th November",
+    title: "Final Round",
+    duration: "23rd May-24th May",
     description:
-      "All Aboard! Save your spot at India's largest student-run hackathon.",
+      "Top teams will compete for the title",
     positionClasses: "top-[81.68%] left-[18%] -translate-y-1/2",
     layout: "left",
     lineProgress: 0.83,
@@ -311,17 +311,14 @@ export default function TimelineMobile() {
               ref={(el) => {
                 checkpointsRef.current[index] = el;
               }}
-              className={`absolute z-10 flex items-center w-70 ${
-                step.positionClasses
-              } ${
-                step.layout === "left"
+              className={`absolute z-10 flex items-center w-70 ${step.positionClasses
+                } ${step.layout === "left"
                   ? "flex-row"
                   : "flex-row-reverse text-right"
-              } ${
-                step.layout === "left"
+                } ${step.layout === "left"
                   ? ""
                   : step.maxW
-              }`}
+                }`}
             >
               {/* Huge Number */}
               <div
@@ -331,8 +328,8 @@ export default function TimelineMobile() {
               </div>
 
               {/* Text Information Box */}
-              <div className={`flex flex-col gap-1 w-full ${ step.layout === "left" ? "items-start" : "items-end" } `}>
-                <h3 className="m-0 text-lg font-unbounded font-semibold whitespace-nowrap">
+              <div className={`flex flex-col gap-1 w-full ${step.layout === "left" ? "items-start" : "items-end"} `}>
+                <h3 className="m-0 text-lg font-unbounded font-semibold break-words">
                   {step.title}
                 </h3>
                 <hr className="w-full border-t border-gray-600 my-[2px]" />
