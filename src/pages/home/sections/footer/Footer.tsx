@@ -88,7 +88,7 @@ export default function ContactSection() {
 
             {/* Social Icons */}
             <div className="flex justify-center lg:justify-start items-center gap-5">
-              <a href="mailto:unofficial01acmju@gmail.com">
+              <a href="mailto:acmjustudentchapter@gmail.com">
                 <img src={mail} alt="Email" className="w-5 hover:scale-110 transition-transform" />
               </a>
               <a href="https://www.linkedin.com/company/jadavpur-university-acm-student-chapter/posts/?feedView=all" target="_blank" rel="noopener noreferrer">
