@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 // import herobg from '../../../../assets/dashboard/hero-bg.png'
 import mascotImg from '../../../../assets/events/events_mascot.webp'
-import comingsoonImg from '../../../../../public/event-card-placeholder-img.webp'
+// import comingsoonImg from '../../../../../public/event-card-placeholder-img.webp'
 
 // const EVENTS = [
 //   {
@@ -60,7 +60,7 @@ const EVENTS = [
     date: 'TBA',
     location: 'TBA',
     seats: 0,
-    image: comingsoonImg,
+    image: '/event-card-placeholder-img.webp',
     color: '#9ca3af',
   },
   {
@@ -71,7 +71,7 @@ const EVENTS = [
     date: 'TBA',
     location: 'TBA',
     seats: 0,
-    image: comingsoonImg,
+    image: '/event-card-placeholder-img.webp',
     color: '#9ca3af',
   },
   {
@@ -82,7 +82,7 @@ const EVENTS = [
     date: 'TBA',
     location: 'TBA',
     seats: 0,
-    image: comingsoonImg,
+    image: '/event-card-placeholder-img.webp',
     color: '#9ca3af',
   },
   {
@@ -93,7 +93,7 @@ const EVENTS = [
     date: 'TBA',
     location: 'TBA',
     seats: 0,
-    image: comingsoonImg,
+    image: '/event-card-placeholder-img.webp',
     color: '#9ca3af',
   },
 ]
@@ -374,9 +374,9 @@ const Events: React.FC = () => {
             }}
           >
             <span className="text-white lg:text-7xl md:text-6xl text-4xl">Exciting </span>
-              <span className='text-blue-600 lg:text-7xl md:text-6xl text-4xl'>Events</span>
-              <br />
-              <span className="text-white lg:text-7xl md:text-6xl text-4xl">Await !!</span>
+            <span className='text-blue-600 lg:text-7xl md:text-6xl text-4xl'>Events</span>
+            <br />
+            <span className="text-white lg:text-7xl md:text-6xl text-4xl">Await !!</span>
           </p>
           <div
             className="h-px mt-5"

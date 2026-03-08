@@ -13,7 +13,7 @@ import { EventCard } from "./EventCard";
 import Navbar from "../../../../../components/Navbar";
 import FunkyColorButton from "../../../../../components/FunkyColorButton";
 import DiscordIcon from "../../../../../components/icons/DiscordIcon";
-import DevfolioIcon from "../../../../../components/icons/DevfolioIcon";
+// import DevfolioIcon from "../../../../../components/icons/DevfolioIcon";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -139,6 +139,20 @@ export const Dashboard: React.FC<DashboardProps> = ({ animateIn = false }) => {
     return () => ctx.revert();
   }, [animateIn]); // ← Re-runs only when animateIn flips to true
 
+  //_______________________________________________________________________________________
+  // Devfolio useEffect
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://apply.devfolio.co/v2/sdk.js';
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    }
+  }, []);
+  //_______________________________________________________________________________________
+
   // CTA buttons use Framer Motion — key prop forces re-mount when animateIn fires,
   // so delayChildren is measured from transition completion, not page load.
   return (
@@ -234,7 +248,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ animateIn = false }) => {
               visible: { opacity: 1, scale: 1, transition: { duration: 0.3, ease: "backOut" } },
             }}
           >
-            <FunkyColorButton
+            {/* <FunkyColorButton
               icon={<DevfolioIcon size={28} color="white" />}
               color1="#3770ff"
               color2="#00DB96"
@@ -242,7 +256,13 @@ export const Dashboard: React.FC<DashboardProps> = ({ animateIn = false }) => {
               className="font-unbounded font-bold w-78 px-8 py-3 xl:-translate-x-76 lg:-translate-x-28 translate-x-0"
             >
               Apply with Devfolio
-            </FunkyColorButton>
+            </FunkyColorButton> */}
+            <div
+              className="apply-button xl:-translate-x-76 lg:-translate-x-28 translate-x-0"
+              data-hackathon-slug="synchronicity-s-2"
+              data-button-theme="light"
+              style={{ height: "44px", width: "312px" }}
+            ></div>
           </motion.div>
 
           <motion.div
