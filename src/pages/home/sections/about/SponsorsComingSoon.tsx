@@ -68,7 +68,11 @@ const SponsorsComingSoon: React.FC = () => {
                 >
                     Sponsors
                 </motion.p>
-
+								<img									
+									src="/Devfolio_Logo-White.png"
+									alt="DEVFOLIO LOGO"
+									className="w-48 md:w-64 lg:w-80"
+								/>
                 {/* Coming Soon row */}
                 <motion.div
                     className="flex items-center gap-4 mt-2"
