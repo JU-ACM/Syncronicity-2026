@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Download, FileText, Handshake } from "lucide-react";
+import { Download, FileText, BadgeDollarSign, BadgeIndianRupee } from "lucide-react";
 
 interface BrochureOption {
     label: string;
@@ -15,9 +15,14 @@ const brochureOptions: BrochureOption[] = [
         icon: <FileText size={16} />,
     },
     {
-        label: "Sponsor Brochure",
-        href: "/brochure.pdf",
-        icon: <Handshake size={16} />,
+        label: "Sponsor Brochure USD",
+        href: "https://drive.google.com/file/d/189V-KQUbn4oBQAgzqyQU8OLQ4GOjV0Gb/view?usp=sharing",
+        icon: <BadgeDollarSign size={16} />,
+    },
+    {
+        label: "Sponsor Brochure INR",
+        href: "https://drive.google.com/file/d/1aZiBrGl6mgFk97i-xBgp1XgAiOzJwWRD/view?usp=sharing",
+        icon: <BadgeIndianRupee size={16} />,
     },
 ];
 
