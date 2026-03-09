@@ -8,11 +8,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 9999;
-  pointer-events: none; /* Crucial: Allows your actual clicks to pass through the icon */
-  
-  /* Optional: Add a slight transition if you are using state to change the icon size/color */
-  transition: transform 0.1s ease-out; 
+  z-index: 999999;
+  pointer-events: none;
 }
 
 /* 3. Disable custom cursor on touch devices (mobile/tablets) */
