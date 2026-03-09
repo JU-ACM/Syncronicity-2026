@@ -13,7 +13,6 @@ import { EventCard } from "./EventCard";
 import Navbar from "../../../../../components/Navbar";
 import FunkyColorButton from "../../../../../components/FunkyColorButton";
 import DiscordIcon from "../../../../../components/icons/DiscordIcon";
-// import DevfolioIcon from "../../../../../components/icons/DevfolioIcon";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -247,21 +246,13 @@ export const Dashboard: React.FC<DashboardProps> = ({ animateIn = false }) => {
               hidden: { opacity: 0, scale: 0.92 },
               visible: { opacity: 1, scale: 1, transition: { duration: 0.3, ease: "backOut" } },
             }}
+            className="cursor-pointer px-8 py-3 rounded-full xl:-translate-x-76 lg:-translate-x-28 translate-x-0 bg-[#3870FF]"
           >
-            {/* <FunkyColorButton
-              icon={<DevfolioIcon size={28} color="white" />}
-              color1="#3770ff"
-              color2="#00DB96"
-              textColor="white"
-              className="font-unbounded font-bold w-78 px-8 py-3 xl:-translate-x-76 lg:-translate-x-28 translate-x-0"
-            >
-              Apply with Devfolio
-            </FunkyColorButton> */}
             <div
-              className="apply-button xl:-translate-x-76 lg:-translate-x-28 translate-x-0"
+              className="apply-button"
               data-hackathon-slug="synchronicity-s-2"
               data-button-theme="light"
-              style={{ height: "44px", width: "312px" }}
+              style={{ height: "28px", width: "248px" }}
             ></div>
           </motion.div>
 
