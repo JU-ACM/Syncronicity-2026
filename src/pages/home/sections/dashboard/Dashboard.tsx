@@ -246,7 +246,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ animateIn = false }) => {
               hidden: { opacity: 0, scale: 0.92 },
               visible: { opacity: 1, scale: 1, transition: { duration: 0.3, ease: "backOut" } },
             }}
-            className="cursor-pointer px-8 py-3 rounded-full xl:-translate-x-76 lg:-translate-x-28 translate-x-0 bg-[#3870FF]"
+            // className="cursor-pointer px-8 py-3 rounded-full xl:-translate-x-76 lg:-translate-x-28 translate-x-0 bg-[#3870FF]"
           >
             <div
               className="apply-button"
