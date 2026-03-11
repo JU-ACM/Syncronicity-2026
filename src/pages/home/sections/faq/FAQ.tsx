@@ -113,7 +113,7 @@ const FAQItem = ({ question, answer, isOpen, onClick }: {
                             exit={{ y: -6 }}
                             transition={{ duration: 0.3, ease: EASE }}
                         >
-                            <p className="text-sm leading-relaxed text-white/60 font-light">
+                            <p className="text-sm font-euclid leading-relaxed text-white/60 font-light">
                                 {answer}
                             </p>
                         </motion.div>
@@ -169,7 +169,7 @@ const FAQ: React.FC = () => {
                             >
                                 <HelpCircle size={18} />
                             </motion.div>
-                            <span className="text-xs uppercase tracking-[0.3em] font-light">Support Center</span>
+                            <span className="text-xs uppercase font-euclid tracking-[0.3em]">Support Center</span>
                         </motion.div>
 
                         <motion.h2
@@ -183,7 +183,7 @@ const FAQ: React.FC = () => {
                         </motion.h2>
 
                         <motion.p
-                            className="max-w-md text-white/50 text-sm md:text-base font-light leading-relaxed"
+                            className="max-w-md font-euclid text-white/50 text-sm md:text-base font-light leading-relaxed"
                             variants={fadeUp}
                         >
                             Find answers to common inquiries about the event, registration process,
@@ -204,7 +204,7 @@ const FAQ: React.FC = () => {
                                 animate={{ scale: [1, 1.4, 1], opacity: [0.7, 1, 0.7] }}
                                 transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
                             />
-                            <p className="text-xs text-white/40 font-medium">Need more help? Contact our support team</p>
+                            <p className="text-xs font-euclid text-white/40">Need more help? Contact our support team</p>
                         </motion.button>
                     </motion.div>
 
