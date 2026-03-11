@@ -9,11 +9,11 @@ interface BrochureOption {
 }
 
 const brochureOptions: BrochureOption[] = [
-    {
-        label: "Information Brochure",
-        href: "/brochure.pdf",
-        icon: <FileText size={16} />,
-    },
+    // {
+    //     label: "Information Brochure",
+    //     href: "/brochure.pdf",
+    //     icon: <FileText size={16} />,
+    // },
     {
         label: "Sponsor Brochure USD",
         href: "https://drive.google.com/file/d/1FBX8tQhJsoCxGEyAyY7WXHPrK_uJsODB/view?usp=drivesdk",
