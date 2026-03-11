@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Download, FileText, BadgeDollarSign, BadgeIndianRupee } from "lucide-react";
+import { Download, BadgeDollarSign, BadgeIndianRupee } from "lucide-react";
 
 interface BrochureOption {
     label: string;
