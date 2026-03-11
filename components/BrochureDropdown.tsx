@@ -16,12 +16,12 @@ const brochureOptions: BrochureOption[] = [
     },
     {
         label: "Sponsor Brochure USD",
-        href: "https://drive.google.com/file/d/189V-KQUbn4oBQAgzqyQU8OLQ4GOjV0Gb/view?usp=sharing",
+        href: "https://drive.google.com/file/d/1FBX8tQhJsoCxGEyAyY7WXHPrK_uJsODB/view?usp=drivesdk",
         icon: <BadgeDollarSign size={16} />,
     },
     {
         label: "Sponsor Brochure INR",
-        href: "https://drive.google.com/file/d/1aZiBrGl6mgFk97i-xBgp1XgAiOzJwWRD/view?usp=sharing",
+        href: "https://drive.google.com/file/d/1VCWyoWFu58pIOIqDHKG1bmGv-YqdkvyQ/view?usp=drivesdk",
         icon: <BadgeIndianRupee size={16} />,
     },
 ];
