@@ -62,12 +62,14 @@ export const Dashboard: React.FC<DashboardProps> = ({ animateIn = false }) => {
           navRef.current,
           { y: -60, opacity: 0 },
           { y: 0, opacity: 1, duration: 1 },
-          0
+          0,
         );
       }
 
       // 2. Title — ClipPath Wipe Animation
-      const titleLines = [titleLine1Ref.current, titleLine2Ref.current].filter(Boolean);
+      const titleLines = [titleLine1Ref.current, titleLine2Ref.current].filter(
+        Boolean,
+      );
       if (titleLines.length) {
         tl.fromTo(
           titleLines,
@@ -80,7 +82,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ animateIn = false }) => {
             stagger: 0.5,
             ease: "power3.out",
           },
-          0.2
+          0.2,
         );
       }
 
@@ -89,8 +91,14 @@ export const Dashboard: React.FC<DashboardProps> = ({ animateIn = false }) => {
         tl.fromTo(
           heroImgRef.current,
           { y: 120, opacity: 0, scale: 0.88 },
-          { y: 0, opacity: 1, scale: 1, duration: 1.5, ease: "elastic.out(1, 0.6)" },
-          1
+          {
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            duration: 1.5,
+            ease: "elastic.out(1, 0.6)",
+          },
+          1,
         );
       }
 
@@ -100,7 +108,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ animateIn = false }) => {
           leftCardRef.current,
           { x: -140, opacity: 0, rotate: -8 },
           { x: 0, opacity: 1, rotate: 0, duration: 0.9, ease: "power4.out" },
-          0.75
+          0.75,
         );
       }
 
@@ -110,7 +118,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ animateIn = false }) => {
           rightCardRef.current,
           { x: 140, opacity: 0, rotate: 8 },
           { x: 0, opacity: 1, rotate: 0, duration: 0.9, ease: "power4.out" },
-          0.75
+          0.75,
         );
       }
 
@@ -120,7 +128,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ animateIn = false }) => {
           listLinksRef.current,
           { y: 30, opacity: 0 },
           { y: 0, opacity: 1, duration: 0.6 },
-          1.1
+          1.1,
         );
       }
 
@@ -130,7 +138,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ animateIn = false }) => {
           descriptionRef.current,
           { y: 30, opacity: 0 },
           { y: 0, opacity: 1, duration: 0.6 },
-          1.25
+          1.25,
         );
       }
     }, containerRef);
@@ -141,15 +149,26 @@ export const Dashboard: React.FC<DashboardProps> = ({ animateIn = false }) => {
   //_______________________________________________________________________________________
   // Devfolio useEffect
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://apply.devfolio.co/v2/sdk.js';
-    script.async = true;
-    script.defer = true;
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
+    if (!animateIn) return; // ← IMPORTANT
+
+    const existing = document.querySelector(
+      'script[src="https://apply.devfolio.co/v2/sdk.js"]',
+    );
+
+    if (existing) {
+      existing.remove();
     }
-  }, []);
+
+    const script = document.createElement("script");
+    script.src = "https://apply.devfolio.co/v2/sdk.js";
+    script.async = true;
+
+    document.body.appendChild(script);
+
+    return () => {
+      script.remove();
+    };
+  }, [animateIn]);
   //_______________________________________________________________________________________
 
   // CTA buttons use Framer Motion — key prop forces re-mount when animateIn fires,
@@ -170,7 +189,10 @@ export const Dashboard: React.FC<DashboardProps> = ({ animateIn = false }) => {
 
       <section className="h-full w-full relative">
         {/* Left Event Card */}
-        <div ref={leftCardRef} className="absolute hidden xl:block left-15 top-60 cursor-pointer">
+        <div
+          ref={leftCardRef}
+          className="absolute hidden xl:block left-15 top-60 cursor-pointer"
+        >
           <EventCard
             imageUrl={syncS1}
             title="Synchronicity S1"
@@ -197,14 +219,21 @@ export const Dashboard: React.FC<DashboardProps> = ({ animateIn = false }) => {
             </span>
           </span>
           <span style={{ display: "block" }}>
-            <span ref={titleLine2Ref} style={{ display: "inline-block" }} className="text-blue-600">
+            <span
+              ref={titleLine2Ref}
+              style={{ display: "inline-block" }}
+              className="text-blue-600"
+            >
               Season 2
             </span>
           </span>
         </p>
 
         {/* ListOfLinks */}
-        <div ref={listLinksRef} style={{ position: "absolute", width: "100%", zIndex: 50 }}>
+        <div
+          ref={listLinksRef}
+          style={{ position: "absolute", width: "100%", zIndex: 50 }}
+        >
           <ListofLinks className="hidden md:flex xl:left-80 xl:top-79 lg:left-30 lg:top-79 md:left-[10vw] top-60" />
         </div>
 
@@ -217,7 +246,10 @@ export const Dashboard: React.FC<DashboardProps> = ({ animateIn = false }) => {
         />
 
         {/* Description */}
-        <div ref={descriptionRef} style={{ position: "absolute", width: "100%" }}>
+        <div
+          ref={descriptionRef}
+          style={{ position: "absolute", width: "100%" }}
+        >
           <Description className="xl:right-80 xl:top-79 lg:right-30 lg:top-79 md:right-[10vw] md:translate-x-0 md:left-auto md:top-59 left-1/2 -translate-x-1/2 top-120" />
         </div>
 
@@ -244,22 +276,30 @@ export const Dashboard: React.FC<DashboardProps> = ({ animateIn = false }) => {
           <motion.div
             variants={{
               hidden: { opacity: 0, scale: 0.92 },
-              visible: { opacity: 1, scale: 1, transition: { duration: 0.3, ease: "backOut" } },
+              visible: {
+                opacity: 1,
+                scale: 1,
+                transition: { duration: 0.3, ease: "backOut" },
+              },
             }}
             // className="cursor-pointer px-8 py-3 rounded-full xl:-translate-x-76 lg:-translate-x-28 translate-x-0 bg-[#3870FF]"
           >
             <div
               className="apply-button"
               data-hackathon-slug="synchronicity-s-2"
-              data-button-theme="light"
-              style={{ height: "28px", width: "248px" }}
+              data-button-theme="dark"
+              style={{ height: "44px", width: "312px" }}
             ></div>
           </motion.div>
 
           <motion.div
             variants={{
               hidden: { opacity: 0, scale: 0.92 },
-              visible: { opacity: 1, scale: 1, transition: { duration: 0.3, ease: "backOut" } },
+              visible: {
+                opacity: 1,
+                scale: 1,
+                transition: { duration: 0.3, ease: "backOut" },
+              },
             }}
           >
             <FunkyColorButton
@@ -268,7 +308,11 @@ export const Dashboard: React.FC<DashboardProps> = ({ animateIn = false }) => {
               color2="#00DB96"
               textColor="white"
               onClick={() =>
-                window.open("https://discord.gg/zAQB3aFw", "_blank", "noopener,noreferrer")
+                window.open(
+                  "https://discord.gg/zAQB3aFw",
+                  "_blank",
+                  "noopener,noreferrer",
+                )
               }
               className="font-unbounded font-bold w-78 px-8 py-3 xl:-translate-x-76 lg:-translate-x-28 translate-x-0"
             >
@@ -278,7 +322,10 @@ export const Dashboard: React.FC<DashboardProps> = ({ animateIn = false }) => {
         </motion.div>
 
         {/* Right Event Card */}
-        <div ref={rightCardRef} className="absolute hidden xl:block right-15 top-60 cursor-pointer">
+        <div
+          ref={rightCardRef}
+          className="absolute hidden xl:block right-15 top-60 cursor-pointer"
+        >
           <EventCard
             imageUrl={icpcMockFest}
             title="ICPC Mock Fest"
