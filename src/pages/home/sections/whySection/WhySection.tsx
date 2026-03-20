@@ -60,7 +60,6 @@ const WhySection = () => {
   return (
     <div className="why-section-class w-full min-h-screen bg-no-repeat bg-center bg-cover overflow-x-hidden flex pb-20 md:pt-100 pt-70">
       <section className="w-full min-h-screen flex flex-col items-center justify-center pt-[0vh] md:pt-[16vh] max-md:min-h-fit max-md:justify-start">
-
         {/* Title */}
         <motion.p
           className="whyTitle max-w-[1100px] font-montserrat font-black leading-[1.2] text-center text-[rgba(16,160,204,1)] mt-[clamp(-120px,-12vh,-60px)] max-h-[850px]:mt-[3vh] max-md:mt-0 max-md:px-4 max-md:leading-[1.1]"
@@ -70,7 +69,7 @@ const WhySection = () => {
           transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
         >
           <span className="text-white">Why you can't miss </span>
-          <span className="text-blue-600">Synchronicity 2.O!</span>
+          <span className="text-blue-600">Synchronicity S2!</span>
         </motion.p>
 
         {/* Robot */}
@@ -111,9 +110,14 @@ const WhySection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.65, delay: 0.2, ease: "easeOut" }}
         >
-          Synchronicity 2.0 is where ambition meets opportunity. Compete for massive cash prizes,cool goodies and some Swag Se Swagat. Most importantly, unlock unparalleled networking by connecting directly with renowned industry experts, gain one-on-one insights on the happening trends of tech and showcase your talent. This is your chance to go all out, challenge the boundaries and show them what sets you apart!!
+          Synchronicity S2 is where ambition meets opportunity. Compete for
+          massive cash prizes,cool goodies and some Swag Se Swagat. Most
+          importantly, unlock unparalleled networking by connecting directly
+          with renowned industry experts, gain one-on-one insights on the
+          happening trends of tech and showcase your talent. This is your chance
+          to go all out, challenge the boundaries and show them what sets you
+          apart!!
         </motion.p>
-
       </section>
     </div>
   );

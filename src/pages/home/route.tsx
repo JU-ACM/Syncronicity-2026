@@ -115,7 +115,7 @@ export const HomeRoute = () => {
         <FAQ />
         <div className="absolute lg:translate-y-15 md:translate-y-15 translate-y-10 lg:rotate-4 md:rotate-4 rotate-9 bottom-0 z-800 w-full">
           <Marquee1
-            texts={["Thanks For Visiting", "See You at Synchronicity 2.0"]}
+            texts={["Thanks For Visiting", "See You at Synchronicity S2"]}
             Icon={LogoIconMono}
             iconSize={marqueeIconSize}
             iconColor="white"
@@ -125,7 +125,7 @@ export const HomeRoute = () => {
         </div>
         <div className="absolute translate-y-9 lg:-rotate-2 md:-rotate-2 -rotate-4 bottom-0 z-19 flex justify-end w-full">
           <Marquee2
-            texts={["Synchronicity 2.0"]}
+            texts={["Synchronicity S2"]}
             Icon={LogoIconMono}
             iconSize={marqueeIconSize}
             iconColor="white"
