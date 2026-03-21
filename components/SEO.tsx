@@ -12,7 +12,7 @@ export interface SEOProps {
 }
 
 const SITE_URL = "https://synchronicity.ju-acm.com";
-const DEFAULT_OG_IMAGE = "/images/og/default.png";
+const DEFAULT_OG_IMAGE = "/images/og/default.jpg";
 
 const SEO: React.FC<SEOProps> = ({
   title,
