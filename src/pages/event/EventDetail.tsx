@@ -1,16 +1,40 @@
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import herobg from '../../assets/dashboard/hero-bg.webp';
+import SEO from '../../../components/SEO';
+import StructuredData from '../../../components/StructuredData';
 
 const EventDetail: React.FC = () => {
     const { id } = useParams<{ id: string }>();
     const navigate = useNavigate();
+
+    const eventNames: Record<string, string> = {
+        'cybersecurity': 'Cybersecurity',
+        'web-development': 'Web Development',
+        'ai-ml': 'AI / ML',
+        'web3': 'Web3',
+    };
+
+    const eventName = eventNames[id || ''] || id || 'Event';
 
     return (
         <div
             className="min-h-screen w-full flex flex-col items-center justify-center relative bg-no-repeat bg-center bg-cover"
             style={{ backgroundImage: `url(${herobg})` }}
         >
+            <SEO
+                title={`${eventName} Track`}
+                description={`${eventName} track at Synchronicity 2026 hackathon. Explore challenges and build innovative solutions.`}
+                canonicalPath={`/event/${id}`}
+                ogImage="/images/og/event.png"
+            />
+            <StructuredData
+                breadcrumbs={[
+                    { name: 'Home', url: '/home' },
+                    { name: 'Events', url: '/event' },
+                    { name: eventName, url: `/event/${id}` },
+                ]}
+            />
             {/* Noise grain */}
             <div
                 className="absolute inset-0 pointer-events-none"

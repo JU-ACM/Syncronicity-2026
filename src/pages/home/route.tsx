@@ -19,6 +19,9 @@ import LogoIconMono from "../../../components/icons/LogoIconMono";
 import Transition from "../../../components/Transition";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import SEO from "../../../components/SEO";
+import StructuredData, { synchronicityEvent } from "../../../components/StructuredData";
+import { FAQ_DATA } from "./sections/faq/FAQ";
 
 export const HomeRoute = () => {
   const lenis = useLenis();
@@ -68,6 +71,16 @@ export const HomeRoute = () => {
 
   return (
     <div className="w-full min-h-screen bg-[#B2D9E7] overflow-hidden">
+      <SEO
+        title="Home"
+        description="Synchronicity 2026 - A 24-hour hackathon organized by JU ACM. Build innovative solutions across Web Development, Web3, and AI/ML tracks."
+        canonicalPath="/home"
+        ogImage="/images/og/home.png"
+      />
+      <StructuredData
+        event={synchronicityEvent}
+        faq={{ questions: FAQ_DATA }}
+      />
       {/*
         Transition receives:
           isReady      → only start once the page has painted

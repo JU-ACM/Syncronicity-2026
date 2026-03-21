@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://synchronicity-2026.com/sitemap.xml

@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "motion/react";
 import { useNavigate } from "react-router-dom";
 import type { Easing } from "motion/react";
+import SEO from "../../../components/SEO";
 
 const EASE_IN_OUT: Easing = "easeInOut";
 
@@ -19,6 +20,11 @@ const NotFound: React.FC = () => {
 
     return (
         <div className="relative w-full min-h-screen bg-gradient-to-b from-[#B2D9E7] via-[#CAE7F1] to-[#9ECCDC] flex flex-col items-center justify-center overflow-hidden px-6">
+            <SEO
+                title="Page Not Found"
+                description="The page you're looking for doesn't exist. Return to Synchronicity 2026 home page."
+                noindex={true}
+            />
             {/* Decorative blurred orbs */}
             <motion.div
                 className="absolute top-[10%] left-[10%] w-72 h-72 rounded-full bg-[#155DFC]/10 blur-3xl"

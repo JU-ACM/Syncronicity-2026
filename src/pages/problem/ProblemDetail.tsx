@@ -16,6 +16,8 @@ import {
   Rocket,
 } from "lucide-react";
 import FunkyColorButton from "../../../components/FunkyColorButton";
+import SEO from "../../../components/SEO";
+import StructuredData from "../../../components/StructuredData";
 
 // ─── Animation Variants ────────────────────────────────────────────────────────
 
@@ -118,6 +120,20 @@ const ProblemDetail: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#F4FAFB] pb-24 overflow-x-hidden">
+      <SEO
+        title={problem.title}
+        description={problem.description.slice(0, 160)}
+        canonicalPath={`/problem/${category}/${id}`}
+        ogImage="/images/og/problem.png"
+      />
+      <StructuredData
+        breadcrumbs={[
+          { name: 'Home', url: '/home' },
+          { name: 'Problems', url: '/home#problems' },
+          { name: event, url: `/problem/${category}` },
+          { name: problem.title.slice(0, 30), url: `/problem/${category}/${id}` },
+        ]}
+      />
       {/* ── Sticky Back Navigation ── */}
       <motion.div
         className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100"

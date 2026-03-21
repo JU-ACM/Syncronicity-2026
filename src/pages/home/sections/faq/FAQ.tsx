@@ -8,7 +8,7 @@ import { useLenis } from 'lenis/react'
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1]
 
-const FAQ_DATA = [
+export const FAQ_DATA = [
     {
         question: "When should I arrive at the venue?",
         answer: "Participants should arrive at least 30–60 minutes before the opening ceremony to complete check-in, collect badges, and settle down before the event kickoff."
