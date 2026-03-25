@@ -274,6 +274,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ animateIn = false }) => {
           }}
         >
           <motion.div
+            className="xl:-translate-x-76 lg:-translate-x-28 translate-x-0"
             variants={{
               hidden: { opacity: 0, scale: 0.92 },
               visible: {
@@ -282,7 +283,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ animateIn = false }) => {
                 transition: { duration: 0.3, ease: "backOut" },
               },
             }}
-            // className="cursor-pointer px-8 py-3 rounded-full xl:-translate-x-76 lg:-translate-x-28 translate-x-0 bg-[#3870FF]"
+          // className="cursor-pointer px-8 py-3 rounded-full xl:-translate-x-76 lg:-translate-x-28 translate-x-0 bg-[#3870FF]"
           >
             <div
               className="apply-button"
