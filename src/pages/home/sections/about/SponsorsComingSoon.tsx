@@ -1,174 +1,178 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-import type { Variants } from 'framer-motion'
+import React from "react";
+import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 
-const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1]
+const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
 const fadeUp: Variants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: (i: number = 0) => ({
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.6, ease: EASE, delay: i * 0.1 },
-    }),
-}
+  hidden: { opacity: 0, y: 20 },
+  visible: (i: number = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: EASE, delay: i * 0.1 },
+  }),
+};
 
 const SponsorsComingSoon: React.FC = () => {
-    return (
-        <div className="sponsors-coming-soon-class py-20 relative w-full min-h-[100vh] bg-[#131313] flex flex-col items-center justify-center overflow-hidden">
+  return (
+    <div className="sponsors-coming-soon-class py-20 relative w-full min-h-[100vh] bg-[#131313] flex flex-col items-center justify-center overflow-hidden">
+      {/* Ambient glow — breathes in/out */}
+      <motion.div
+        className="absolute w-[600px] h-[600px] rounded-full pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(16,160,204,0.12) 0%, transparent 70%)",
+          filter: "blur(100px)",
+        }}
+        animate={{ scale: [1, 1.15, 1], opacity: [0.7, 1, 0.7] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+      />
 
-            {/* Ambient glow — breathes in/out */}
-            <motion.div
-                className="absolute w-[600px] h-[600px] rounded-full pointer-events-none"
-                style={{
-                    background: 'radial-gradient(circle, rgba(16,160,204,0.12) 0%, transparent 70%)',
-                    filter: 'blur(100px)',
-                }}
-                animate={{ scale: [1, 1.15, 1], opacity: [0.7, 1, 0.7] }}
-                transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+      {/* Subtle grid pattern */}
+      <div
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)",
+          backgroundSize: "60px 60px",
+        }}
+      />
+
+      <div className="relative z-10 flex flex-col items-center gap-6 px-4 w-full max-w-4xl">
+        {/* "Our Partners" label */}
+        <motion.p
+          className="text-xs uppercase tracking-[0.4em] text-white/40 font-euclid font-light"
+          variants={fadeUp}
+          custom={0}
+          initial="hidden"
+          animate="visible"
+        >
+          Our Partners
+        </motion.p>
+
+        {/* SPONSORS heading */}
+        <motion.p
+          className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-unbounded font-bold text-center"
+          style={{
+            background:
+              "linear-gradient(135deg, #70D2FF 0%, #10A0CC 40%, #0d8ab0 70%, #70D2FF 100%)",
+            backgroundSize: "200% 200%",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            animation: "shimmer 4s ease-in-out infinite",
+          }}
+          variants={fadeUp}
+          custom={1}
+          initial="hidden"
+          animate="visible"
+        >
+          Sponsors
+        </motion.p>
+
+        {/* Gold Sponsor */}
+        <motion.div
+          className="flex flex-col items-center gap-4 w-full mt-4"
+          variants={fadeUp}
+          custom={2}
+          initial="hidden"
+          animate="visible"
+        >
+          <div className="flex items-center gap-3">
+            <div className="h-px w-10 bg-gradient-to-r from-transparent to-[#FFD700]/60" />
+            <span
+              className="text-xs uppercase tracking-[0.3em] font-euclid font-semibold"
+              style={{ color: "#FFD700" }}
+            >
+              Gold Sponsor
+            </span>
+            <div className="h-px w-10 bg-gradient-to-l from-transparent to-[#FFD700]/60" />
+          </div>
+          <div className="flex items-center justify-center rounded-2xl border border-[#FFD700]/20 bg-white/5 backdrop-blur-sm px-12 py-8 shadow-[0_0_40px_rgba(255,215,0,0.07)]">
+            <img
+              src="/Devfolio_Logo-White.png"
+              alt="Devfolio"
+              className="w-44 md:w-56 lg:w-72 object-contain"
             />
+          </div>
+        </motion.div>
 
-            {/* Subtle grid pattern */}
-            <div
-                className="absolute inset-0 opacity-[0.03]"
-                style={{
-                    backgroundImage:
-                        'linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)',
-                    backgroundSize: '60px 60px',
-                }}
+        {/* Divider */}
+        <motion.div
+          className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mt-2"
+          variants={fadeUp}
+          custom={3}
+          initial="hidden"
+          animate="visible"
+        />
+
+        {/* In-Kind Sponsor */}
+        <motion.div
+          className="flex flex-col items-center gap-4 w-full"
+          variants={fadeUp}
+          custom={4}
+          initial="hidden"
+          animate="visible"
+        >
+          <div className="flex items-center gap-3">
+            <div className="h-px w-10 bg-gradient-to-r from-transparent to-[#10A0CC]/60" />
+            <span className="text-xs uppercase tracking-[0.3em] font-euclid font-semibold text-[#10A0CC]">
+              In-Kind Sponsor
+            </span>
+            <div className="h-px w-10 bg-gradient-to-l from-transparent to-[#10A0CC]/60" />
+          </div>
+          <div className="flex items-center justify-center rounded-2xl border border-[#10A0CC]/20 bg-white/5 backdrop-blur-sm px-12 py-8 shadow-[0_0_40px_rgba(16,160,204,0.07)]">
+            <img
+              src="/Mastra_Logo_ver1[white].png"
+              alt="Mastra"
+              className="w-36 md:w-44 lg:w-56 object-contain scale-150"
             />
+          </div>
+        </motion.div>
 
-            <div className="relative z-10 flex flex-col items-center gap-6 px-4 w-full max-w-4xl">
+        {/* Subtext */}
+        <motion.p
+          className="text-white/30 text-sm font-euclid text-center max-w-md mt-4"
+          variants={fadeUp}
+          custom={5}
+          initial="hidden"
+          animate="visible"
+        >
+          We're partnering with industry leaders to make this event
+          unforgettable. Stay tuned!
+        </motion.p>
 
-                {/* "Our Partners" label */}
-                <motion.p
-                    className="text-xs uppercase tracking-[0.4em] text-white/40 font-euclid font-light"
-                    variants={fadeUp}
-                    custom={0}
-                    initial="hidden"
-                    animate="visible"
-                >
-                    Our Partners
-                </motion.p>
+        {/* Animated dots */}
+        <motion.div
+          className="flex gap-2"
+          variants={fadeUp}
+          custom={6}
+          initial="hidden"
+          animate="visible"
+        >
+          {[0, 1, 2].map((i) => (
+            <motion.span
+              key={i}
+              className="w-1.5 h-1.5 rounded-full bg-[#10A0CC]/60"
+              animate={{ opacity: [0.3, 1, 0.3], scale: [0.8, 1.2, 0.8] }}
+              transition={{
+                duration: 1.4,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: i * 0.2,
+              }}
+            />
+          ))}
+        </motion.div>
+      </div>
 
-                {/* SPONSORS heading */}
-                <motion.p
-                    className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-unbounded font-bold text-center"
-                    style={{
-                        background: 'linear-gradient(135deg, #70D2FF 0%, #10A0CC 40%, #0d8ab0 70%, #70D2FF 100%)',
-                        backgroundSize: '200% 200%',
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent',
-                        animation: 'shimmer 4s ease-in-out infinite',
-                    }}
-                    variants={fadeUp}
-                    custom={1}
-                    initial="hidden"
-                    animate="visible"
-                >
-                    Sponsors
-                </motion.p>
-
-                {/* Gold Sponsor */}
-                <motion.div
-                    className="flex flex-col items-center gap-4 w-full mt-4"
-                    variants={fadeUp}
-                    custom={2}
-                    initial="hidden"
-                    animate="visible"
-                >
-                    <div className="flex items-center gap-3">
-                        <div className="h-px w-10 bg-gradient-to-r from-transparent to-[#FFD700]/60" />
-                        <span className="text-xs uppercase tracking-[0.3em] font-euclid font-semibold" style={{ color: '#FFD700' }}>
-                            Gold Sponsor
-                        </span>
-                        <div className="h-px w-10 bg-gradient-to-l from-transparent to-[#FFD700]/60" />
-                    </div>
-                    <div className="flex items-center justify-center rounded-2xl border border-[#FFD700]/20 bg-white/5 backdrop-blur-sm px-12 py-8 shadow-[0_0_40px_rgba(255,215,0,0.07)]">
-                        <img
-                            src="/Devfolio_Logo-White.png"
-                            alt="Devfolio"
-                            className="w-44 md:w-56 lg:w-72 object-contain"
-                        />
-                    </div>
-                </motion.div>
-
-                {/* Divider */}
-                <motion.div
-                    className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mt-2"
-                    variants={fadeUp}
-                    custom={3}
-                    initial="hidden"
-                    animate="visible"
-                />
-
-                {/* In-Kind Sponsor */}
-                <motion.div
-                    className="flex flex-col items-center gap-4 w-full"
-                    variants={fadeUp}
-                    custom={4}
-                    initial="hidden"
-                    animate="visible"
-                >
-                    <div className="flex items-center gap-3">
-                        <div className="h-px w-10 bg-gradient-to-r from-transparent to-[#10A0CC]/60" />
-                        <span className="text-xs uppercase tracking-[0.3em] font-euclid font-semibold text-[#10A0CC]">
-                            In-Kind Sponsor
-                        </span>
-                        <div className="h-px w-10 bg-gradient-to-l from-transparent to-[#10A0CC]/60" />
-                    </div>
-                    <div className="flex items-center justify-center rounded-2xl border border-[#10A0CC]/20 bg-white/5 backdrop-blur-sm px-12 py-8 shadow-[0_0_40px_rgba(16,160,204,0.07)]">
-                        <img
-                            src="/Mastra_Logo_ver1[white].png"
-                            alt="Mastra"
-                            className="w-36 md:w-44 lg:w-56 object-contain"
-                        />
-                    </div>
-                </motion.div>
-
-                {/* Subtext */}
-                <motion.p
-                    className="text-white/30 text-sm font-euclid text-center max-w-md mt-4"
-                    variants={fadeUp}
-                    custom={5}
-                    initial="hidden"
-                    animate="visible"
-                >
-                    We're partnering with industry leaders to make this event unforgettable. Stay tuned!
-                </motion.p>
-
-                {/* Animated dots */}
-                <motion.div
-                    className="flex gap-2"
-                    variants={fadeUp}
-                    custom={6}
-                    initial="hidden"
-                    animate="visible"
-                >
-                    {[0, 1, 2].map((i) => (
-                        <motion.span
-                            key={i}
-                            className="w-1.5 h-1.5 rounded-full bg-[#10A0CC]/60"
-                            animate={{ opacity: [0.3, 1, 0.3], scale: [0.8, 1.2, 0.8] }}
-                            transition={{
-                                duration: 1.4,
-                                repeat: Infinity,
-                                ease: 'easeInOut',
-                                delay: i * 0.2,
-                            }}
-                        />
-                    ))}
-                </motion.div>
-            </div>
-
-            <style>{`
+      <style>{`
                 @keyframes shimmer {
                     0%, 100% { background-position: 0% 50%; }
                     50% { background-position: 100% 50%; }
                 }
             `}</style>
-        </div>
-    )
-}
+    </div>
+  );
+};
 
-export default SponsorsComingSoon
+export default SponsorsComingSoon;
