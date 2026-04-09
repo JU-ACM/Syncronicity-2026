@@ -13,6 +13,7 @@ import { EventCard } from "./EventCard";
 import Navbar from "../../../../../components/Navbar";
 import FunkyColorButton from "../../../../../components/FunkyColorButton";
 import DiscordIcon from "../../../../../components/icons/DiscordIcon";
+import DevfolioIcon from "../../../../../components/icons/DevfolioIcon";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -274,7 +275,6 @@ export const Dashboard: React.FC<DashboardProps> = ({ animateIn = false }) => {
           }}
         >
           <motion.div
-            className="xl:-translate-x-76 lg:-translate-x-28 translate-x-0"
             variants={{
               hidden: { opacity: 0, scale: 0.92 },
               visible: {
@@ -283,14 +283,23 @@ export const Dashboard: React.FC<DashboardProps> = ({ animateIn = false }) => {
                 transition: { duration: 0.3, ease: "backOut" },
               },
             }}
-          // className="cursor-pointer px-8 py-3 rounded-full xl:-translate-x-76 lg:-translate-x-28 translate-x-0 bg-[#3870FF]"
           >
-            <div
-              className="apply-button"
-              data-hackathon-slug="synchronicity-s-2"
-              data-button-theme="dark"
-              style={{ height: "44px", width: "312px" }}
-            ></div>
+            <FunkyColorButton
+              icon={<DevfolioIcon size={28} color="white" />}
+              color1="#3770FF"
+              color2="#00C9FF"
+              textColor="white"
+              onClick={() =>
+                window.open(
+                  "https://synchronicity-s-2.devfolio.co/",
+                  "_blank",
+                  "noopener,noreferrer",
+                )
+              }
+              className="font-unbounded font-bold w-78 px-8 py-3 xl:-translate-x-76 lg:-translate-x-28 translate-x-0"
+            >
+              Apply on Devfolio
+            </FunkyColorButton>
           </motion.div>
 
           <motion.div

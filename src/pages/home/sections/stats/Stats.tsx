@@ -6,7 +6,7 @@ import DecryptedText from "./components/DecryptedText";
 const statsData = [
   {
     id: 1,
-    value: 1660,
+    value: 25000,
     suffix: "+",
     desc: "Impressions",
     accentColor: "text-[#5A70FF]",
@@ -43,7 +43,7 @@ const cardVariants: Variants = {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { type: "spring", bounce: 0.4, duration: 0.8 }
+    transition: { type: "spring", bounce: 0.4, duration: 0.8 },
   },
 };
 
@@ -51,9 +51,7 @@ export default function Stats() {
   return (
     // Reduced minimum height and padding on mobile for the ~60vh constraint
     <section className="stats-class relative w-full min-h-[60vh] md:min-h-[70vh] flex flex-col justify-center items-center py-10 md:py-20 px-4 md:px-12 bg-transparent overflow-hidden">
-
       <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col gap-8 md:gap-16">
-
         {/* Section Header */}
         <motion.p
           className="font-bounded text-3xl md:text-5xl lg:text-7xl text-center font-bold text-white tracking-tight"
@@ -81,25 +79,28 @@ export default function Stats() {
                 key={stat.id}
                 variants={cardVariants}
                 className={`relative flex flex-col justify-center items-center w-full bg-[#F2F7FA] h-full
-                  ${isMainCard
-                    // Main card: spans 2 columns on mobile, 2 rows/cols on desktop
-                    ? "col-span-2 lg:col-span-2 lg:row-span-2 h-[160px] md:h-[300px] lg:h-[480px] p-6 md:p-12 rounded-[1.5rem] md:rounded-[2rem]"
-                    // Small cards: 1 column each on mobile, side-by-side
-                    : "col-span-1 lg:col-span-1 lg:row-span-1 h-[140px] md:h-[224px] p-4 md:p-8 rounded-2xl md:rounded-[2rem]"
+                  ${
+                    isMainCard
+                      ? // Main card: spans 2 columns on mobile, 2 rows/cols on desktop
+                        "col-span-2 lg:col-span-2 lg:row-span-2 h-[160px] md:h-[300px] lg:h-[480px] p-6 md:p-12 rounded-[1.5rem] md:rounded-[2rem]"
+                      : // Small cards: 1 column each on mobile, side-by-side
+                        "col-span-1 lg:col-span-1 lg:row-span-1 h-[140px] md:h-[224px] p-4 md:p-8 rounded-2xl md:rounded-[2rem]"
                   }
                 `}
               >
                 <div className="relative z-10 flex flex-col items-center text-center gap-1 md:gap-4">
                   {/* Scaled down text for mobile, retaining original sizes for md/lg */}
-                  <h3 className={`font-bounded font-black tracking-tighter leading-none ${stat.accentColor} 
+                  <h3
+                    className={`font-bounded font-black tracking-tighter leading-none ${stat.accentColor} 
                     ${isMainCard ? "text-5xl md:text-8xl lg:text-9xl" : "text-3xl md:text-6xl lg:text-7xl"}
-                  `}>
+                  `}
+                  >
                     <CountUp
                       from={0}
                       to={stat.value}
                       separator=","
                       direction="up"
-                      duration={1.5}
+                      duration={1.0}
                     />
                     {stat.suffix}
                   </h3>

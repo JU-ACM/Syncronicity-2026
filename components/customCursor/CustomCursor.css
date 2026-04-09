@@ -1,4 +1,4 @@
-/* 1. Disable ALL default browser cursors globally (including pointer and grab) */
+/* 1. Disable ALL default browser cursors globally */
 * {
   cursor: none !important;
 }
@@ -10,15 +10,26 @@
   left: 0;
   z-index: 999999;
   pointer-events: none;
+  will-change: transform;
 }
 
-/* 3. Disable custom cursor on touch devices (mobile/tablets) */
+/* 3. Icon visibility — controlled via data-mode, no React re-renders */
+.cursor-icon {
+  display: none;
+}
+
+.custom-cursor[data-mode="default"] .cursor-icon--default,
+.custom-cursor[data-mode="hover"]   .cursor-icon--hover,
+.custom-cursor[data-mode="grab"]    .cursor-icon--grab {
+  display: block;
+}
+
+/* 4. Disable custom cursor on touch devices */
 @media (hover: none) and (pointer: coarse) {
   .custom-cursor {
     display: none;
   }
-  
-  /* Restore default touch behavior just in case */
+
   * {
     cursor: auto !important;
   }

@@ -38,7 +38,7 @@ const SponsorsComingSoon: React.FC = () => {
                 }}
             />
 
-            <div className="relative z-10 flex flex-col items-center gap-6 px-4">
+            <div className="relative z-10 flex flex-col items-center gap-6 px-4 w-full max-w-4xl">
 
                 {/* "Our Partners" label */}
                 <motion.p
@@ -68,48 +68,69 @@ const SponsorsComingSoon: React.FC = () => {
                 >
                     Sponsors
                 </motion.p>
-								<img									
-									src="/Devfolio_Logo-White.png"
-									alt="DEVFOLIO LOGO"
-									className="w-48 md:w-64 lg:w-80"
-								/>
-                {/* Coming Soon row */}
+
+                {/* Gold Sponsor */}
                 <motion.div
-                    className="flex items-center gap-4 mt-2"
+                    className="flex flex-col items-center gap-4 w-full mt-4"
                     variants={fadeUp}
                     custom={2}
                     initial="hidden"
                     animate="visible"
                 >
-                    <motion.div
-                        className="h-px w-12 bg-gradient-to-r from-transparent to-[#10A0CC]/50"
-                        initial={{ scaleX: 0, originX: 1 }}
-                        animate={{ scaleX: 1 }}
-                        transition={{ duration: 0.7, delay: 0.4, ease: EASE }}
-                    />
-                    <span
-                        className="text-sm md:text-base font-euclid font-medium tracking-[0.2em] uppercase"
-                        style={{
-                            background: 'linear-gradient(90deg, #ffffff 0%, #10A0CC 100%)',
-                            WebkitBackgroundClip: 'text',
-                            WebkitTextFillColor: 'transparent',
-                        }}
-                    >
-                        Coming Soon
-                    </span>
-                    <motion.div
-                        className="h-px w-12 bg-gradient-to-l from-transparent to-[#10A0CC]/50"
-                        initial={{ scaleX: 0, originX: 0 }}
-                        animate={{ scaleX: 1 }}
-                        transition={{ duration: 0.7, delay: 0.4, ease: EASE }}
-                    />
+                    <div className="flex items-center gap-3">
+                        <div className="h-px w-10 bg-gradient-to-r from-transparent to-[#FFD700]/60" />
+                        <span className="text-xs uppercase tracking-[0.3em] font-euclid font-semibold" style={{ color: '#FFD700' }}>
+                            Gold Sponsor
+                        </span>
+                        <div className="h-px w-10 bg-gradient-to-l from-transparent to-[#FFD700]/60" />
+                    </div>
+                    <div className="flex items-center justify-center rounded-2xl border border-[#FFD700]/20 bg-white/5 backdrop-blur-sm px-12 py-8 shadow-[0_0_40px_rgba(255,215,0,0.07)]">
+                        <img
+                            src="/Devfolio_Logo-White.png"
+                            alt="Devfolio"
+                            className="w-44 md:w-56 lg:w-72 object-contain"
+                        />
+                    </div>
+                </motion.div>
+
+                {/* Divider */}
+                <motion.div
+                    className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mt-2"
+                    variants={fadeUp}
+                    custom={3}
+                    initial="hidden"
+                    animate="visible"
+                />
+
+                {/* In-Kind Sponsor */}
+                <motion.div
+                    className="flex flex-col items-center gap-4 w-full"
+                    variants={fadeUp}
+                    custom={4}
+                    initial="hidden"
+                    animate="visible"
+                >
+                    <div className="flex items-center gap-3">
+                        <div className="h-px w-10 bg-gradient-to-r from-transparent to-[#10A0CC]/60" />
+                        <span className="text-xs uppercase tracking-[0.3em] font-euclid font-semibold text-[#10A0CC]">
+                            In-Kind Sponsor
+                        </span>
+                        <div className="h-px w-10 bg-gradient-to-l from-transparent to-[#10A0CC]/60" />
+                    </div>
+                    <div className="flex items-center justify-center rounded-2xl border border-[#10A0CC]/20 bg-white/5 backdrop-blur-sm px-12 py-8 shadow-[0_0_40px_rgba(16,160,204,0.07)]">
+                        <img
+                            src="/Mastra_Logo_ver1[white].png"
+                            alt="Mastra"
+                            className="w-36 md:w-44 lg:w-56 object-contain"
+                        />
+                    </div>
                 </motion.div>
 
                 {/* Subtext */}
                 <motion.p
-                    className="text-white/30 text-sm font-euclid text-center max-w-md mt-2"
+                    className="text-white/30 text-sm font-euclid text-center max-w-md mt-4"
                     variants={fadeUp}
-                    custom={3}
+                    custom={5}
                     initial="hidden"
                     animate="visible"
                 >
@@ -118,9 +139,9 @@ const SponsorsComingSoon: React.FC = () => {
 
                 {/* Animated dots */}
                 <motion.div
-                    className="flex gap-2 mt-1"
+                    className="flex gap-2"
                     variants={fadeUp}
-                    custom={4}
+                    custom={6}
                     initial="hidden"
                     animate="visible"
                 >
