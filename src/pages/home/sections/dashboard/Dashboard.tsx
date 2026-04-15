@@ -319,7 +319,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ animateIn = false }) => {
               textColor="white"
               onClick={() =>
                 window.open(
-                  "https://discord.gg/zAQB3aFw",
+                  "https://discord.gg/rqZm9Hb5tv",
                   "_blank",
                   "noopener,noreferrer",
                 )
