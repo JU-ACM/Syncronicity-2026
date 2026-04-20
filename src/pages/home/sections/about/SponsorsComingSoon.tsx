@@ -124,18 +124,18 @@ const SponsorsComingSoon: React.FC = () => {
             <div className="h-px w-10 bg-gradient-to-l from-transparent to-[#FFD700]/60" />
           </div>
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <div className="flex items-center justify-center rounded-2xl border border-[#FFD700]/20 bg-white/5 backdrop-blur-sm px-12 py-8 shadow-[0_0_40px_rgba(255,215,0,0.07)]">
+            <div className="flex items-center justify-center rounded-2xl border border-[#FFD700]/20 bg-white/5 backdrop-blur-sm px-10 shadow-[0_0_40px_rgba(255,215,0,0.07)] w-56 md:w-64 lg:w-72 h-24 md:h-28">
               <img
                 src="/Devfolio_Logo-White.png"
                 alt="Devfolio"
-                className="w-36 md:w-44 lg:w-56 object-contain"
+                className="max-w-full max-h-full object-contain"
               />
             </div>
-            <div className="flex items-center justify-center rounded-2xl border border-[#FFD700]/20 bg-white/5 backdrop-blur-sm px-12 py-8 shadow-[0_0_40px_rgba(255,215,0,0.07)]">
+            <div className="flex items-center justify-center rounded-2xl border border-[#FFD700]/20 bg-white/5 backdrop-blur-sm px-10 shadow-[0_0_40px_rgba(255,215,0,0.07)] w-56 md:w-64 lg:w-72 h-24 md:h-28">
               <img
                 src="/RiseIn_Logo.webp"
                 alt="Rise In"
-                className="w-36 md:w-44 lg:w-56 object-contain"
+                className="max-w-full max-h-full object-contain"
               />
             </div>
           </div>
