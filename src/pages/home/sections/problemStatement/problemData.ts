@@ -30,34 +30,34 @@ export interface EventSection {
 }
 
 export const Data: EventSection[] = [
-  {
-    event: "Open Innovation",
-    categorySlug: "open-innovation",
-    problems: [
-      {
-        id: 0,
-        slug: "open-innovation-track",
-        title: "Open Innovation Track",
-        description:
-          "The Open Innovation Track at Synchronicity S2 empowers participants to solve real-world challenges faced by students through innovative, scalable web solutions. It encourages creative thinking, problem-solving, and the development of impactful digital products that enhance campus life.",
-        goal: "Enable participants to design and build transformative solutions that address real-world problems using modern web technologies, data-driven approaches, and collaborative innovation.",
-        tags: [
-          "Innovation",
-          "Web Development",
-          "Problem Solving",
-          "Scalable Systems",
-        ],
-        objectives: [
-          "Encourage creative and out-of-the-box thinking",
-          "Build impactful and scalable web solutions",
-          "Solve real-world student and campus problems",
-          "Leverage modern technologies and frameworks",
-          "Promote collaboration and teamwork",
-          "Deliver a functional and user-centric product",
-        ],
-      },
-    ],
-  },
+  // {
+  //   event: "Open Innovation",
+  //   categorySlug: "open-innovation",
+  //   problems: [
+  //     {
+  //       id: 0,
+  //       slug: "open-innovation-track",
+  //       title: "Open Innovation Track",
+  //       description:
+  //         "The Open Innovation Track at Synchronicity S2 empowers participants to solve real-world challenges faced by students through innovative, scalable web solutions. It encourages creative thinking, problem-solving, and the development of impactful digital products that enhance campus life.",
+  //       goal: "Enable participants to design and build transformative solutions that address real-world problems using modern web technologies, data-driven approaches, and collaborative innovation.",
+  //       tags: [
+  //         "Innovation",
+  //         "Web Development",
+  //         "Problem Solving",
+  //         "Scalable Systems",
+  //       ],
+  //       objectives: [
+  //         "Encourage creative and out-of-the-box thinking",
+  //         "Build impactful and scalable web solutions",
+  //         "Solve real-world student and campus problems",
+  //         "Leverage modern technologies and frameworks",
+  //         "Promote collaboration and teamwork",
+  //         "Deliver a functional and user-centric product",
+  //       ],
+  //     },
+  //   ],
+  // },
   {
     event: "Web Development",
     categorySlug: "web-development",
