@@ -31,6 +31,34 @@ export interface EventSection {
 
 export const Data: EventSection[] = [
   {
+    event: "Open Innovation",
+    categorySlug: "open-innovation",
+    problems: [
+      {
+        id: "",
+        slug: "open-innovation-track",
+        title: "Open Innovation Track",
+        description:
+          "The Open Innovation Track at Synchronicity S2 empowers participants to solve real-world challenges faced by students through innovative, scalable web solutions. It encourages creative thinking, problem-solving, and the development of impactful digital products that enhance campus life.",
+        goal: "Enable participants to design and build transformative solutions that address real-world problems using modern web technologies, data-driven approaches, and collaborative innovation.",
+        tags: [
+          "Innovation",
+          "Web Development",
+          "Problem Solving",
+          "Scalable Systems",
+        ],
+        objectives: [
+          "Encourage creative and out-of-the-box thinking",
+          "Build impactful and scalable web solutions",
+          "Solve real-world student and campus problems",
+          "Leverage modern technologies and frameworks",
+          "Promote collaboration and teamwork",
+          "Deliver a functional and user-centric product",
+        ],
+      },
+    ],
+  },
+  {
     event: "Web Development",
     categorySlug: "web-development",
     problems: [
@@ -40,8 +68,7 @@ export const Data: EventSection[] = [
         title: "Intelligent Campus Event Recommendation Engine",
         description:
           "College campuses host dozens of events, but students discover them through scattered sources like WhatsApp, posters, and social media. This leads to missed events, low attendance, poor analytics, no centralized archive, and no personalization.",
-        goal:
-          "Build a centralized, intelligent event discovery platform that matches students with relevant events while enabling clubs to manage and promote events effectively.",
+        goal: "Build a centralized, intelligent event discovery platform that matches students with relevant events while enabling clubs to manage and promote events effectively.",
         tags: [
           "Recommendation System",
           "Event Platform",
@@ -63,14 +90,8 @@ export const Data: EventSection[] = [
         title: "Collaborative Timetable & Deadline Manager",
         description:
           "Students struggle with hidden deadlines across LMS and emails, overlapping exams and submissions, lack of shared view of group workload, sudden crunch weeks, and high stress due to poor foresight.",
-        goal:
-          "Build a collaborative academic planning tool that visualizes semester workload using heatmaps and enables shared deadline tracking.",
-        tags: [
-          "Academic Planning",
-          "Calendar",
-          "Heatmap",
-          "Collaboration",
-        ],
+        goal: "Build a collaborative academic planning tool that visualizes semester workload using heatmaps and enables shared deadline tracking.",
+        tags: ["Academic Planning", "Calendar", "Heatmap", "Collaboration"],
         objectives: [
           "Crowdsourced deadline tracker",
           "Semester stress heatmap visualization",
@@ -91,8 +112,7 @@ export const Data: EventSection[] = [
         title: "Carbon Credit Management System",
         description:
           "The carbon credit ecosystem suffers from double counting, fraudulent credits, manual verification, lack of transparency, and poor lifecycle tracking.",
-        goal:
-          "Build a blockchain-based system that automates carbon credit creation, verification, tracking, trading, and retirement.",
+        goal: "Build a blockchain-based system that automates carbon credit creation, verification, tracking, trading, and retirement.",
         tags: [
           "Blockchain",
           "Smart Contracts",
@@ -113,8 +133,7 @@ export const Data: EventSection[] = [
         title: "Decentralized Identity Management (DID)",
         description:
           "Centralized identity systems cause data breaches, privacy loss, identity theft, repeated KYC processes, and lack of user ownership over personal data.",
-        goal:
-          "Build a decentralized identity system that enables self-sovereign identity, verifiable credentials, and privacy-preserving authentication.",
+        goal: "Build a decentralized identity system that enables self-sovereign identity, verifiable credentials, and privacy-preserving authentication.",
         tags: [
           "Decentralized Identity",
           "SSI",
@@ -141,8 +160,7 @@ export const Data: EventSection[] = [
         title: "Intelligent Data Preprocessing Agent",
         description:
           "Raw datasets often contain mixed data types, missing values, inconsistent formatting, unscaled features, and noisy entries. Data scientists spend most of their time cleaning data instead of building models.",
-        goal:
-          "Build an AI-powered preprocessing agent that profiles, cleans, transforms, and outputs a model-ready dataset with explainability.",
+        goal: "Build an AI-powered preprocessing agent that profiles, cleans, transforms, and outputs a model-ready dataset with explainability.",
         tags: [
           "Machine Learning",
           "Data Cleaning",
@@ -163,8 +181,7 @@ export const Data: EventSection[] = [
         title: "Multimodal Semantic Retrieval System",
         description:
           "Legacy search systems support only text and ignore semantic meaning. They cannot process images, audio, video, or hyperlinks and lack hybrid retrieval strategies.",
-        goal:
-          "Build a multimodal semantic search engine capable of understanding meaning across multiple input formats.",
+        goal: "Build a multimodal semantic search engine capable of understanding meaning across multiple input formats.",
         tags: [
           "Multimodal AI",
           "Semantic Search",

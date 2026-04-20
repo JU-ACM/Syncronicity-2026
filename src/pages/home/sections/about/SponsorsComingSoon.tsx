@@ -69,7 +69,7 @@ const SponsorsComingSoon: React.FC = () => {
           Sponsors
         </motion.p>
 
-        {/* Gold Sponsor */}
+        {/* Diamond Sponsor */}
         <motion.div
           className="flex flex-col items-center gap-4 w-full mt-4"
           variants={fadeUp}
@@ -78,20 +78,20 @@ const SponsorsComingSoon: React.FC = () => {
           animate="visible"
         >
           <div className="flex items-center gap-3">
-            <div className="h-px w-10 bg-gradient-to-r from-transparent to-[#FFD700]/60" />
+            <div className="h-px w-10 bg-gradient-to-r from-transparent to-[#70D2FF]/60" />
             <span
               className="text-xs uppercase tracking-[0.3em] font-euclid font-semibold"
-              style={{ color: "#FFD700" }}
+              style={{ color: "#70D2FF" }}
             >
-              Gold Sponsor
+              Diamond Partner
             </span>
-            <div className="h-px w-10 bg-gradient-to-l from-transparent to-[#FFD700]/60" />
+            <div className="h-px w-10 bg-gradient-to-l from-transparent to-[#70D2FF]/60" />
           </div>
-          <div className="flex items-center justify-center rounded-2xl border border-[#FFD700]/20 bg-white/5 backdrop-blur-sm px-12 py-8 shadow-[0_0_40px_rgba(255,215,0,0.07)]">
+          <div className="flex items-center justify-center rounded-2xl border border-[#70D2FF]/20 bg-white/5 backdrop-blur-sm px-12 py-8 shadow-[0_0_40px_rgba(112,210,255,0.07)]">
             <img
-              src="/Devfolio_Logo-White.png"
-              alt="Devfolio"
-              className="w-44 md:w-56 lg:w-72 object-contain"
+              src="/Miro_Logo.jpg"
+              alt="Miro"
+              className="w-44 md:w-56 lg:w-72 object-contain rounded-xl"
             />
           </div>
         </motion.div>
@@ -105,11 +105,56 @@ const SponsorsComingSoon: React.FC = () => {
           animate="visible"
         />
 
-        {/* In-Kind Sponsor */}
+        {/* Gold Sponsors */}
         <motion.div
           className="flex flex-col items-center gap-4 w-full"
           variants={fadeUp}
           custom={4}
+          initial="hidden"
+          animate="visible"
+        >
+          <div className="flex items-center gap-3">
+            <div className="h-px w-10 bg-gradient-to-r from-transparent to-[#FFD700]/60" />
+            <span
+              className="text-xs uppercase tracking-[0.3em] font-euclid font-semibold"
+              style={{ color: "#FFD700" }}
+            >
+              Gold Partners
+            </span>
+            <div className="h-px w-10 bg-gradient-to-l from-transparent to-[#FFD700]/60" />
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <div className="flex items-center justify-center rounded-2xl border border-[#FFD700]/20 bg-white/5 backdrop-blur-sm px-12 py-8 shadow-[0_0_40px_rgba(255,215,0,0.07)]">
+              <img
+                src="/Devfolio_Logo-White.png"
+                alt="Devfolio"
+                className="w-36 md:w-44 lg:w-56 object-contain"
+              />
+            </div>
+            <div className="flex items-center justify-center rounded-2xl border border-[#FFD700]/20 bg-white/5 backdrop-blur-sm px-12 py-8 shadow-[0_0_40px_rgba(255,215,0,0.07)]">
+              <img
+                src="/RiseIn_Logo.webp"
+                alt="Rise In"
+                className="w-36 md:w-44 lg:w-56 object-contain"
+              />
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Divider */}
+        <motion.div
+          className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mt-2"
+          variants={fadeUp}
+          custom={5}
+          initial="hidden"
+          animate="visible"
+        />
+
+        {/* In-Kind Sponsor */}
+        <motion.div
+          className="flex flex-col items-center gap-4 w-full"
+          variants={fadeUp}
+          custom={6}
           initial="hidden"
           animate="visible"
         >
@@ -133,7 +178,7 @@ const SponsorsComingSoon: React.FC = () => {
         <motion.p
           className="text-white/30 text-sm font-euclid text-center max-w-md mt-4"
           variants={fadeUp}
-          custom={5}
+          custom={7}
           initial="hidden"
           animate="visible"
         >
@@ -145,7 +190,7 @@ const SponsorsComingSoon: React.FC = () => {
         <motion.div
           className="flex gap-2"
           variants={fadeUp}
-          custom={6}
+          custom={8}
           initial="hidden"
           animate="visible"
         >
