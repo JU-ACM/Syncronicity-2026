@@ -35,7 +35,7 @@ export const Data: EventSection[] = [
     categorySlug: "open-innovation",
     problems: [
       {
-        id: "",
+        id: 0,
         slug: "open-innovation-track",
         title: "Open Innovation Track",
         description:
