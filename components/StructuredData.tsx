@@ -151,7 +151,7 @@ export const defaultOrganization: OrganizationSchema = {
 export const synchronicityEvent: EventSchema = {
   name: "Synchronicity 2026",
   description:
-    "A 24-hour hackathon organized by JU ACM, featuring problem statements across Web Development, Web3, and AI/ML tracks.",
+    "A 24-hour hackathon organized by JU ACM, featuring problem statements across Open Innovation, Web Development, Web3, and AI/ML tracks.",
   startDate: "2026-03-21T09:00:00+05:30",
   endDate: "2026-03-22T09:00:00+05:30",
   location: {
