@@ -30,7 +30,54 @@ export interface EventSection {
 }
 
 export const Data: EventSection[] = [
-
+  {
+    event: "Open Innovation",
+    categorySlug: "open-innovation",
+    problems: [
+      {
+        id: 1,
+        slug: "open-innovation",
+        title: "Open Innovation",
+        description:
+          "This track is all about spotting real-world problems (or even inventing new ones 👀) and crafting solutions that actually matter. Whether it's something hyper-local or globally scalable, the goal is simple: identify a gap and fill it with something impactful.",
+        goal: "Identify real-world problems and build impactful solutions.",
+        tags: ["Open Ended", "Innovation", "Problem Solving", "Any Domain"],
+        objectives: [
+          "Identify a meaningful problem",
+          "Design a solution that creates real impact",
+          "Build a functional prototype",
+          "Validate usefulness with users/stakeholders",
+        ],
+        expectedSolution:
+          "A working prototype (or strong MVP) that clearly addresses a real problem, with a demo and explanation of impact.",
+        evaluationCriteria: [
+          {
+            name: "Innovation",
+            description: "Originality of the idea and approach.",
+          },
+          {
+            name: "Impact",
+            description: "How meaningful and scalable the solution is.",
+          },
+          {
+            name: "Technical Depth",
+            description: "Quality of engineering and technical execution.",
+          },
+          {
+            name: "Usability",
+            description: "Clarity, UX, and how usable the solution feels.",
+          },
+        ],
+        resources: [
+          {
+            name: "Apply on Devfolio",
+            description: "Registration and event details.",
+            url: "https://synchronicity-s-2.devfolio.co/",
+          },
+        ],
+      },
+    ],
+  },
   {
     event: "Web Development",
     categorySlug: "web-development",
@@ -168,21 +215,6 @@ export const Data: EventSection[] = [
           "Multi-agent architecture for processing",
           "Explainable ranking of results",
         ],
-      },
-    ],
-  },
-  {
-    event: "Open Innovation",
-    categorySlug: "open-innovation",
-    problems: [
-      {
-        id: 1,
-        slug: "open-innovation-track",
-        title: "Open Innovation Track",
-        description:
-          "This track is all about spotting real-world problems (or even inventing new ones 👀) and crafting solutions that actually matter. Whether it's something hyper-local or globally scalable, the goal is simple: identify a gap and fill it with something impactful.",
-        goal: "No limits. No templates. Just you, your ideas, and how far you're willing to push them.",
-        tags: ["Open Ended", "Innovation", "Problem Solving", "Any Domain"],
       },
     ],
   },

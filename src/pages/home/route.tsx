@@ -73,7 +73,7 @@ export const HomeRoute = () => {
     <div className="w-full min-h-screen bg-[#B2D9E7] overflow-hidden">
       <SEO
         title="Home"
-        description="Synchronicity 2026 - A 24-hour hackathon organized by JU ACM. Build innovative solutions across Web Development, Web3, and AI/ML tracks."
+        description="Synchronicity 2026 - A 24-hour hackathon organized by JU ACM. Build innovative solutions across Open Innovation, Web Development, Web3, and AI/ML tracks."
         canonicalPath="/home"
         ogImage="/images/og/home.png"
       />
