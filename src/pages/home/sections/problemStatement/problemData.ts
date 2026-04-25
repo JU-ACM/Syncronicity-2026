@@ -30,34 +30,7 @@ export interface EventSection {
 }
 
 export const Data: EventSection[] = [
-  // {
-  //   event: "Open Innovation",
-  //   categorySlug: "open-innovation",
-  //   problems: [
-  //     {
-  //       id: 0,
-  //       slug: "open-innovation-track",
-  //       title: "Open Innovation Track",
-  //       description:
-  //         "The Open Innovation Track at Synchronicity S2 empowers participants to solve real-world challenges faced by students through innovative, scalable web solutions. It encourages creative thinking, problem-solving, and the development of impactful digital products that enhance campus life.",
-  //       goal: "Enable participants to design and build transformative solutions that address real-world problems using modern web technologies, data-driven approaches, and collaborative innovation.",
-  //       tags: [
-  //         "Innovation",
-  //         "Web Development",
-  //         "Problem Solving",
-  //         "Scalable Systems",
-  //       ],
-  //       objectives: [
-  //         "Encourage creative and out-of-the-box thinking",
-  //         "Build impactful and scalable web solutions",
-  //         "Solve real-world student and campus problems",
-  //         "Leverage modern technologies and frameworks",
-  //         "Promote collaboration and teamwork",
-  //         "Deliver a functional and user-centric product",
-  //       ],
-  //     },
-  //   ],
-  // },
+
   {
     event: "Web Development",
     categorySlug: "web-development",
@@ -195,6 +168,21 @@ export const Data: EventSection[] = [
           "Multi-agent architecture for processing",
           "Explainable ranking of results",
         ],
+      },
+    ],
+  },
+  {
+    event: "Open Innovation",
+    categorySlug: "open-innovation",
+    problems: [
+      {
+        id: 1,
+        slug: "open-innovation-track",
+        title: "Open Innovation Track",
+        description:
+          "This track is all about spotting real-world problems (or even inventing new ones 👀) and crafting solutions that actually matter. Whether it's something hyper-local or globally scalable, the goal is simple: identify a gap and fill it with something impactful.",
+        goal: "No limits. No templates. Just you, your ideas, and how far you're willing to push them.",
+        tags: ["Open Ended", "Innovation", "Problem Solving", "Any Domain"],
       },
     ],
   },

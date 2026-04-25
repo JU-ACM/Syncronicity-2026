@@ -21,7 +21,7 @@ const timelineSteps = [
     id: "step-2",
     number: "2",
     title: "Registration closes",
-    duration: "26th April",
+    duration: "7th May",
     description: "Last chance to register",
     positionClasses: "top-[26.5%] right-[20%]",
     layout: "right",
@@ -32,7 +32,7 @@ const timelineSteps = [
     id: "step-3",
     number: "3",
     title: "Final Date for PPT Submission",
-    duration: "3rd May",
+    duration: "14th May",
     description: "Submit your presentation for prelims.",
     positionClasses: "top-[46%] right-[33%] lg:top-[49%] lg:right-[35%]",
     layout: "right",
@@ -301,13 +301,11 @@ export default function Timeline() {
               ref={(el) => {
                 checkpointsRef.current[index] = el;
               }}
-              className={`absolute z-10 flex items-center w-[45vw] lg:w-max will-change-transform ${
-                step.positionClasses
-              } ${
-                step.layout === "left"
+              className={`absolute z-10 flex items-center w-[45vw] lg:w-max will-change-transform ${step.positionClasses
+                } ${step.layout === "left"
                   ? "flex-row"
                   : "flex-row-reverse text-right"
-              }`}
+                }`}
             >
               <div
                 className={`text-7xl lg:text-9xl font-bounded font-black leading-none tracking-tighter mx-4 shrink-0 ${step.number === "5" ? "lg:text-[12rem]" : "lg:text-9xl"} `}

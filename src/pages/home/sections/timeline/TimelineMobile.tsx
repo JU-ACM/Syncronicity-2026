@@ -25,7 +25,7 @@ const timelineSteps = [
     id: "step-2",
     number: "2",
     title: "Registration closes",
-    duration: "26th April",
+    duration: "7th May",
     description:
       "Last chance to register",
     maxW: "",
@@ -38,7 +38,7 @@ const timelineSteps = [
     id: "step-3",
     number: "3",
     title: "Final Date for PPT Submission",
-    duration: "3rd May",
+    duration: "14th May",
     description:
       "Submit your presentation for prelims.",
     maxW: "max-w-60", // Converted max-w-60 to arbitrary value for consistency
