@@ -204,11 +204,10 @@ const ProblemDetail: React.FC = () => {
             .map((label, i) => (
               <motion.span
                 key={i}
-                className={`text-xs px-3 py-1.5 rounded-full font-euclid font-semibold ${
-                  i < 2
-                    ? "bg-[#E6F6FA] text-blue-600"
-                    : "bg-gray-100 text-gray-600 font-medium"
-                }`}
+                className={`text-xs px-3 py-1.5 rounded-full font-euclid font-semibold ${i < 2
+                  ? "bg-[#E6F6FA] text-blue-600"
+                  : "bg-gray-100 text-gray-600 font-medium"
+                  }`}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{
@@ -462,7 +461,7 @@ const ProblemDetail: React.FC = () => {
 
           <motion.button
             onClick={() =>
-              window.open(problem.resources?.[0]?.url || "#", "_blank")
+              window.open("https://synchronicity-s-2.devfolio.co/", "_blank")
             }
             className="flex items-center gap-2 bg-blue-600 hover:bg-blue-400 text-white px-5 py-2.5 rounded-full font-euclid text-sm font-semibold shadow-lg shadow-blue-600/20"
             whileHover={{
