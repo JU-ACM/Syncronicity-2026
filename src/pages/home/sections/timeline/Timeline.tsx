@@ -21,7 +21,7 @@ const timelineSteps = [
     id: "step-2",
     number: "2",
     title: "Registration closes",
-    duration: "7th May",
+    duration: "14th May",
     description: "Last chance to register",
     positionClasses: "top-[26.5%] right-[20%]",
     layout: "right",
