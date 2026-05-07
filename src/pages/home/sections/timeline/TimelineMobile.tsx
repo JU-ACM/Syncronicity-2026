@@ -25,7 +25,7 @@ const timelineSteps = [
     id: "step-2",
     number: "2",
     title: "Registration closes",
-    duration: "7th May",
+    duration: "14th May",
     description:
       "Last chance to register",
     maxW: "",
@@ -63,7 +63,7 @@ const timelineSteps = [
     id: "step-5",
     number: "5",
     title: "Final Round",
-    duration: "23rd May-24th May",
+    duration: "30th May-31st May",
     description:
       "Top teams will compete for the title",
     positionClasses: "top-[81.68%] left-[18%] -translate-y-1/2",
