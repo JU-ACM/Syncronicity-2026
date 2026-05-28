@@ -19,7 +19,7 @@ function getInitials(name: string): string {
 }
 
 function getDriveThumbUrl(photoId: string): string {
-    return `https://drive.google.com/thumbnail?id=${photoId}&sz=w400`;
+    return `/judgesnmentors/${photoId}`;
 }
 
 const cardVariants = {
