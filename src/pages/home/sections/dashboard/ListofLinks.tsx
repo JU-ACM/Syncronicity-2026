@@ -70,7 +70,7 @@ function ListofLinks({ className = "" }): React.JSX.Element {
         className="w-full h-full"
         onClick={() => {
           console.log("Scrolling to Sponsors...");
-          lenis?.scrollTo(".sponsors-coming-soon-class", {
+          lenis?.scrollTo(".sponsors-class", {
             offset: 0, 
             duration: 1.2, 
           });

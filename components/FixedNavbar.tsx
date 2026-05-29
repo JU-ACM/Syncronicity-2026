@@ -14,7 +14,7 @@ const navLinks = [
   { label: "Problems", sectionClass: ".problem-statement-class" },
   { label: "Events", sectionClass: ".events-class" },
   { label: "Timeline", sectionClass: ".timeline-class" },
-  { label: "Sponsors", sectionClass: ".sponsors-coming-soon-class" },
+  { label: "Sponsors", sectionClass: ".sponsors-class" },
 ];
 
 const FixedNavbar: React.FC = () => {

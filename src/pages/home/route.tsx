@@ -10,7 +10,6 @@ import ProblemStatement from "./sections/problemStatement/ProblemStatement";
 import Timeline from "./sections/timeline/Timeline";
 import TimelineMobile from "./sections/timeline/TimelineMobile";
 import WhySection from "./sections/whySection/WhySection";
-import SponsorsComingSoon from "./sections/about/SponsorsComingSoon";
 import GoToTop from "../../../components/GoToTop";
 import FixedNavbar from "../../../components/FixedNavbar";
 import Marquee1 from "../../../components/marquee/Marquee1";
@@ -22,6 +21,9 @@ import { useLocation } from "react-router-dom";
 import SEO from "../../../components/SEO";
 import StructuredData, { synchronicityEvent } from "../../../components/StructuredData";
 import { FAQ_DATA } from "./sections/faq/FAQ";
+import TeamSection from "./sections/CoreTeam/CoreTeam";
+import JudgesMentorsSection from "./sections/Judges&Mentor/JudgesMentorSection";
+import SponsorsSection from "./sections/about/About";
 
 export const HomeRoute = () => {
   const lenis = useLenis();
@@ -121,8 +123,12 @@ export const HomeRoute = () => {
         <TimelineMobile />
         <CityScape className="absolute z-10 top-0 w-full" />
       </div>
+      <SponsorsSection />
 
-      <SponsorsComingSoon />
+      {/* <SponsorsComingSoon /> */}
+      <JudgesMentorsSection />
+      <TeamSection />
+
 
       <div className="bg-[#131313] relative w-full">
         <FAQ />
