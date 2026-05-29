@@ -94,7 +94,13 @@ const tiers: Tier[] = [
     borderColor: 'rgba(255,255,255,0.15)',
     shadowColor: 'rgba(255,255,255,0.04)',
     layout: 'grid',
-    sponsors: [],  // add community partner logos here
+    sponsors: [
+      { name: 'Citadel', logo: '/commPartner/citadel.webp', alt: 'Citadel' },
+      { name: 'GDG', logo: '/commPartner/gdg.jpg', alt: 'GDG' },
+      { name: 'Hacktropica', logo: '/commPartner/Hacktropica-logo-2.png', alt: 'Hacktropica' },
+      { name: 'Innofusion', logo: '/commPartner/innofusion.png', alt: 'Innofusion' },
+      { name: 'RCIIT ACM', logo: '/commPartner/rcciitAcm.png', alt: 'RCIIT ACM' },
+    ],
   },
 ]
 
@@ -104,21 +110,22 @@ interface SponsorCardProps {
   sponsor: Sponsor
   borderColor: string
   shadowColor: string
+  compact?: boolean
 }
 
 const SponsorCard: React.FC<SponsorCardProps> = ({
   sponsor,
   borderColor,
   shadowColor,
+  compact = false,
 }) => (
   <div
-    className="flex items-center justify-center rounded-2xl bg-white/5 backdrop-blur-sm transition-all duration-500 hover:bg-white/10 hover:scale-[1.03] cursor-default"
+    className={`flex items-center justify-center rounded-2xl bg-white/5 backdrop-blur-sm transition-all duration-500 hover:bg-white/10 hover:scale-[1.03] cursor-default ${compact ? 'w-[130px] h-[75px] sm:w-[240px] sm:h-[130px] p-3 sm:p-[20px_28px]' : ''
+      }`}
     style={{
       border: `1px solid ${borderColor}`,
       boxShadow: `0 0 40px ${shadowColor}`,
-      width: '240px',
-      height: '130px',
-      padding: '20px 28px',
+      ...(!compact && { width: '240px', height: '130px', padding: '20px 28px' }),
     }}
   >
     <img
@@ -202,35 +209,19 @@ const TierSection: React.FC<TierSectionProps> = ({ tier, sectionRef }) => (
             ))}
           </div>
         ) : (
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 mt-4 justify-items-center">
             {tier.sponsors.map((s) => (
               <SponsorCard
                 key={s.name}
                 sponsor={s}
                 borderColor={tier.borderColor}
                 shadowColor={tier.shadowColor}
+                compact
               />
             ))}
           </div>
         )
-      ) : (
-        // Empty state placeholder for community partners
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
-          {Array.from({ length: 6 }).map((_, i) => (
-            <div
-              key={i}
-              className="flex items-center justify-center rounded-2xl bg-white/5 backdrop-blur-sm"
-              style={{
-                border: `1px solid ${tier.borderColor}`,
-                width: '240px',
-                height: '130px',
-              }}
-            >
-              <div className="w-16 h-6 rounded bg-white/10 animate-pulse" />
-            </div>
-          ))}
-        </div>
-      )}
+      ) : null}
     </div>
   </section>
 )
