@@ -286,7 +286,7 @@ const SponsorsSection: React.FC = () => {
   }, [])
 
   return (
-    <div ref={outerRef} className="relative w-full bg-[#131313]">
+    <div ref={outerRef} className="sponsors-class relative w-full bg-[#131313]">
       {/* Subtle grid overlay */}
       <div
         className="absolute inset-0 opacity-[0.025] pointer-events-none"
